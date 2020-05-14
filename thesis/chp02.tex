@@ -1,0 +1,105 @@
+\chapter{Kapitel 2 mit einigen Dingen}
+\label{chp:Sonstiges}
+Dieses Kapitel zeigt noch ein paar Kleinigkeiten, die f\"ur die Gestaltung der Ausarbeitung hilfreich sein k\"onnen. Insbesondere ist beschrieben, wie diese Vorlage korrekt ausgef\"ullt wird, damit man sich bei der Erstellung der Arbeit dann wirklich auf die Inhalte konzentrieren kann.
+
+~\\
+\vfill
+\minitoc
+\clearpage
+
+
+\section{Kapitel\"ubersicht}
+\label{sec:2:KapitelUebersicht}
+Zu Beginn, es macht sich immer gut, Kapitel in der Arbeit strukturiert zu beginnen. Dazu ist in dieser Vorlage folgende F\"ahigkeit hinterlegt: Jedes Kapitel kann mit einer einleitenden Kurz\"ubersicht gestaltet werden, dazu ist zu Beginn jedes Kapitels der Anfang der \TeX-Datei wie in Listing~\ref{lst:KapitelCode} gezeigt zu gestalten.
+
+\begin{lstlisting}[captionpos=b, caption=Listing f\"ur den Beginn dieses Kapitels,label=lst:KapitelCode]
+\chapter{Kapitel 2 mit einigen Dingen}
+\label{chp:Sonstiges}
+Dieses Kapitel zeigt noch ein paar Kleinigkeiten, die f\"ur die Gestaltung der Ausarbeitung hilfreich sein k\"onnen.
+
+~\\
+\vfill
+\minitoc
+\clearpage
+\end{lstlisting}
+
+Dies erzeugt einen kurzen einleitenden Text f\"ur das Kapitel mitsamt einer kleinen \emph{Minitoc}, die einen groben inhaltlichen \"Uberblick gibt.
+
+\begin{MySugg}
+	Obwohl f\"ur jedes Kapitel die weiter oben beschriebenen Einleitungen inkl.\ Kapitel\"ubersicht m\"oglich sind, sollten Sie diese erst ab dem 2.~Kapitel verwenden und \emph{nicht} im ersten, einleitenden Kapitel.
+\end{MySugg}
+
+\section{Ausf\"ullen der Vorlage}
+\label{sec:2:AusfuellenDerVorlage}
+Um die Vorlage korrekt auszuf\"ullen sind nur wenige Schritte erforderlich:
+\begin{compactenum}
+	\item Eintragen der Metadaten f\"ur das Titelblatt
+	\item Eintragen der Daten f\"ur die Arbeit
+	\item Schreiben des Texts
+	\item Erstellen der zusammenfassenden Texte
+\end{compactenum}
+
+% \paragraph{Metadaten fur das Deckblatt.}
+% Das Deckblatt folgt den Vorgaben der Technischen Universit\"at M\"unchen. Um daf\"ur zu sorgen, dass auf diesem der Titel der Arbeit erscheint, sind in der Datei \kw{thesis.tex} einige Eintragungen zu machen, siehe Listing~\ref{lst:Deckblatt}. Die Eintragungen sollten selbsterkl\"arend sein.
+
+\begin{lstlisting}[captionpos=b, caption=Metadaten f\"ur das Deckblatt,label=lst:Deckblatt]
+%% Einfache Definitionen von Konstanten für das gesamte Dokument.
+%  Sie werden bspw. beim Aufbau der Titelseite ausgewertet.
+\def\titelname    {Name der Arbeit}
+\def\autorforinfo {Marco Kuhrmann}
+\def\email        {kuhrmann@in.tum.de}
+\def\subjectname  {Prozessmodellierung}	%Beispiel
+\def\location     {M�nchen}
+\def\keywordsname {V-Modell XT}			%Beispiel
+
+%% spezifisch fuer eine MA, fuer BA etc. muss das angepasst werden
+\def\doctype{Masterarbeit in Informatik}
+\def\title{The English Title}
+\def\titleGer{Der Deutsche Titel (s.o.)}
+\def\author{Name Autor}
+\def\date{Juli 15, 2010}
+\end{lstlisting}
+
+Das Deckblatt enth\"alt nur sehr wenige Daten. \"Ublicherweise wird dieses auf Karton gedruckt, der dann als Mantel f\"ur die Arbeit dient.
+
+\paragraph{Metadaten f\"ur die Arbeit.}
+F\"ur die Arbeit selbst sind \"uber die Informationen hinaus noch weitere Daten relevant. Insbesondere die Informationen zum Aufgabensteller und zu den Betreuern sind hier zu beachten. Die betreffenden Informationen sind in der Datei \kw{titlepage.tex} (siehe Listing~\ref{lst:Deckblatt2}) einzutragen.
+
+\begin{lstlisting}[captionpos=b, caption=Metadaten f\"ur das Deckblatt (innen),label=lst:Deckblatt2]
+\vspace{20mm}
+%\hfill
+  \begin{tabular}{ll}
+	\large Bearbeiter:      & \large \author \\[2mm]
+	\large Aufgabensteller: & \large Prof. Dr. Dr. h.c. Manfred Broy \\[2mm]
+	\large Betreuer:        & \large Dr. Marco Kuhrmann \\[2mm]
+	\large Abgabedatum:     & \large Juni 15, 2010
+  \end{tabular}
+\end{lstlisting}
+
+Auch hier sind die Eintragungen selbsterkl\"arend. Wichtig: F\"ur den Titel m\"ussen hier keine erneuten Eingaben erfolgen. Dieser wird in Deutsch und Englisch aus der \kw{thesis.tex} \"ubernommen.
+
+\paragraph{Schreiben des Texts.}
+Diese Aufgabe wird wohl den meisten Teil der Zeit w\"ahrend der Abschlussarbeit in Anspruch nehmen. Hierzu lassen sich generell nur wenige Hinweise geben:
+\begin{compactitem}
+	\item Beginnen Sie rechtzeitig mit schreiben!
+	\item Erstellen Sie zuerst eine halbwegs stabile Gliederung und sehen Sie mindestens f\"ur jedes Kapitel eine eigene \TeX-Datei vor. Wie solche Dateien eingebunden werden, sehen Sie in der Datei \kw{thesis.tex}, die als Zentraldokument f\"ur die Arbeit fungiert.
+	\item Verwenden Sie wo es geht \emph{semantisches Markup}. Das sind selbstdefinierte ,,Befehle'', die Textersetzungen vornehmen. In den Dateien \kw{commands.tex} und \kw{shortcuts.tex} finden Sie viele Beispiele.
+\end{compactitem}
+
+\paragraph{Erstellen der zusammenfassenden Texte.}
+In der Vorlage gibt es verschiedene, kleine Textabschnitte, die Sie noch f\"ullen m\"ussen, bzw.\ k\"onnen. Zun\"achst die obligatorische Zusammenfassung. Diese befindet sich in der Datei \kw{abstract.tex}. Es ist vorgesehen, dass die Zusammenfassung immer in Deutsch und Englisch erstellt wird -- es wird zwar nicht vorgeschrieben, aber Sie sollten es tun.
+
+Falls Sie jemand bei der Arbeit unterst\"utzt haben sollte und Sie ihm daf\"ur danken m\"ochten, ist in der Datei \kw{acknowledgements.tex} entsprechender Platz daf\"ur vorgesehen.
+
+Abschli{\ss}end ist in der Datei \kw{disclaimer.tex} noch die Erkl\"arung der Selbstst\"andigkeit zu finden, mit der Sie per Unterschrift erkl\"aren, die Arbeit auch selbst erstellt zu haben. Der Name wird dort aus den Einstellung in der Datei \kw{thesis.tex} automatisch \"ubernommen und das Datum wird ebenfalls automatisch bei jeder Neuerstellung des Dokuments gesetzt.
+
+\section{Abschluss}
+\label{sec:2:Abschluss}
+Eigentlich war es das auch schon. Mit diesen grundlegenden Informationen und ein wenig Vorkenntnissen in \LaTeX\ sollten Sie zu einer herzeigbaren Ausarbeitung kommen.
+
+Diese Vorlage entwickeln wir seit \emph{8 Jahren} immer Schritt f\"ur Schritt weiter. F\"ur Anmerkungen, Feedback usw.\ sind wir immer sehr dankbar. Gerne auch Verbesserungsvorschl\"age, \zB\ in Form angepasster Makros o.\"a.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "thesis"
+%%% End:

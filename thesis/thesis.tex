@@ -1,0 +1,247 @@
+\tolerance 500   % Verhindet pingelige "`overfull \hbox"'-Meldungen.
+
+\documentclass[12pt,a4paper,normalheadings,oneside,DIV9,BCOR10mm,listsleft,fleqn,leqno,tablecaptionbelow,abstracton,pointlessnumbers]{scrbook}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%% Einfache Definitionen von Konstanten fuer das gesamte Dokument.
+%  Sie werden bspw. beim Aufbau der Titelseite ausgewertet.
+\def\titelname    {Name der Arbeit}
+\def\autorforinfo {Leo Hanisch}
+\def\email        {leo.hanisch@tum.de}
+\def\subjectname  {Prozessmodellierung}	%Beispiel
+\def\location     {M\"unchen}
+\def\keywordsname {Vague Requirements}			%Beispiel
+
+%% spezifisch fuer eine MA, fuer BA etc. muss das angepasst werden
+\def\doctype{Masterarbeit in Informatik}
+\def\title{Detecting Vague Requirements with Machine Learning}
+\def\titleGer{Detektion von vagen Anforderungen mit maschinellem Lernen}
+\def\author{Leo Hanisch}
+\def\date{November 15, 2020}
+
+%% Festlegen der Dokumentmetrik
+\usepackage[inner=2.5cm,outer=3.5cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage{palatino}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsbsy}
+\usepackage{babel}
+\usepackage{paralist}
+
+\usepackage{xspace}
+
+%% Bereich Tabellen
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{everysel}
+\usepackage{framed}
+\usepackage{ragged2e}
+
+%% Einbindung von Minitocs
+\usepackage{shorttoc}
+\usepackage{minitoc}
+
+%% Flexible Tabellenspalten und Kommandos
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}%
+\newcolumntype{C}{>{\Centering\arraybackslash}X}%
+\newcolumntype{R}{>{\RaggedLeft\arraybackslash}X}%
+
+\newcommand{\opentableheader}{\toprule}
+\newcommand{\closetableheader}{\toprule}
+
+%% actual versions of the listings package:
+%% ftp://ftp.dante.de/tex-archive/help/Catalogue/entries/listings.html
+\usepackage{listings}
+\usepackage{dotnet_new}
+\usepackage[pdftex, colorlinks,
+            linkcolor=black,
+            citecolor=black,
+            pagecolor=black,
+            filecolor=black,
+            urlcolor=black]{hyperref}
+\usepackage{graphicx}
+
+\usepackage{bibgerm}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage[final]{pdfpages}
+
+%% Benutzen der Koma-Headings
+\usepackage[komastyle]{scrpage2}
+
+%% kompakte Items
+\usepackage{paralist}
+
+%% verbatin in footnode
+\usepackage{fancyvrb}
+
+\usepackage{natbib}
+
+%% Eigene Packages
+\input{shortcuts}
+\input{commands}
+\usepackage{textcomp}
+
+%% enable TUM symbols on title page
+\usepackage{tumlogo}
+
+%% some information for acrobat reader
+\pdfinfo{%
+%  /Title (\titelname)
+  /Author (\autorforinfo)
+  /Subject (\subjectname)
+  /Keywords (\keywordsname)
+}
+\clearscrplain
+%% end of preamble
+
+%% beginning of document
+\begin{document}
+
+\pagestyle{scrplain}
+
+%\frontmatter
+\input{cover.tex}
+
+%\clearemptydoublepage
+%\input{titlepage.tex}
+\input{disclaimer.tex}
+\input{abstract.tex}
+
+\clearscrplain
+
+%% table of contents
+\pagenumbering{roman}\setcounter{page}{1}
+\clearscrheadfoot
+\ohead{\headmark}
+\ofoot[\pagemark]{\pagemark}
+\automark[chapter]{section}
+
+%% Konfiguration der Minitocs
+\dominitoc
+\setcounter{minitocdepth}{3}
+\mtcsettitle{minitoc}{\"Ubersicht}
+\mtcsettitlefont{minitoc}{\large\sffamily}
+\mtcsetfont{minitoc}{*}{\sffamily}
+\mtcsetfont{minitoc}{section}{\normalfont}
+\mtcsetfont{minitoc}{subsection}{\normalfont}
+\mtcsetfont{minitoc}{subsubsection}{\normalfont}
+
+%% Erstellen der Inhaltsverzeichnisse, Tabellen und Bilder (Listings opt.)
+%\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\tableofcontents
+\vfill
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+%\lstlistoflistings
+%\cleardoublepage
+
+\clearscrheadfoot
+%\chead{}
+\ohead{\headmark}
+% \cfoot{Marco Kuhrmann}
+\ofoot[\pagemark]{\pagemark}
+\automark[chapter]{section}
+\renewcommand{\headfont}{\normalfont\sffamily\slshape}
+\renewcommand{\pnumfont}{\normalfont\sffamily}
+
+%\renewcommand{\baselinestretch}{1.25}\normalsize
+
+\pagestyle{scrheadings}
+\pagenumbering{arabic}\setcounter{page}{1}
+
+%% Text: Content
+
+%%% Comment this out to suppress those chapters
+%\input{chapter/chp01.tex}
+%\input{chapter/chp02.tex}
+%%% Add your chapter here
+
+\input{chapter/introduction.tex}
+
+% ## Struktur
+%  1. Einleitung
+%     1.1 Motivation: Bugs teuer und testen auch teuer
+%     1.2 Problem: Vor dem release/testbaren System wissen wo bugs sind und ist der algo geeignet
+%     1.3 Mein Beitrag: Implementierung und ob Algo wirkt
+%     1.4 Warum löst das das Problem? Weil Studie systematisch durchgeführt 1 Seite
+%   1. Abstract
+%     Jeder der Punkte auf 1 bis zwei Sätze zusammengefasst
+%  1. Fundamentals/Grundlagen: Erklärungen, Definitionen 2/3 Seiten
+%    1.1 Was ist bug prediction
+%    1.2 was ist ein linear classifier
+%    1.3 Ansatz Algo für Bug-prediction erklären
+%  1. Related Work (Pro Quelle ein Absatz) 7 bis 10 Papiere
+%      1. Studien über bug prediction nur statisch hard gecodede Muster (google scholar)
+%  (1. Approach) wie ich classifier traniere
+%  1. Studie (eigentlicher Beitrag der ARbeit)
+%      1.1 Ziel der Studie (Forschungsfragen)
+%          Forschungsfragen(Funktioniert der Algorithmus)
+%      1.1 Studie design (Vorgehen)
+%          1.1 git auschecken
+%          1.2 Algo drauf loslassen
+%          1.3 Selbst korrigieren
+%          1.4 Präzision bestimmen ("Frage 1 wird beantwortet mit folgender Metrik(Formel)")
+%  1. Studie Objekts (besser mehrere)
+%      1.1 Welche Repos habe ich verwendet
+%      1.3 Wieviele Commits welche programmiersprache wieviele devs wieviele lines of code
+%      Tabelle mit Charakteristika
+%  (1. Studie exekution)
+%  1. Studie Results (gegliedert nach Forschungsfrage)
+%     1.1 nur die Zahlen keine Interpretation (recht kurz pro Studie Objekt eine Tabelle oder so)
+%  1. Interpretation der Ergebnisse (Zeigen wie gescheit ich bin :D)
+%     Antworten auf Forschungsfragen
+%  1. Threats to Validity (Angriffspunkte auf meine Studie)
+%      1. Veralgemeinerbarkeit weil nur begrenzte studie objekts oder nur eine Programmiersprache
+%      1. Könnte Fehler in Algorithums
+%      1. Ich könnte biased sein
+%      (externe Validität interne Validität)
+%      Ist kleiner Threat weil...
+%  1. Schluss (Zusammenfassung von Einleitung bis Schluss)
+
+%  Studie zwischen 5 bis 8 Seiten
+%  Studie design ein Bild
+%  zwischen 10 und 20 Seiten
+% Ein Gedanke pro Absatz nicht mehr als 8-10 Zeilen
+
+%\appendix
+%\input{app01.tex}
+
+% Todo:
+% 1. Modell checken 15 min scharf nachdenken
+% Änderungshäufigkeit kein guter Indikator
+
+% Vortrag
+% Einleitung mit Motivation
+% Ansatz vorstellen
+% Studie vorstellen
+% Studie design
+% Studie result (1. 5 bis 10 dateien sind studie objekts)
+% Präzi schwierig
+% Aber aufgrund der "natur der Datei"
+
+
+
+%%\section{Literaturverzeichnis}
+%% bibs...
+%\nocite{*}
+%\bibliographystyle{geralpha}
+\bibliographystyle{plainnat}
+\bibliography{thesis}
+%\bibliography{bibtex}
+\vfill
+%\pagebreak
+
+\end{document}

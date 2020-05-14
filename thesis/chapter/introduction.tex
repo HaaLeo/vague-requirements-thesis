@@ -1,0 +1,25 @@
+\chapter{Introduction}
+\label{chp:Einleitung}
+Trotz steigender Anforderungen an die Zuverlässigkeit von Softwaresystemen, steigt mit deren Komplexität auch die Anzahl potenzieller Fehler, die diese beinhalten.
+Das hemmt einen schnellen Entwicklungsprozess und kann unvorhersehbare Probleme nach sich ziehen, wenn Fehler nicht behoben werden.
+Dem kann durch Testen der Software engegengewirkt werden \citep{Myers2004}.
+Allerdings kann das Testen von Software bis zu 50\% der verfügbaren Ressourcen verbrauchen \citep{Beizer1990}.
+Trotzdem wird dieser Aufwand zunehmend in Kauf genommen, da die Veröffentlichung fehlerhafter Software oft Nutzer verloren werden.
+Dabei darf eine entscheidende Limitation des Testens nicht außer Acht gelassen werden: Testen kann nur vorhandene Fehler aufzeigen, allerdings nicht bestätigten, dass ein System fehlerfrei ist \citep{Ammann2008}.
+
+Selbst wenn ein Fehler bekannt ist, muss dieser zuerst lokalisiert werden, bevor Maßnahmen ergriffen werden können.
+Dies kann sehr viel Zeit in Anspruch nehmen.
+Erschwerend kommt hinzu, dass Software Entwickler ohnehin meistens Zeitdruck ausgesetzt sind und laufende Kosten im Blick behalten m\"ussen.
+Dies f\"uhrt oft dazu, dass die entwickelte Software Qualit\"at einb\"ußt und Projekt Manager die begrenzten Resourcen mit h\"ochster Effizienz zuweisen m\"ussen.
+Um sowohl der Veröffentlichung fehlerhafter Software vorzubeugen, als auch den Druck auf Software Entwickler zu mindern, ist es zielführend schon vor dem Release und möglichst früh im Entwicklungsprozess potenzielle Schwachstellen zu identifizieren, also vorauszusagen welche Komponenten Fehler aufweisen werden.
+
+Für die Analyse von Softwareprojekte gibt es eine Vielzahl an Metriken.
+Beispiele sind die \textit{Depth of Inheritance Tree} Metrik oder die \textit{Number of Children} Metrik zur Angabe der Anzahl direkt abgeleiteten Klassen \citep{Gyimothy2005}.
+Eine weitere Metrik zur Einschätzung der Fehleranfälligkeit und des Orts auftretender Fehler ist die \textit{History Complexity Metric} (HCM) \citep{Hassan2009}.
+Diese nimmt an, dass häufige und umfangreiche Änderungen der gleichen Komponente die Wahrscheinlichkeit steigt, dass ein Fehler auftritt.
+
+Es ist noch nicht ausreichend getestet und mit Studien belegt, dass Bug Prediction Ansätze den Software Entwickler mit nützlicher Information unterstützen \citep{Lewis2013}. Deswegen ist das Ziel dieser Arbeit einen Algorithmus zu implementieren, der mit Hilfe HCM voraussagt an welchen Stellen in einem Softwareprojekt wahrscheinlich Fehler auftreten werden, und diesen anhand einer Studie zu validieren.
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "thesis"
+%%% End:
