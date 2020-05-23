@@ -1,11 +1,9 @@
 \RequirePackage[l2tabu,orthodox]{nag}
 
-% TODO: decide if one-sided/two-sided
-%\documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook} % two-sided
 \documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc]{scrbook} % one-sided
 
-% TODO: change citation style in settings
 \input{settings}
+\input{pages/acronyms}
 
 % TODO: change thesis information
 \newcommand*{\getUniversity}{Technical University of Munich}
@@ -38,6 +36,7 @@
 
 \mainmatter{}
 
+% TODO: Remove me
 \input{chapters/00_test}
 \input{chapters/01_introduction}
 % TODO: add more chapters here
@@ -48,6 +47,10 @@
 \listoffigures{}
 \listoftables{}
 \microtypesetup{protrusion=true}
+
+\printacronyms[name=List of Abbreviations and Acronyms, heading=chapter*]
+\addcontentsline{toc}{chapter}{List of Abbreviations and Acronyms}
+
 \printbibliography{}
 
 \end{document}

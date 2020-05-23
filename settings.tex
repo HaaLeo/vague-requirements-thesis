@@ -25,6 +25,8 @@
 \usepackage[final]{microtype}
 \usepackage{caption}
 \usepackage[hidelinks]{hyperref} % hidelinks removes colored boxes around references and links
+\usepackage{longtable} % used by acro
+\usepackage{acro}
 
 \bibliography{bibliography}
 
@@ -64,4 +66,21 @@
   autogobble,
   keywordstyle=\bfseries\color{TUMBlue},
   stringstyle=\color{TUMAccentGreen}
+}
+
+% Set longtable indentation
+\setlength\LTleft{0pt}
+
+% Avoid hyphenation (splitting of "natural language processing" for instance)
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% acro
+\acsetup{
+  list/display = used,
+  make-links = true,
+  format/first-long = \textit,
+  list/template = longtable,
 }
