@@ -1,17 +1,18 @@
 FILE := main
 OUT  := build
+JOBNAME := 'Detecting Vague Requirements with Machine Learning'
 
 .PHONY: pdf
 pdf:
-	latexmk -interaction=nonstopmode -outdir=$(OUT) -pdf -halt-on-error $(FILE)
+	latexmk -interaction=nonstopmode -outdir=$(OUT) -jobname=$(JOBNAME) -pdf -halt-on-error $(FILE)
 
 .PHONY: watch
 watch:
-	latexmk -interaction=nonstopmode -outdir=$(OUT) -pdf -pvc -halt-on-error $(FILE)
+	latexmk -interaction=nonstopmode -outdir=$(OUT) -jobname=$(JOBNAME) -pdf -pvc -halt-on-error $(FILE)
 
 .PHONY: clean
 clean:
-	rm -rf $(filter-out $(OUT)/$(FILE).pdf, $(wildcard $(OUT)/*))
+	rm -rf $(filter-out $(OUT)/$(JOBNAME).pdf, $(wildcard $(OUT)/*))
 
 .PHONY: purge
 purge:

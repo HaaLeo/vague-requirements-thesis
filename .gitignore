@@ -1,4 +1,4 @@
-build/main.pdf
+build/*.pdf
 *_temp.tex
 .DS_Store
 
