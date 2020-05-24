@@ -30,15 +30,19 @@ Such tooling could support the reviewer by automatically indicating requirement 
 Further, in industrial environments not only dedicated requirement smells are of interest but, more general speaking, ambiguous or vague requirements.
 Such an assistant tool should be capable to process natural language since requirements are mostly formulated in natural language \parencite{Mich:2004} and indicate whether a requirement is vague or not.
 
-\Ac{ML} achieved in recent history remarkable results for \ac{NLP} tasks \parencite{Khan:2016}.
-An example to mention is Google's \ac{NN} model called BERT which showcased how \acp{NN} can improve performance in transfer learning tremendously \parencite{Devlin:2018}.
+\Ac{ML} achieved in recent history remarkable results for complex \ac{NLP} tasks \parencite{Khan:2016}.
+An example to mention is Google's \ac{NN} model called BERT which showcased how \acp{NN} can improve performance in \textit{transfer learning} tremendously \parencite{Devlin:2018}.
 This recent success indicates that \acp{NN} have great potential in transfer learning and therefore maybe are capable to detect vague requirements.
+However, recent research lacks of the exploration of vague sentences and in particular vague requirements.
 
 The aim of this thesis is to further explore the capabilities of modern \acp{NN} in the context of detection of vague requirements and whether they are suitable candidates to improve the quality assurance process.
 In order to improve quality assurance I make the following contributions:
 \begin{enumerate}
-    \item Create a dataset containing requirements and labels which indicate whether the corresponding requirement is vague or not
-    \item Analyze whether and to what extent state of the art \acp{NN} are capable to classify requirements as \textit{vague} and \textit{not vague}
-    \item Compare different Machine Learning approaches among each other to determine which performs best using dedicated metrics.
-    \item To be defined
+    \item Since recent research endorses \acp{NN}' capabilities to solve complex tasks but explores this in the context of vague requirements not yet, this thesis evaluates whether and to what extent state of the art \acp{NN} are capable to classify requirements as \textit{vague} and \textit{not vague}.
+    \item To successfully apply transfer learning one needs a set of labeled data points. However, there are no such datasets publicly available.
+        Therefore, I will create a dataset containing requirements and labels which indicate whether the corresponding requirement is vague or not.
+    \item It is known that recent \ac{ML} approaches perform well on \ac{NLP} tasks.
+        However, they have not been compared among each other in the context of vague requirements.
+        Therefore, I compare different \ac{ML} approaches among each other to determine which performs best using dedicated metrics.
+    \item To be defined % TODO List correct contributions
 \end{enumerate}
