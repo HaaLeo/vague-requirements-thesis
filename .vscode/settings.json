@@ -2,68 +2,19 @@
     "[latex]": {
         "editor.wordWrap": "on"
     },
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "texify",
-            "tools": [
-                "texify"
-            ]
-        },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        }
+    "todo-tree.filtering.includeGlobs": [
+        "**/*.tex"
     ],
-    "latex-workshop.latex.tools": [
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "texify",
-            "command": "texify",
-            "args": [
-                "-c",
-                "-p",
-                "thesis.tex"
-            ],
-            "env": {}
-        },
-    ],
+    "todo-tree.general.tagGroups": {
+        "TODO": [
+            "TODO",
+            "Todo",
+            "todo"
+        ]
+    },
+    "todo-tree.regex.regex": "((//|#|%|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "todo-tree.general.statusBar": "total",
     "cSpell.words": [
         "dataset"
-    ]
+    ],
 }
