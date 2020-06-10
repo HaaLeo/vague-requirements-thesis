@@ -2,16 +2,16 @@ FILE := main
 OUT  := build
 JOBNAME := 'Detecting Vague Requirements with Machine Learning'
 
-.PHONY: bibliography
-bibliography:
-	[[ ! -a bibliography.txt ]] || mv bibliography.txt bibliography.bib
+.PHONY: bibfile
+bibfile:
+	[[ ! -a Detecting-Vague-Requiremnts-using-Machine-Learning.txt ]] || mv Detecting-Vague-Requiremnts-using-Machine-Learning.txt bibliography.bib
 
 .PHONY: pdf
-pdf: bibliography
+pdf: bibfile
 	latexmk -interaction=nonstopmode -outdir=$(OUT) -jobname=$(JOBNAME) -pdf -halt-on-error $(FILE)
 
 .PHONY: watch
-watch: bibliography
+watch: bibfile
 	latexmk -interaction=nonstopmode -outdir=$(OUT) -jobname=$(JOBNAME) -pdf -pvc -halt-on-error $(FILE)
 
 .PHONY: clean
