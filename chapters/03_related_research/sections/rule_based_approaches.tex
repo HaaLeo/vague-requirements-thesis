@@ -1,6 +1,13 @@
 \section{Rule-Based Approaches}
 \label{chp:related_research:sec:rule_based approaches}
 
+Since use cases are often used to specify functional requirements, \textcite{Ciemniewska:2007} aim to support use case reviews with a tool which is capable to detect \textit{bad smells}.
+They want to detect specification level use case defects such as duplicates as well as use case level smells like too long or too short use cases.
+To uncover each of their proposed smells the parser introduced by \textcite{Klein:2002} is used.
+With the tokens returned by the parser rules are implemented to detect each smell.
+The developed system was tested with 40 use cases which almost all contained a bad smell.
+It remains unclear how the approach performed regarding precision and recall.
+
 \textcite{Gleich:2010} present a tool to enable automated ambiguity detection.
 Moreover, the tool shall help its users to create awareness that the detected problems are earnest and explain the cause of the detected ambiguous phrases to train the users.
 The tool is similar to Unix' \textit{grep} command line tool.
@@ -56,3 +63,13 @@ It can also be extended by the user so it can be tailored to the requirements.
 Second a lexical analyzer is used to scan requirement and compare each token with the \ac{AIC}.
 If a match occurs, the token is reported as possible ambiguity.
 Although the authors could not achieve their initial goal of 100\% recall, they are confident that future research will further improve their approach.
+
+\textcite{Fantechi:2018} state that ambiguities are not only introduced unintentionally to requirements documents and cause severe drawbacks in the software engineering process.
+They may also be inserted on purpose to capture variable facets which will be solved in a downstream development step.
+In order to further research this claim, first the existing tool \ac{QuARS} \parencite{Fabbrini:2002} is applied on requirements and its output is assessed whether ambiguities can be variation points.
+Second, \ac{QuARS} is altered with an additional tailored dictionary to check whether the variability detection process can be enhanced.
+For both cases \ac{QuARS}' output was assessed and manually classified as false positive, actual ambiguity or variability point.
+The authors conclude that ambiguities are possible indicators for variability.
+Specifically terms like "and/or", "may and "could" are likely to indicate variability instead of ambiguities.
+Further, it is shown that rule-based tools like \ac{QuARS} tend to output many false positive entities.
+This leads the authors to question whether precision should be considered more important in non safety-critical systems since it will speed up requirement analysis.
