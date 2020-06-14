@@ -1,0 +1,21 @@
+\section{Machine Learning Based Approaches}
+\label{chp:related_research:sec:machine_learingn_based_approaches}
+
+Next to solely rule-based approaches, there exist \ac{ML} based approaches which use \ac{ML} techniques to classify a requirement.
+In this chapter \ac{ML} based approaches for requirement classification are presented.
+
+\textcite{Ormandjieva:2007} present an approach which utilizes decision trees for the classification task.
+Their quality model distinguishes among \textit{surface understanding} and \textit{conceptual understanding}.
+Surface understanding means the literal meaning like how difficult or easy it is to understand a requirements documents' passages.
+Whereas conceptual understanding aims for a passage's interpretation.
+For example how difficult it is for a developer to implement a system by only reading the paragraph.
+The dataset was obtained by manual reviews of four annotators.
+Each annotator carefully read a set of requirements documents and classified its passages once with respect to surface understanding and once with respect to conceptual understanding.
+The inter-rator agreement is indicated by Cohen's Kappa \parencite{Cohen:1960} and is 0.64 for conceptual understanding and 0.66 for surface understanding.
+For the classification task each sentence of the requirements documents was \ac{POS} tagged and its syntax parsed using the Stanford Parser \parencite{Klein:2002}.
+Then the number of occurrences of the indicators for little surface understanding were counted.
+Based on that information a decision tree was constructed.
+The authors mention that a \ac{NN} could maybe achieve better results.
+However, due to the lack of data a decision tree is preferred.
+The trained decision tree was capable to solve the classification task with 86.67\% accuracy.
+\textcite{Ormandjieva:2007} conclude that it is indeed feasible to uncover faults related to surface understanding using a decision tree and see their quality model approved as suitable.
