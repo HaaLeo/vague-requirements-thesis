@@ -17,7 +17,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build -jobname='Detecting Vague Requirements with Machine Learning'
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build -jobname='Detecting Vague Requirements with Machine Learning' main
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
