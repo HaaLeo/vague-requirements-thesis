@@ -4,6 +4,13 @@
 Next to solely rule-based approaches, there exist \ac{ML} based approaches which use \ac{ML} techniques to classify a requirement.
 In this chapter \ac{ML} based approaches for requirement classification are presented.
 
+\textcite{Medlock:2007} present an approach which examines hedge classification in scientific literature.
+The subject of hedge classification is to detect speculative language.
+First they introduce a probabilistic model to gather training data.
+The same model is used to derive a weakly supervised learner which classifies a sample as speculative when its probability exceeds a predefined threshold.
+This iterative learning approach is capable to perform hedge classification with similar accurate accuracy as other approaches based on \acp{SVM}.
+They conclude that their simple \ac{ML} based approach is capable to perform hedge classification and more complex \ac{ML} approaches are likely to perform even better.
+
 \textcite{Ormandjieva:2007} present an approach which utilizes decision trees for the classification task.
 Their quality model distinguishes among \textit{surface understanding} and \textit{conceptual understanding}.
 Surface understanding means the literal meaning like how difficult or easy it is to understand a requirements documents' passages.
@@ -19,3 +26,18 @@ The authors mention that a \ac{NN} could maybe achieve better results.
 However, due to the lack of data a decision tree is preferred.
 The trained decision tree was capable to solve the classification task with 86.67\% accuracy.
 \textcite{Ormandjieva:2007} conclude that it is indeed feasible to uncover faults related to surface understanding using a decision tree and see their quality model approved as suitable.
+
+\textcite{Yang:2012} use \ac{CRF} to extract uncertainty cues from requirements documents.
+They manually labeled several requirements documents for uncertainty cues and their corresponding scopes.
+The detection problem was formulated as a labelling task of a sequence on token-level.
+Each word of a sentence is assigned a class label indicating whether the word is the first word of the cue, inside a cue or not in a cue.
+To additionally gather further information regarding the semantics of a cue keyword, more linguistic features were extracted.
+Examples are the word lemma, \ac{POS} tag, \ac{POS} tags of the three neighboring words and grammatical relations.
+Those features and the class label are used to train a classification model using the \ac{CRF} algorithm \parencite{Lafferty:2001}.
+Further, a post-processing step is applied to to capture infrequent cues extracted from the training dataset.
+In this step the cues are detected using string matching.
+When a match occurs the sentence is classified as speculative.
+In the conducted study multiple models with a different amount of features was trained and tested.
+Speculative sentences were detected with 85.58\% precision and 77.65\% recall considering all features.
+Regarding uncertainty scope identification the presented system performs worse: 54.37\% precision and 49.95\% recall were achieved.
+They conclude that their implemented approach works well on uncovering speculative sentences and suggest that different supervised \ac{ML} techniques could be promising in solving this task.
