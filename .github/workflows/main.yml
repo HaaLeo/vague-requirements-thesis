@@ -17,10 +17,10 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build -jobname='Detecting Vague Requirements with Machine Learning' main
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Thesis
-          path: 'build/Detecting Vague Requirements with Machine Learning.pdf'
+          path: build/main.pdf
