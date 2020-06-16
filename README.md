@@ -1,4 +1,7 @@
 # Vague-Requirements
+
+![CI](https://github.com/HaaLeo/vague-requirements-thesis/workflows/CI/badge.svg)
+
 Detecting Vague Requirements with Machine Learning
 
 ## LaTeX template for TUM theses
