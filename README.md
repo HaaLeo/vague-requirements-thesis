@@ -1,6 +1,6 @@
 # Vague-Requirements
 
-![CI](https://github.com/HaaLeo/vague-requirements-thesis/workflows/CI/badge.svg)
+[![CI](https://github.com/HaaLeo/vague-requirements-thesis/workflows/CI/badge.svg)](https://github.com/HaaLeo/vague-requirements-thesis/actions?query=workflow%3ACI)
 
 Detecting Vague Requirements with Machine Learning
 

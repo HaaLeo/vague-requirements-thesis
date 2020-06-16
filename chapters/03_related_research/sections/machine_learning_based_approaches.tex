@@ -8,7 +8,7 @@ In this chapter \ac{ML} based approaches for requirement classification are pres
 The subject of hedge classification is to detect speculative language.
 First they introduce a probabilistic model to gather training data.
 The same model is used to derive a weakly supervised learner which classifies a sample as speculative when its probability exceeds a predefined threshold.
-This iterative learning approach is capable to perform hedge classification with similar accurate accuracy as other approaches based on \acp{SVM}.
+This iterative learning approach is capable to perform hedge classification with similar accuracy as other approaches based on \acp{SVM}.
 They conclude that their simple \ac{ML} based approach is capable to perform hedge classification and more complex \ac{ML} approaches are likely to perform even better.
 
 \textcite{Ormandjieva:2007} present an approach which utilizes decision trees for the classification task.
@@ -41,3 +41,16 @@ In the conducted study multiple models with a different amount of features was t
 Speculative sentences were detected with 85.58\% precision and 77.65\% recall considering all features.
 Regarding uncertainty scope identification the presented system performs worse: 54.37\% precision and 49.95\% recall were achieved.
 They conclude that their implemented approach works well on uncovering speculative sentences and suggest that different supervised \ac{ML} techniques could be promising in solving this task.
+
+\textcite{Stajner:2017} examine linguistic hedging in the monetary political domain.
+They create two different datasets.
+One includes transcribed \textit{debates} of different meetings of several committees.
+The second dataset includes the meetings statement reports which are typically conducted at the end of a meeting and further referred to as \textit{decisions}.
+The datasets were labeled \textit{speculative} or \textit{non-speculative} by three annotators.
+The averaged pairwise Cohen's Kappa \parencite{Cohen:1960} was 0.56 for the debates and 0.61 for the decisions dataset.
+The annotators marked phrases which indicate a speculative sentence in their opinion.
+For the classification task a \ac{SVM} was trained on both datasets.
+They used \ac{BoW}, the lists of speculation triggers or different combinations as input features for the \acp{SVM}.
+The authors benchmarked their \ac{SVM} approach with a \ac{CNN} and the best performing system for the CoNLL-2010 shared task \parencite{Farkas:2010}.
+The conclude that a general domain dataset can be used to train a model for a hedge classification task in this domain.
+Further they showed that their \ac{SVM} approach including lists of speculation triggers performs as well as other state of the art systems in other domains and could outperform the \ac{CNN} classifier on the debates dataset.
