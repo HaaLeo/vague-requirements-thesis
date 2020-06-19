@@ -73,3 +73,7 @@ The authors conclude that ambiguities are possible indicators for variability.
 Specifically terms like "and/or", "may and "could" are likely to indicate variability instead of ambiguities.
 Further, it is shown that rule-based tools like \ac{QuARS} tend to output many false positive entities.
 This leads the authors to question whether precision should be considered more important in non safety-critical systems since it will speed up requirement analysis.
+
+All these approaches use rather simple mechanisms to determine a requirement's quality like matching the requirements against a predefined list of vague words.
+Although some works use more complex approaches like \ac{POS} tagging and achieve remarkable results, they do not consider \ac{ML} techniques.
+In contrast to that, this thesis aims to investigate whether recent \ac{ML} techniques, especially \textit{transfer learning}, are capable to reliably classify requirements regarding their vagueness.

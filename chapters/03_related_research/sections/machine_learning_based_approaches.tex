@@ -42,6 +42,17 @@ Speculative sentences were detected with 85.58\% precision and 77.65\% recall co
 Regarding uncertainty scope identification the presented system performs worse: 54.37\% precision and 49.95\% recall were achieved.
 They conclude that their implemented approach works well on uncovering speculative sentences and suggest that different supervised \ac{ML} techniques could be promising in solving this task.
 
+\textcite{Parra:2015} use \ac{ML} techniques to classify requirement regarding their quality.
+The approach of choice is rule induction.
+The authors use this technique because of its robustness against noise due to insufficient data.
+To generate the models they use the PART rule induction algorithm \parencite{Eibe:1998}.
+The obtained models use a requirement's different metrics to classify it.
+The models are used to induce rules which then can be used to evaluate a requirement's quality according to the corresponding metric.
+The models were examined using a dataset annotated by experts and achieved accuracy in a range between 83.27\% and 87.72\%.
+The achieved recall remains unknown.
+The authors conclude that it is possible to learn the quality features of a requirement and use the obtained models for quality prediction of new requirements.
+They endorse to enhance the model creation process to further improve the performance.
+
 \textcite{Stajner:2017} examine linguistic hedging in the monetary political domain.
 They create two different datasets.
 One includes transcribed \textit{debates} of different meetings of several committees.
@@ -54,3 +65,9 @@ They used \ac{BoW}, the lists of speculation triggers or different combinations 
 The authors benchmarked their \ac{SVM} approach with a \ac{CNN} and the best performing system for the CoNLL-2010 shared task \parencite{Farkas:2010}.
 The conclude that a general domain dataset can be used to train a model for a hedge classification task in this domain.
 Further they showed that their \ac{SVM} approach including lists of speculation triggers performs as well as other state of the art systems in other domains and could outperform the \ac{CNN} classifier on the debates dataset.
+
+All of the presented works use \ac{ML} techniques in order to improve their results.
+Some try to build classifier which are capable to predict a new requirement's quality.
+Others use those techniques to extract specific cues and their location.
+However, none of the mentioned approaches examines how state of the art \acp{NN} perform at classifying requirements as vague or not.
+With this thesis I want to answer the question whether deep neural networks are promising in classifying requirements regarding their quality
