@@ -1,3 +1,18 @@
 \subsection{Cohen's Kappa}
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:cohens_kappa}
-This is Cohen
+Cohen's Kappa $\kappa$ was introduced by \textcite{Cohen:1960} in 1960.
+He states the hypothesis that even if all raters are unaware of the correct answer and purely guessing, nevertheless some data points are congruent.
+In his opinion that random congruency should be considered by agreement statistics.
+To tackle this issue he introduced the kappa statistics to account for the random agreement among raters.
+Similar to other correlation statistics can take values in the range from -1 to 1.
+0 indicates the agreement obtained by random choice, whereas 1 represents perfect agreement.
+The kappa calculation includes two quantities.
+$p_o$ is the observed agreement of raters and $p_e$ is the probability of chance agreement.
+The overall formula of Cohen's $\kappa$ is then given by \cref{eq:Cohens_kappa}:
+\begin{equation}\label{eq:Cohens_kappa}
+    \kappa = \frac{p_o - p_e}{1 - p_e}
+\end{equation}
+% TODO link to accuracy definition
+$p_o$ is given by the experiments \textit{accuracy}.
+For $p_e$
+% next step get formula for p_e
