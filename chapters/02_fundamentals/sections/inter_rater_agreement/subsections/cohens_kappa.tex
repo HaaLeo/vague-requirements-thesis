@@ -27,19 +27,19 @@ An overview for $C=3$ is given in \cref{tab:cohens_kappa_sample_definition}.
         \cline{3-5}
         \multicolumn{2}{c|}{}&$c_1$&$c_2$&$c_3$&\multicolumn{1}{c}{Proportion}\\
         \cline{2-5}
-        \multirow{3}{*}{A}& $c_1$ & $n_{c_1, c_1}$ & $n_{c_1, c_2}$ &$n_{c_1, c_3}$& $p_{B, c_1}$\\
+        \multirow{3}{*}{A}& $c_1$ & $n_{c_1, c_1}$ & $n_{c_1, c_2}$ &$n_{c_1, c_3}$& $p_{A, c_1}$\\
         \cline{2-5}
-        & $c_2$ & $n_{c_2, c_1}$ & $n_{c_2, c_2}$ &$n_{c_2, c_3}$&$p_{B, c_2}$\\
+        & $c_2$ & $n_{c_2, c_1}$ & $n_{c_2, c_2}$ &$n_{c_2, c_3}$&$p_{A, c_2}$\\
         \cline{2-5}
-        & $c_3$ & $n_{c_3, c_1}$ & $n_{c_3, c_2}$ &$n_{c_3, c_3}$ & $p_{B, c_3}$\\
+        & $c_3$ & $n_{c_3, c_1}$ & $n_{c_3, c_2}$ &$n_{c_3, c_3}$ & $p_{A, c_3}$\\
         \cline{2-5}
-        \multicolumn{1}{c}{} & \multicolumn{1}{c}{Proportion} & \multicolumn{1}{c}{$p_{A, c_1}$} & \multicolumn{1}{c}{$p_{A, c_2}$} & \multicolumn{1}{c}{$p_{A, c_3}$} & \multicolumn{1}{c}{$1$}\\
+        \multicolumn{1}{c}{} & \multicolumn{1}{c}{Proportion} & \multicolumn{1}{c}{$p_{B, c_1}$} & \multicolumn{1}{c}{$p_{B, c_2}$} & \multicolumn{1}{c}{$p_{B, c_3}$} & \multicolumn{1}{c}{$1$}\\
     \end{tabular}
     \caption[Cohen's Kappa notation overview]{Example confusion matrix.}\label{tab:cohens_kappa_sample_definition}
 \end{table}
 
 $P_o$ is then given by:
-
+\nopagebreak
 \begin{equation}\label{eq:Cohens_kappa:p_o}
     P_o = \frac{\sum_{i=1}^{C} n_{c_i, c_i}}{N}
 \end{equation}
