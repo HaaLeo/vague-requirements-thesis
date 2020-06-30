@@ -1,3 +1,30 @@
 \subsection{Free-Marginal Multirater Kappa}
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:free_marginal_multirater_kappa}
-This is Randolph
+
+Popular kappa statistics, such as Fleiss' kappa \parencite{Fleiss:1971} are influenced by \textit{bias} and \textit{prevalence} which can cause low kappa values despite high agreement \parencite{Randolph:2005, Sim:2005} and therefore the interpretation is not straightforward.
+Further, Fleiss' kappa assumes that the raters know beforehand how to distribute their votes over the possible categories.
+This limitation is referred to as \textit{fixed marginals} \parencite{Brennan:1981}.
+According to \textcite{Sim:2005}, prevalence influences the kappa coefficient if the proportion of agreements on one attribute differ strongly to the proportion of another attribute.
+Bias is defined as the degree raters disagree on an attribute \parencite{Sim:2005}.
+To tackle this drawback, \textcite{Randolph:2005} introduces a \textit{Free-Marginal Multirater Kappa} $\kappa_{free}$ which does not suffer the drawbacks of prevalence and bias.
+Further, his approach allows free marginals, meaning that the raters are not restricted on how often they assign a subject to a specific class \parencite{Brennan:1981}.
+\citeauthor{Randolph:2005} suggests to use his kappa metric when some marginals are not fixed.
+Further, he points out that the number of categories must be chosen carefully, since each category which is theoretically not necessary, will falsely inflate the kappa's value.
+
+\Citeauthor{Randolph:2005}'s kappa \parencite{Randolph:2005} follows the same formula like the previous kappa coefficients.
+The overall observed agreement ($P_o$) subtracted the merely by chance expected agreement ($P_e$) is divided by the maximal adjusted chance agreement ($1-P_e$) yields the same formula as for the previous kappa \cref{eq:Cohens_kappa,eq:fleiss_kappa,eq:Scotts_pi}:
+
+\begin{equation}\label{eq:Randolphs_kappa}
+    \kappa_{free} = \frac{P_o - P_e}{1 - P_e}
+\end{equation}
+
+It also uses the observed agreement similar to \citeauthor{Fleiss:1971}  $P_o=\bar{P}$ (\cref{eq:fleiss_P_bar}).
+However, its $P_e$ is defined as
+
+\begin{equation}\label{eq:Randolphs_Pe}
+P_e = \frac{1}{C}
+\end{equation}
+
+with $C$ being the number of different classes.
+When plugging the test data from \cref{tab:cohens_kappa_sample_data} in \cref{eq:Randolphs_kappa}, \citeauthor{Fleiss:1971}' observed agreement $\bar{P} = 0.7$ can be reused.
+With \citeauthor{Randolph:2005}'s $P_e = 0.5$ the overall kappa yields again $\kappa_{free} = \frac{0.7 - 0.5}{1 - 0.5} = 0.4$.
