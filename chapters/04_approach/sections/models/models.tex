@@ -8,9 +8,6 @@ In detail, our approach considers three different models.
 Namely \ac{BERT} \parencite{Devlin:2018}, \ac{DistilBERT} \parencite{Sanh:2019} and \ac{ERNIE2.0} \parencite{Sun:2019a}.
 This chapter presents the used models and their properties.
 
-\Ac{BERT} is based on \textit{encoder} of the original transformer model of \textcite{Vaswani:2017}.
-It is simply a stack of encoders.
-There exist variants of \ac{BERT}: \ac{BERT}$_{base}$ and \ac{BERT}$_{large}$.
-The first consists of 12 encoder layers, second of 24 which yields to 110 million parameters and 310 million respectively.
-More trainable parameters usually lead to a better performance.
-On the other hand
+\input{chapters/04_approach/sections/models/subsections/BERT}
+\input{chapters/04_approach/sections/models/subsections/distilBERT}
+\input{chapters/04_approach/sections/models/subsections/ERNIE2.0}
