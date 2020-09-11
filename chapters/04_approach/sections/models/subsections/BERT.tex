@@ -14,7 +14,7 @@ This is achieved by introducing special input tokens which have a designated mea
 For our approach most important special token is the \textit{[CLS]} token, because its corresponding final hidden state represents the aggregation of the input sequence and can be used for further downstream classification tasks.
 \Ac{BERT}'s input is the summation of three different embeddings.
 The first embedding is the \textit{token embedding}.
-Here each input token (for example each word of a sentence) is embedded using WordPiece embeddings \parencite{Wu:2016} which utilize a vocabulary of 30.000 words.
+Here each input token (for example each word of a sentence) is embedded using WordPiece embeddings \parencite{Wu:2016} which utilize a vocabulary of 30,000 words.
 The second embedding is called \textit{segment embedding} and indicates to which input sequence a token belongs.
 The third embedding embeds a tokens position.
 The input of \ac{BERT} is obtained by summing up those three embeddings for each input token.
@@ -25,3 +25,4 @@ Once we embed our input sentences and pass them to \ac{BERT}, \ac{BERT} aggregat
 However, this raw token does not yet indicate whether a requirement is vague or not.
 In order to finally classify a requirement, the [CLS] token is passed to a single layer feed forward \ac{NN}.
 The output of this layer then indicates in percent how certain the model is whether a requirement is vague or not.
+It consists of 1,500 parameters.
