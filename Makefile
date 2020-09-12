@@ -18,3 +18,7 @@ clean:
 .PHONY: purge
 purge:
 	rm -rf $(OUT)
+
+.PHONY: figures
+figures:
+	find  ./figures -name '*.pdf' | xargs -I PDF_FILE sed -i '' "s|{[[:alpha:]_]*\.pdf}|{PDF_FILE}|g" "PDF_FILE"'_tex'

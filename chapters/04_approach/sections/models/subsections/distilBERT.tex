@@ -14,5 +14,5 @@ The "teacher" can also be a set of different models.
 With this technique the authors successfully trained \ac{DistilBERT} to keep 97\% of \ac{BERT}'s performance.
 Compared to \ac{BERT}, \ac{DistilBERT} only consists of 40\% less parameters and trains 60\% faster. \parencite{Sanh:2019}
 
-Since \ac{DistilBERT} and \ac{BERT} share the overall same architecture, \ac{DistilBERT} also exposes a [CLS] which again can be seen as an aggregation of the input sequence.
-Similar to our \ac{BERT}-based model, we will again use this token as input for a fully connected feed forward \ac{NN} with 1,500 trainable parameters.
+Since \ac{DistilBERT} and \ac{BERT} share the overall same architecture, \ac{DistilBERT} also exposes a [CLS] token which again can be seen as an aggregation of the input sequence.
+Similar to our \ac{BERT}-based model, we use this token as input for a fully connected feed forward \ac{NN} with 1,500 trainable parameters.
