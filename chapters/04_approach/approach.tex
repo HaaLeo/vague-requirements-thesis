@@ -10,7 +10,14 @@
 In this chapter the concrete approach is presented which was used to detect vague requirements.
 To classify requirements as vague or not \acp{NN} are used.
 The result of each \ac{NN} will be evaluated using dedicated metrics.
+
+Transformer based approaches have turned out to be viable alternatives to traditional architectures based on \acp{RNN} for \ac{NLP} tasks like language translation \parencites{Gehring:2017}{Vaswani:2017}.
+This showcases that transformers are capable to solve complex \ac{NLP} tasks.
+Therefore, we also leverage a transformer based approach to attempt to classify vague requirements.
+In detail, our approach considers three different models.
+Namely \ac{BERT} \parencite{Devlin:2018}, \ac{DistilBERT} \parencite{Sanh:2019} and \ac{ERNIE2.0} \parencite{Sun:2019a}.
 The following sub chapters outline which particular models and metrics are used.
 
-\input{chapters/04_approach/sections/models/models}
-\input{chapters/04_approach/sections/metrics}
+\input{chapters/04_approach/sections/BERT}
+\input{chapters/04_approach/sections/distilBERT}
+\input{chapters/04_approach/sections/ERNIE2.0}

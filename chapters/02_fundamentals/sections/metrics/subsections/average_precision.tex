@@ -1,4 +1,4 @@
-\subsection{Average precision}
+\subsection{Average Precision}
 \label{chp:fundamentals:sec:metrics:subsec:average_precision}
 
 Due to the previously mentioned trade-off between recall and precision both of those metrics must be considered when optimizing a model for a task.
@@ -9,7 +9,7 @@ One metric which considers recall as well as precision is \ac{AP}.
     AP = \sum_{i=1}^n {p(i)\Delta r(i)}
 \end{equation}
 
-Where $p(i)$ is the precision considering $i$ elements.
+Where $p(i)$ is the precision taking into account the first $i$ elements.
 $\Delta r(i)$ indicates the the recall change from the $i-1$th element to the $i$th item.
 With this metric the order of the sequence is crucial.
 An algorithm which manages to sort a sequence of elements that all relevant items are listed first will achieve higher AP than an algorithm that performs poorly on the sorting task.
