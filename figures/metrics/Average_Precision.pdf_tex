@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0.1 (c497b03c, 2020-09-10), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'True_Positives.pdf' (pdf, eps, ps)
+%% Accompanies image file 'Average_Precision.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{482.70781591bp}%
+    \setlength{\unitlength}{445.03937278bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,18 +50,19 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.38110877)%
+  \begin{picture}(1,0.16878981)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.26473564,0.00629662){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\begin{footnotesize}selected items\end{footnotesize}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{./figures/metrics/True_Positives.pdf}}%
-    \put(0.31358642,0.20844952){\color[rgb]{0.30588235,0.60392157,0.02352941}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}True Positives\end{tabular}}}}%
-    \put(0.50298077,0.2071704){\color[rgb]{0.80784314,0.36078431,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}False Positives\end{tabular}}}}%
-    \put(0.1329237,0.34925667){\color[rgb]{0.20392157,0.39607843,0.64313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}False Negatives\end{tabular}}}}%
-    \put(0.65978213,0.35275684){\color[rgb]{0.53333333,0.54117647,0.52156863}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}True Negatives\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{./figures/metrics/True_Positives.pdf}}%
-    \put(0.74355179,0.00629823){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\begin{footnotesize}irrelevant item\end{footnotesize}\end{tabular}}}}%
-    \put(0.49566144,0.00629823){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\begin{footnotesize}relevant item\end{footnotesize}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{./figures/metrics/True_Positives.pdf}}%
+    \put(0.57107282,0.00682957){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\begin{footnotesize}irrelevant item\end{footnotesize}\end{tabular}}}}%
+    \put(0.30220013,0.00682957){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\begin{footnotesize}relevant item\end{footnotesize}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{./figures/metrics/Average_Precision.pdf}}%
+    \put(0.06403922,0.12678042){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Sequence\end{tabular}}}}%
+    \put(0.08406029,0.04639274){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Index $i$\\\end{tabular}}}}%
+    \put(0.19600688,0.04720904){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0.38863009,0.04686671){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0.57963397,0.04686671){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}%
+    \put(0.77190161,0.04727486){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}4\end{tabular}}}}%
+    \put(0.96153619,0.04727486){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{./figures/metrics/Average_Precision.pdf}}%
   \end{picture}%
 \endgroup%

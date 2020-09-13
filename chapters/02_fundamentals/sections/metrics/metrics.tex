@@ -2,16 +2,21 @@
 \label{chp:fundamentals:sec:metrics}
 
 In order to evaluate classification models usually different metrics are used.
-This chapter introduces the metrics which we use to evaluate the trained models.
+This chapter defines required terms before the metrics are introduced in the following subchapters.
+
+When introducing metrics for predictions it is good practice to consider the prediction labels as \textit{positives} and \textit{negatives} respectively.
+Then the correct predicted positives are referred to as \ac{TP} and the incorrect positive classified item as \ac{FP}.
+The same scheme applies to the negatives and they are therefore distinguished into \ac{TN} and \ac{FN}.
+\Cref{fig:metrics:tp_vis} visualizes those groups. \parencite{Powers:2011}
 
 \begin{figure}[htpb]
     \centering
     \def\svgwidth{\columnwidth}
     \input{figures/metrics/True_Positives.pdf_tex}
-    \caption[Visualization of True Positives]{A visualization of true positives, true negatives, false positives and false negatives.}\label{fig:metrics:tp_vis}
+    \caption[Visualization of True Positives]{A visualization of \ac{TP}, \ac{FP}, \ac{TN} and \ac{FN}.}\label{fig:metrics:tp_vis}
 \end{figure}
 
-
-\input{./chapters/02_fundamentals/sections/metrics/subsections/precision}
+\input{chapters/02_fundamentals/sections/metrics/subsections/precision}
 \input{chapters/02_fundamentals/sections/metrics/subsections/recall}
+\input{chapters/02_fundamentals/sections/metrics/subsections/f1_score}
 \input{chapters/02_fundamentals/sections/metrics/subsections/average_precision}

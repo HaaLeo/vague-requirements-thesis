@@ -1,2 +1,13 @@
 \subsection{Recall}
 \label{chp:fundamentals:sec:metrics:subsec:Recall}
+
+The next metric we wan to introduce is called \textit{recall} and is defined \textit{"as the probability of detecting an item given that it is relevant"} \parencite{Zhu:2004}.
+
+\begin{equation}\label{eq:recall}
+    rec = \frac{TP}{TP+FN}
+\end{equation}
+
+This metric expresses the performance of an algorithm as whether most of the relevant items are selected.
+However, irrelevant items which may also be selected will not be penalized.
+Therefore, an algorithm which simply selects \textit{all} available items will always achieve a recall $rec=1$.
+For the date shown in \cref{fig:metrics:tp_vis}, the corresponding algorithm achieves a recall of $rec = \frac{3}{3+9} = 0.25$.

@@ -1,2 +1,13 @@
 \subsection{Precision}
 \label{chp:fundamentals:sec:metrics:subsec:precision}
+
+\textit{Precision} is defined \textit{"as the probability that an item is relevant given that it is detected by the algorithm"} \parencite{Zhu:2004}.
+This means when an algorithm is optimized for precision, the aim is that all selected items are relevant.
+However, this measure only considers the items selected by the algorithm meaning it neglects the relevant items which were not selected by the algorithm.
+Precision is defined as:
+
+\begin{equation}\label{eq:precision}
+    prec = \frac{TP}{TP+FP}
+\end{equation}
+
+As an example the algorithm which was used to classify the elements in \cref{fig:metrics:tp_vis} has a precision $prec = \frac{3}{3+4} = \frac{3}{7}\approx 0.43$.

@@ -32,21 +32,6 @@
     </marker>
     <marker
        style="overflow:visible"
-       id="Arrow2Mstart"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="Arrow2Mstart"
-       inkscape:isstock="true"
-       inkscape:collect="always">
-      <path
-         transform="scale(0.6) translate(0,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         id="path1029" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="marker3302"
        refX="0.0"
        refY="0.0"
@@ -143,18 +128,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.6007766"
-     inkscape:cx="357.55817"
-     inkscape:cy="230.47459"
+     inkscape:zoom="0.81342164"
+     inkscape:cx="296.49418"
+     inkscape:cy="134.00332"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1720"
-     inkscape:window-height="1075"
+     inkscape:window-height="1049"
      inkscape:window-x="72"
      inkscape:window-y="23"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -171,6 +156,17 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="53.375748"
+       y="69.355759"
+       id="text1676-16"><tspan
+         sodipodi:role="line"
+         id="tspan1674-0"
+         x="53.375748"
+         y="69.355759"
+         style="font-size:3.175px;stroke-width:0.264583">\begin{footnotesize}selected items\end{footnotesize}</tspan></text>
     <rect
        style="fill:#dad7cb;fill-opacity:1;stroke:#dad7cb;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect2198-9"
@@ -237,39 +233,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.378px;line-height:1.25;font-family:sans-serif;fill:#888a85;fill-opacity:1;stroke:none;stroke-width:0.211125"
-       x="89.413078"
-       y="12.772976"
+       x="96.271324"
+       y="12.980111"
        id="text2454-8-9"
-       transform="scale(1.2532045,0.79795438)"><tspan
+       transform="scale(1.2532045,0.79795437)"><tspan
          sodipodi:role="line"
          id="tspan2452-1-7"
-         x="89.413078"
-         y="12.772976"
+         x="96.271324"
+         y="12.980111"
          style="font-size:3.378px;fill:#888a85;stroke-width:0.211125">True Negatives</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.378px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.211125"
-       x="59.908859"
-       y="78.538216"
-       id="text2518"
-       transform="scale(1.2532045,0.79795438)"><tspan
-         sodipodi:role="line"
-         id="tspan2516"
-         x="59.908859"
-         y="78.538216"
-         style="font-size:3.378px;fill:#000000;fill-opacity:1;stroke-width:0.211125">Selected Items</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.378px;line-height:1.25;font-family:sans-serif;stroke-width:0.211125"
-       x="9.513464"
-       y="78.117653"
-       id="text1093"
-       transform="scale(1.2532045,0.79795439)"><tspan
-         sodipodi:role="line"
-         id="tspan1091"
-         x="9.513464"
-         y="78.117653"
-         style="stroke-width:0.211125">Relevant Items</tspan></text>
     <circle
        style="fill:#0065bd;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:square;paint-order:markers stroke fill;stop-color:#000000"
        id="path1215"
@@ -454,15 +426,47 @@
        cy="34.038517"
        ry="21.558163"
        rx="33.857555" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.223753px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
-       d="M 86.093044,55.251647 85.01447,58.65356"
-       id="path940"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.241431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker1363)"
-       d="m 30.437801,52.679232 -5.11017,6.292374"
-       id="path1457"
-       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="134.91267"
+       y="69.355484"
+       id="text1676-1"><tspan
+         sodipodi:role="line"
+         id="tspan1674-5"
+         x="134.91267"
+         y="69.355484"
+         style="font-size:3.175px;stroke-width:0.264583">\begin{footnotesize}irrelevant item\end{footnotesize}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="92.699776"
+       y="69.355484"
+       id="text1676"><tspan
+         sodipodi:role="line"
+         id="tspan1674"
+         x="92.699776"
+         y="69.355484"
+         style="font-size:3.175px;stroke-width:0.264583">\begin{footnotesize}relevant item\end{footnotesize}</tspan></text>
+    <circle
+       style="fill:#0065bd;fill-opacity:1;stroke:none;stroke-width:0.47929;stroke-linecap:square;paint-order:markers stroke fill;stop-color:#000000"
+       id="path1215-4-0"
+       cx="78.101906"
+       cy="68.427727"
+       r="2" />
+    <rect
+       style="fill:#64a0c8;fill-opacity:1;stroke:none;stroke-width:0.559176;stroke-linecap:square;paint-order:markers stroke fill;stop-color:#000000"
+       id="rect1300-15-7"
+       width="4"
+       height="4"
+       x="117.1832"
+       y="66.427727" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#999999;stroke-width:0.752473;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1594-7"
+       cx="37.063663"
+       cy="68.428001"
+       ry="1.6237633"
+       rx="2.5501547" />
   </g>
 </svg>
