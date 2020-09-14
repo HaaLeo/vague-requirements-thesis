@@ -10,13 +10,13 @@ One metric which considers recall as well as precision is \ac{AP}.
 \end{equation}
 
 Where $p(i)$ is the precision taking into account the first $i$ elements.
-$\Delta r(i)$ indicates the the recall change from the $i-1$th element to the $i$th item.
+$\Delta r(i)$ indicates the the recall change from the $i-1$th to the $i$th item.
 With this metric the order of the sequence is crucial.
 An algorithm which manages to sort a sequence of elements that all relevant items are listed first will achieve higher AP than an algorithm that performs poorly on the sorting task.
 
 Let us consider the following example.
 An algorithm was trained to return all relevant items from a dataset.
-Given an unseen dataset of 5 items the model returns the following sorted sequence given in \cref{fig:metrics:average_precision:sample}.
+Given an unseen dataset of five items the model returns the following sorted sequence given in \cref{fig:metrics:average_precision:sample}.
 The sequence is sorted in descending order, meaning the elements which are considered as most relevant by the algorithm are inserted first.
 
 \begin{figure}[htpb]
