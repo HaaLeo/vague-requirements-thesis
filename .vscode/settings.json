@@ -12,6 +12,9 @@
             "todo"
         ]
     },
+    "cSpell.userWords": [
+        "backpropagation"
+    ],
     "todo-tree.regex.regex": "((//|#|%|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
     "todo-tree.general.statusBar": "total",
     "cSpell.words": [
