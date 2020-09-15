@@ -1,0 +1,83 @@
+%% Creator: Inkscape 1.0.1 (c497b03c, 2020-09-10), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Evaluation.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{529.05239524bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.29448807)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.07214396,0.00108788){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Test Dataset\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.3287816,0.15354463){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}DistilBERT\end{tabular}}}}%
+    \put(0.38653885,0.03457725){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Example Model\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.54596828,0.12639668){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}NN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.21629443,0.25271255){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BERT\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.36687921,0.25266836){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}ERNIE2.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.68369624,0.00034333){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Predictions\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.8254838,0.00034333){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Truth\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.3304845,0.08244753){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Pre-Trained Transformer\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.94709698,0.14956797){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$prec$\end{tabular}}}}%
+    \put(0.94142662,0.1160408){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$rec$\end{tabular}}}}%
+    \put(0.93657382,0.08087818){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$F_1$\end{tabular}}}}%
+    \put(0.93940904,0.04489779){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$AP$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{./figures/study/design/Evaluation.pdf}}%
+    \put(0.84089343,0.26093775){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$TP$, $FP$, $TN$ and $FN$\end{tabular}}}}%
+    \put(0.95128886,0.00097713){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Metrics\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{./figures/study/design/Evaluation.pdf}}%
+  \end{picture}%
+\endgroup%
