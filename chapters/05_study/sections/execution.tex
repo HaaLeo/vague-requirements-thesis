@@ -1,5 +1,105 @@
 \section{Execution}
 \label{chp:study:sec:execution}
-Grid Search
+In this section we describe how the study is executed.
+Training \ac{ML} models involves the setting of hyperparameter.
+Those have a direct impact on the performance of a trained model and the user must set them appropriately to optimize the learning routine and with that the model \parencite{Claesen:2015}.
+We are perform a grid search to find a good parameter combination for each model.
+We base the parameter grid for each model on the corresponding recommendations of the authors.
+Further, we take a re-sampling strategy of our dataset into account for the grid search, because we deal with imbalanced data.
+All our models are transformer based.
+Transformer based models have the \textit{maximum input sequence length} as hyperparameter.
+Input sequences are truncated when they exceed this limit and are padded with 0 if they are shorter than this parameter.
+Because of our limited dataset we want to perform $k$-fold cross validation.
+In order to determine how many folds we want to use we add this as parameter to our grid as well.
+Since all models are transformer based the parameter grids are similar.
+The parameter grid for \ac{BERT} and \ac{DistilBERT} is shown in \cref{tab:study:execution:paramter_grid:BERT}.
+\begin{table}[htpb]
+    \centering
+    \begin{tabular}{ p{3.5cm} p{1.5cm} p{2cm} p{1.5cm} p{1.6cm} p{1.5cm} }
+        \toprule
+         Re-sampling & Folds & Learning Rate & Epochs & Max Length & Batch Size \\
+        \midrule
+            \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item {random
+
+                down-sampling}
+                \item {random
+
+                up-sampling}
+            \end{itemize}
+            &\begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 4
+                \item 8
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item $1\mathrm{e}{-06}$
+                \item $5\mathrm{e}{-06}$
+                \item $1\mathrm{e}{-05}$
+                \item $5\mathrm{e}{-05}$
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 1
+                \item 2
+                \item 3
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 64
+                \item 128
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 16
+                \item 32
+            \end{itemize}\\
+        \bottomrule
+    \end{tabular}
+    \caption[Parameter Grid for \ac{BERT} and \ac{DistilBERT}]{Parameter grid for \ac{BERT} and \ac{DistilBERT}.}\label{tab:study:execution:paramter_grid:BERT}
+\end{table}
+
+The parameter grid for \ac{ERNIE2.0} is similar, however the \textcite{Sun:2019a} recommend different learning rates.
+This leads to the parameter grid for \ac{ERNIE2.0} shown in \cref{tab:study:execution:paramter_grid:ERNIE2.0}
+\begin{table}[htpb]
+    \centering
+    \begin{tabular}{ p{3.5cm} p{1.5cm} p{2cm} p{1.5cm} p{1.6cm} p{1.5cm} }
+        \toprule
+         Re-sampling & Folds & Learning Rate & Epochs & Max Length & Batch Size \\
+        \midrule
+            \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item {random
+
+                down-sampling}
+                \item {random
+
+                up-sampling}
+            \end{itemize}
+            &\begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 4
+                \item 8
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item $2\mathrm{e}{-05}$,
+                \item $3\mathrm{e}{-05}$,
+                \item $4\mathrm{e}{-05}$,
+                \item $5\mathrm{e}{-05}$
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 1
+                \item 2
+                \item 3
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 64
+                \item 128
+            \end{itemize}
+            & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+                \item 16
+                \item 32
+            \end{itemize}\\
+        \bottomrule
+    \end{tabular}
+    \caption[Parameter Grid for \ac{ERNIE2.0}]{Parameter grid for \ac{ERNIE2.0}.}\label{tab:study:execution:paramter_grid:ERNIE2.0}
+\end{table}
+
 Detaillierte Beschreibung der Durchführung
+
+% Second Iteration on D_{all}
 eher chronologisch
