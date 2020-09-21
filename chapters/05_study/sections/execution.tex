@@ -76,9 +76,9 @@ This leads to the parameter grid for \ac{ERNIE2.0} shown in \cref{tab:study:exec
                 \item 8
             \end{itemize}
             & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
-                \item $2\mathrm{e}{-05}$,
-                \item $3\mathrm{e}{-05}$,
-                \item $4\mathrm{e}{-05}$,
+                \item $2\mathrm{e}{-05}$
+                \item $3\mathrm{e}{-05}$
+                \item $4\mathrm{e}{-05}$
                 \item $5\mathrm{e}{-05}$
             \end{itemize}
             & \begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
@@ -99,7 +99,14 @@ This leads to the parameter grid for \ac{ERNIE2.0} shown in \cref{tab:study:exec
     \caption[Parameter Grid for \ac{ERNIE2.0}]{Parameter grid for \ac{ERNIE2.0}.}\label{tab:study:execution:paramter_grid:ERNIE2.0}
 \end{table}
 
-Detaillierte Beschreibung der Durchführung
+Now we perform grid search using the crowdsourced dataset $D_{crowd}$.
+For that we split $D_{crowd}$ and used $90\%$ of the data for training and training evaluation whereas the remaining $10\%$ of the data are merely used for the final test of the trained models.
+Finding a suitable learning rate is very challenging task, \textcite{Zeiler:2012} goes even further and states \textit{"[d]etermining a good learning rate becomes more of an art than science for many problems"}.
+However, \textcite{Smith:2018} introduced the 1cycle learning rate schedule to dynamically adjust the learning rate during the training phase.This policy achieved remarkable results in their experiments.
+We use this approach and set the initial learning rate to the value of the corresponding parameter grid.
+Performing the grid search with the given parameter grids the parameter combinations which achieved the best $F_1$ score are listed in \cref{}.
+
+
 
 % Second Iteration on D_{all}
 eher chronologisch
