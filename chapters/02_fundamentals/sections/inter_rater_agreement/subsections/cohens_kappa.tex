@@ -1,7 +1,7 @@
 \subsection{Cohen's Kappa}
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:cohens_kappa}
 Cohen's Kappa $\kappa$ was introduced by \textcite{Cohen:1960} in 1960.
-He states the hypothesis that even if all raters are unaware of the correct answer and purely guessing, nevertheless some data points are congruent.
+He states the hypothesis that even if all raters are unaware of the correct answer and purely guessing, nevertheless some datapoints are congruent.
 In his opinion random congruency should be considered by agreement statistics.
 To tackle this issue he introduced the kappa statistics to account for the random agreement among two raters.
 Similar to other correlation statistics, it can take values in the range from -1 to 1.
@@ -14,8 +14,8 @@ The overall formula of Cohen's $\kappa$ is then given by the following equation:
     \kappa = \frac{P_o - P_e}{1 - P_e}
 \end{equation}
 
-Consider two raters, A and B respectively, assigning $N$ data points to $C$ categories.
-$n_{c_i, c_j}$ indicates how many data points were assigned by rater $A$ to class $c_i$ and to $c_j$ by rater $B$.
+Consider two raters, A and B respectively, assigning $N$ datapoints to $C$ categories.
+$n_{c_i, c_j}$ indicates how many datapoints were assigned by rater $A$ to class $c_i$ and to $c_j$ by rater $B$.
 $p_{A, c_i}$ represents the proportion of assignments that were assigned to class $c_i$ by rater $A$.
 An overview for $C=3$ is given in \cref{tab:cohens_kappa_sample_definition}.
 
@@ -63,7 +63,7 @@ Here two raters rated 50 requirements as \textit{Good} or \textit{Bad}.
         \cline{2-4}
         \multicolumn{1}{c}{} & \multicolumn{1}{c}{Proportion} & \multicolumn{1}{c}{$0.6$} & \multicolumn{    1}{c}{$0.4$} & \multicolumn{1}{c}{$1$}\\
     \end{tabular}
-    \caption[Cohen's Kappa sample data]{Example data of 2 raters assigning 50 data points to two categories.}\label{tab:cohens_kappa_sample_data}
+    \caption[Cohen's Kappa sample data]{Example data of 2 raters assigning 50 datapoints to two categories.}\label{tab:cohens_kappa_sample_data}
 \end{table}
 
 Given \cref{tab:cohens_kappa_sample_data}, one can directly calculate $P_o = \frac{ 20 + 15 }{50} = 0.7$ and $P_e = 0.6 \cdot 0.5 + 0.4 \cdot 0.5 = 0.5$.
