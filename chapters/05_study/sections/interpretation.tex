@@ -1,3 +1,47 @@
 \section{Interpretation}
 \label{chp:study:sec:interpretation}
-Erwähnen warum man Threshold nicht verwendet.
+
+% Introduction paragraph. why are results bad
+When we compare our results from \cref{chp:study:sec:results} with more \hyperref[chp:related_research:sec:rule_based approaches]{\textit{traditional approaches}}, one immediately observes that our models perform rather poorly.
+One example is Smella, developed by \textcite{Femmer:2017}.
+It uncovers \textit{requirement smells} with a precision of $59\%$ and a $82\%$ whereas our \ac{BERT} based model achieves same recall, but only a precision of $0.36$.
+In contrast to our \textit{vague requirements} Smella's objective is to identify requirement smells.
+Although these objectives are not identical, they are very similar.
+Therefore, we can follow that Smella as an example and rule based approaches in general are severely better in identifying poor requirements.
+In this section we want to reflect on the previous results presented and discuss possible causes.
+
+% Paragraph for LIME
+First we want to check which word of a sentence contributes most to the model's classification result.
+To do this we use \ac{LIME}.
+After that we count the occurrences of those words in $D_{all_{train}}$ and try to derive \textit{why} our models classify a majority of the dataset wrongly.
+With this procedure we analyze the top four \ac{TP}, \ac{TN}, \ac{FP} and \ac{FN} of a model.
+An example for a false positive analyzed by \ac{LIME} is given in \cref{fig:study:interpretation:LIME}.
+The more a word's background is highlighted in green, the more it contributes to the overall prediction, in case of \cref{fig:study:interpretation:LIME} the prediction is \textit{vague}.
+\begin{figure}[htpb]
+    \centering
+    \def\svgwidth{\columnwidth}
+    \scalebox{0.80}{\input{figures/study/interpretation/LIME.pdf_tex}}
+    \caption[Study Interpretation: Example for LIME]{LIME scores for a false positive.}\label{fig:study:interpretation:LIME}
+\end{figure}
+
+\newpage % Todo check page break
+After we we determined the occurrences of the requirements' words in the dataset we could not identify a pattern among how often a word occurs in the dataset and how it influences the prediction.
+How often the words of above figure occur in vague and not-vague requirements in $D_{all_{train}}$ is shown in \cref{tab:study:interpretation:LIME}.
+\begin{table}[htpb]
+    \centering
+    \begin{tabular}{l l l l l }
+        \toprule
+         Word & \ac{LIME} Score & Count in Vague Req. & Count in Not Vague Req. \\
+        \midrule
+        analyzes & 0.164 & 6 & 3 \\
+        remaining & 0.201 & 1 & 3  \\
+        life &  0.149 & 13 & 14\\
+        inspection & 0.05 & 3 & 14 \\
+        intervals & 0.063 & 2 & 2 \\
+        \bottomrule
+    \end{tabular}
+    \caption[Study Interpretation: Word Occurrences]{The occurrences of a requirement's words in $D_{all_{train}}$.}\label{tab:study:interpretation:LIME}
+\end{table}
+% Paragraph for Architecture/ Self Attention
+
+% Paragraph on why we do not use thresholds to "enhance" results.
