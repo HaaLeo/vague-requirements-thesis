@@ -15,7 +15,7 @@ All participants are asked to annotate requirements whether they are vague or no
 In the first crowdsourced batch, referred to as $B_{C1}$, each requirement is labeled by two annotators, the second one named $B_{C2}$ is labeled by three.
 The expert batches are referred to as $B_{E1}$ and $B_{E2}$ respectively.
 Afterwards the \acp{IRA} within the crowdsourced batches and among the experts are calculated.
-We choose the free-marginal multirater kappa as \ac{IRA}, because raters do not know beforehand how many requirements are vague.
+We choose the \hyperref[chp:fundamentals:sec:inter_rater_agreement:subsec:free_marginal_multirater_kappa]{\textit{free-marginal multirater kappa}} as \ac{IRA}, because raters do not know beforehand how many requirements are vague.
 All four labeled batches are summarized in \cref{tab:study:objects:crowdsourcing:batches}.
 \begin{table}[htpb]
     \centering
@@ -25,8 +25,8 @@ All four labeled batches are summarized in \cref{tab:study:objects:crowdsourcing
         \midrule
         $B_{C1}$ & Two assignments per requirement via crowdsourcing\\
         $B_{C2}$ & Three assignments per requirement via crowdsourcing\\
-        $B_{E1}$ & One expert assignment per requirement \\
-        $B_{E2}$ & One expert assignment per requirement \\
+        $B_{E1}$ & One assignment per requirement by expert $E1$ \\
+        $B_{E2}$ & One assignment per requirement by expert $E2$ \\
         \bottomrule
     \end{tabular}
     \caption[Overview of test batches]{An overview of all test batches.}\label{tab:study:objects:crowdsourcing:batches}
@@ -35,7 +35,7 @@ All four labeled batches are summarized in \cref{tab:study:objects:crowdsourcing
 % Result of the pretests
 % Todo: Is this paragraph necessary
 \subsubsection{\Ac{IRA} per Batch}
-The results indicate low agreement within each batch.
+We calculate the \ac{IRA} according to its definition in \cref{chp:fundamentals:sec:inter_rater_agreement:subsec:free_marginal_multirater_kappa} and observe that the results indicate low agreement within each batch.
 The agreement between the raters which contributed to a batch $B$ is indicated $IRA(B)$.
 The two experts achieved an agreement of $0.47$.
 The first crowdsourced batch $B_{C1}$ has an \ac{IRA} of $0$ which indicates no agreement at all.
@@ -62,7 +62,7 @@ When generating a dataset we want to ensure a high quality, meaning it is simila
 We use the \ac{IRA} to measure the similarity of two datasets.
 The more same requirements are labeled equally in two different datasets, the more similar are those datasets.
 Consequently, a higher \ac{IRA} is an indicator for a high quality dataset.
-However, it remains unclear what is the threshold for the \ac{IRA} to be considered as \textit{sufficiently high}.
+However, it remains unclear what is an appropriate threshold for the \ac{IRA} to be considered as \textit{sufficiently high}.
 Although \textcite{Landis:1977} introduced a fixed threshold, others state doubts and even argue that inevitably, those are arbitrary \parencites{Dunn:1989}{Brennan:1992}.
 We indicate the \ac{IRA} between two datasets $Q$ and $P$ by $IRA(Q, P)$.
 For our experiment we set the baseline for sufficient similarity to the \ac{IRA} between the two experts $E1$ and $E2$.
