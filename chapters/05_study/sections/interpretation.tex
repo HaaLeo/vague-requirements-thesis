@@ -1,18 +1,21 @@
 \section{Interpretation}
 \label{chp:study:sec:interpretation}
+In the previous section we introduced the study's results.
+In this section we want to interpret these results and argue whether they are good or not.
+In this section we want to reflect on the previous results presented and discuss possible reasons \textit{why} the models come to these particular results.
 
-% Introduction paragraph. why are results bad
+% why are results bad
 When we compare our results from \cref{chp:study:sec:results} with more \hyperref[chp:related_research:sec:rule_based approaches]{\textit{traditional approaches}}, one immediately observes that our models perform rather poorly.
 One example is Smella, developed by \textcite{Femmer:2017}.
-It uncovers \textit{requirement smells} with a precision of $59\%$ and a $82\%$ whereas our \ac{BERT} based model achieves same recall, but only a precision of $0.36$.
+It uncovers \textit{requirement smells} with a precision of $59\%$ and a recall of $82\%$ whereas our \ac{BERT} based model achieves same recall, but only a precision of $0.36$.
 In contrast to our \textit{vague requirements} Smella's objective is to identify requirement smells.
 Although these objectives are not identical, they are very similar.
 Therefore, we can follow that Smella as an example and rule based approaches in general are severely better in identifying poor requirements.
-In this section we want to reflect on the previous results presented and discuss possible causes.
 
 % Paragraph for LIME
-First we want to check which word of a sentence contributes most to the model's classification result.
-To do this we use \ac{LIME}.
+The occurrence of a word can have an impact on a model's classification results.
+Our hypothesis is that if a particular word occurs in the training data much more often in a requirement with a particular label, a requirement of the test dataset that also contains that word is more likely to be assigned that same label as well.
+To check this hypothesis we first determine which word of a sentence contributes most to the model's classification result using \ac{LIME}.
 After that we count the occurrences of those words in $D_{all_{train}}$ and try to derive \textit{why} our models classify a majority of the dataset wrongly.
 With this procedure we analyze the top four \ac{TP}, \ac{TN}, \ac{FP} and \ac{FN} of a model.
 An example for a false positive analyzed by \ac{LIME} is given in \cref{fig:study:interpretation:LIME}.
@@ -20,12 +23,12 @@ The more a word's background is highlighted in green, the more it contributes to
 \begin{figure}[htpb]
     \centering
     \def\svgwidth{\columnwidth}
-    \scalebox{0.80}{\input{figures/study/interpretation/LIME.pdf_tex}}
+    \input{figures/study/interpretation/LIME.pdf_tex}
     \caption[Study Interpretation: Example for LIME]{LIME scores for a false positive.}\label{fig:study:interpretation:LIME}
 \end{figure}
 
 \newpage % Todo check page break
-After we we determined the occurrences of the requirements' words in the dataset we could not identify a pattern among how often a word occurs in the dataset and how it influences the prediction.
+After we we determined the occurrences of the requirements' words in the dataset we could not identify a pattern among how often a word occurs in the dataset and how it influences the prediction, meaning our hypothesis does not apply.
 How often the words of above figure occur in vague and not-vague requirements in $D_{all_{train}}$ is shown in \cref{tab:study:interpretation:LIME}.
 \begin{table}[htpb]
     \centering
@@ -42,6 +45,39 @@ How often the words of above figure occur in vague and not-vague requirements in
     \end{tabular}
     \caption[Study Interpretation: Word Occurrences]{The occurrences of a requirement's words in $D_{all_{train}}$.}\label{tab:study:interpretation:LIME}
 \end{table}
-% Paragraph for Architecture/ Self Attention
+
+% Paragraph for Architecture Output Token
+As next approach to reason about why the model's perform rather bad we take a closer look at their underlying architecture.
+All three models are based upon the transformer introduced by \textcite{Vaswani:2017}.
+It is noticeable that for the downstream classification task only the very first output token is used.
+\Textcite{Devlin:2018} describe this token as \textit{"the aggregate sequence representation for classification tasks"}.
+Although, \ac{BERT} and the other transformer based models output a sequence's aggregation, this aggregation could be created with respect to other criteria and not vagueness.
+This would mean, that the sequence's vagueness is split among the different dimensions of the output vector which is then complexer to identify by a downstream classifier.
+In our case even to complex.
+This would indicate that only two label, "vague" or "not vague" are not sufficient to capture all facets of vagueness.
+It could be easier to train a  classifier to uncover different subcategories of vagueness by using more labels.
+This leads to the thesis that transformer based models are not capable to aggregate sequences regarding their vagueness in a fashion that it can be reliably classified by the chosen downstream \ac{NN}.
+
+% Paragraph on self attention
+Looking closer at the architecture of a transformer one notices that it is a stack of encoders where one encoder itself is composed of one self-attention layer and one feed forward \ac{NN}.
+The self-attention mechanism allows the transformer to attend and incorporate information from neighboring positions to find a better encoding for the word of the current position \parencite{Vaswani:2017}.
+As explained in \cref{chp:fundamentals:sec:machine_learning} self-attention is constructed by multiplying the input token with different matrices which are learned during the training phase.
+Knowing how self-attention is calculated and intended to work, this leads to the thesis that a sequence's vagueness is to diverse and therefore to complex to be sustainable learned by self-attention layers.
+If this applies for one encoder layer, it would be even harder for all downstream encoder layers, meaning the vagueness of a sequence "blurs out" with more encoder layers.
 
 % Paragraph on why we do not use thresholds to "enhance" results.
+Another way to increase a model's performance and account for an imbalanced dataset is the adjustment of the \textit{decision threshold} which is by default $0.5$.
+It can be challenging to choose an optimal threshold because a \ac{NN} allows to set the threshold arbitrary which means many values are a valid choice \parencite{Mazurowski:2008}.
+According to \textcite{Mazurowski:2008}, it is even impossible to directly compare systems which use different thresholds.
+Further, the optimal threshold is coupled to the problem itself and depends on the objective to optimize for \parencite{Brown:2019}.
+For example one would choose a more conservative threshold when classifying safety critical requirements which could endanger lives, than when classifying less critical requirements and reminds of the earlier trade-off between precision and recall.
+The scope of this thesis is \textit{not} to optimize a requirement classification system to a specific objective but to evaluate whether a transformer based system is generally capable to classify the requirements.
+Therefore, we do not further consider the adjustment of thresholds in this thesis.
+
+% Answer the research question
+In this section we compared our results to more traditional approaches and found out that the transformer based models perform worse.
+We tried to comprehend and explain their predictions by applying \ac{LIME} which yielded no conclusive explanation.
+After that we investigated the models' output tokens and their self-attention layers to find clues for the bad prediction results.
+Due to the models' architecture we suspect that transformer based models are not capable to aggregate requirements with regards to their vagueness.
+With this in mind, we can now answer our \ac{RQ} from \cref{chp:study:sec:goal}.
+Due to the poor results compared to other approaches and concerns regarding the models' architecture we conclude that transformer based models in their current implementation are not capable to reliably classify requirements as vague or not-vague.
