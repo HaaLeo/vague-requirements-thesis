@@ -11,6 +11,9 @@ Although we define a quality condition to ensure a dataset's quality which is qu
 This means that that even our crowdsourced dataset meets the condition it is questionable whether the condition itself is sufficient for a high quality dataset.
 However, this concern is only valid for a part of our dataset.
 The dataset $D_{manual}$ is excluded from this threat, because it was labeled by an expert.
+Further, our dataset is imbalanced.
+For example $D_{all}$ consists of $21\%$ vague datapoints.
+Although we took this imbalance into account by applying a re-sampling strategy on the training dataset, the vagueness could still be underrepresented in our dataset and consequently harder to learn by the models.
 
 % Paragraph on Implementation Mistakes
 For the study execution and its evaluation we have written hundreds lines of code.
