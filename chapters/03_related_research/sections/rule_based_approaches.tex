@@ -65,14 +65,14 @@ If a match occurs, the token is reported as possible ambiguity.
 Although the authors could not achieve their initial goal of 100\% recall, they are confident that future research will further improve their approach.
 
 \textcite{Fantechi:2018} state that ambiguities are not only introduced unintentionally to requirements documents and cause severe drawbacks in the software engineering process.
-They may also be inserted on purpose to capture variable facets which will be solved in a downstream development step.
+They may also be inserted on purpose to capture variable facets which are solved in a downstream development step.
 In order to further research this claim, first the existing tool \ac{QuARS} \parencite{Fabbrini:2002} is applied on requirements and its output is assessed whether ambiguities can be variation points.
 Second, \ac{QuARS} is altered with an additional tailored dictionary to check whether the variability detection process can be enhanced.
 For both cases \ac{QuARS}' output was assessed and manually classified as false positive, actual ambiguity or variability point.
 The authors conclude that ambiguities are possible indicators for variability.
 Specifically terms like "and/or", "may and "could" are likely to indicate variability instead of ambiguities.
 Further, it is shown that rule-based tools like \ac{QuARS} tend to output many false positive entities.
-This leads the authors to question whether precision should be considered more important in non safety-critical systems since it will speed up requirement analysis.
+This leads the authors to the question whether precision should be considered more important in non safety-critical systems since it speeds up requirement analysis.
 
 All these approaches use rather simple mechanisms to determine a requirement's quality like matching the requirements against a predefined list of vague words.
 Although some works use more complex approaches like \ac{POS} tagging and achieve remarkable results, they do not consider \ac{ML} techniques.
