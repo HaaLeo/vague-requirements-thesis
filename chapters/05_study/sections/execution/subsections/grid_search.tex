@@ -1,17 +1,24 @@
-\section{Execution}
-\label{chp:study:sec:execution}
-In this section we describe how the study is executed.
-The source code used for the study is publicly available \footnote{It can be found at https://github.com/HaaLeo/vague-requirements-scripts}.
+
+\subsection{Grid Search}
+\label{chp:study:sec:execution:subsec:gridsearch}
 Training \ac{ML} models involves the setting of hyperparameter.
 Those have a direct impact on the performance of a trained model and the user must set them appropriately to optimize the learning routine and with that the model \parencite{Claesen:2015}.
-We are perform a grid search to find a good parameter combination for each model.
+We perform a grid search to find a good parameter combination for each model.
 We base the parameter grid for each model on the corresponding recommendations of the authors.
 Further, we take a re-sampling strategy of our dataset into account for the grid search, because we deal with imbalanced data.
-All our models are transformer based.
-Transformer based models have the \textit{maximum input sequence length} as hyperparameter.
+
+\subsubsection{Parameter Grid}
+\label{chp:study:sec:execution:subsec:gridsearch:parameter_grid}
+All our models are transformer based and involve multiple hyperparameters.
+Transformer based models have the \textit{maximum length} of a sequence as hyperparameter.
 Input sequences are truncated when they exceed this limit and are padded with 0 if they are shorter than this parameter.
-Because of our limited dataset we want to perform $k$-fold cross validation.
-In order to determine how many folds we want to use we add this as parameter to our grid as well.
+Due to our limited dataset we want to perform $k$-fold cross validation.
+In order to determine how many \textit{folds} we want to use we add this as parameter to our grid as well.
+For the training of the models we use an imbalanced dataset.
+To take account for that imbalance we consider different \textit{re-sampling} strategies.
+\textit{Random down-sampling} randomly discards datapoints of the majority class to create a balanced dataset for the training phase.
+\textit{Random up-sampling} achieves the same by randomly duplicating requirements of the minority class.
+The parameters for \textit{learning rate}, \textit{epochs} and \textit{batch size} follow the the recommendations of the base models' authors.
 Since all models are transformer based the parameter grids are similar.
 The parameter grid for \ac{BERT} and \ac{DistilBERT} is shown in \cref{tab:study:execution:paramter_grid:BERT}.
 \begin{table}[htpb]
@@ -100,6 +107,9 @@ This leads to the parameter grid for \ac{ERNIE2.0} shown in \cref{tab:study:exec
     \caption[Parameter Grid for \ac{ERNIE2.0}]{Parameter grid for \ac{ERNIE2.0}.}\label{tab:study:execution:paramter_grid:ERNIE2.0}
 \end{table}
 
+\subsubsection{Grid Search Execution}
+\label{chp:study:sec:execution:subsec:gridsearch:execution}
+
 Now we perform grid search using the crowdsourced dataset $D_{crowd}$.
 For that we split $D_{crowd}$ and used $90\%$ of the data for training and training evaluation whereas the remaining $10\%$ of the data are merely used for the final test of the trained models.
 We ensure that the resulting datasets $D_{crowd_{train}}$ and $D_{crowd_{test}}$ consist of the same proportion of vague datapoints of approximately $19\%$.
@@ -107,6 +117,10 @@ Finding a suitable learning rate is very challenging task, \textcite{Zeiler:2012
 However, \textcite{Smith:2018} introduced the 1cycle learning rate schedule to dynamically adjust the learning rate during the training phase.
 This policy achieved remarkable results in his experiments.
 We use this approach and set the initial learning rate to the value of the corresponding parameter grid.
+
+\subsubsection{Found Hyperparameters}
+\label{chp:study:sec:execution:subsec:gridsearch:execution}
+
 Performing the grid search with the given parameter grids the parameter combinations which achieved the best $F_1$ score are listed in \cref{tab:study:execution:grid_search:results}.
 All three models achieved a $F_1$ score around $0.5$.
 \begin{table}[htpb]
@@ -122,24 +136,3 @@ All three models achieved a $F_1$ score around $0.5$.
     \end{tabular}
     \caption[Grid Search Results]{The best parameter combinations per model found with grid search.}\label{tab:study:execution:grid_search:results}
 \end{table}
-
-% Execution with D_{crowd}
-In the first run we train all three models with the best parameter configuration we found with the grid search on $D{crowd_{train}}$.
-After that we use the trained models to obtain predictions for the test dataset $D{crowd_{test}}$.
-Considering the correctly vague classified requirements as \ac{TP} we then calculate the metrics introduced in \cref{chp:fundamentals:sec:metrics}.
-The resulting metrics indicate that the models performed rather poorly on the classification task.
-For instance, no model achieves a $F_1$ score greater than $0.6$ and no \ac{AP} greater than $0.5$. %Todo: Precision und recall here?
-Instead of listing all results here, we refer to the \hyperref[chp:study:sec:results]{\textit{next section}} where the complete results of all runs are shown comprehensively.
-
-% Why we create D_{manual}
-Our trained models perform rather poorly in correctly classifying the requirements of $D{crowd_{test}}$.
-According to \textcite{Domingos:2012} a \textit{"dumb algorithm with lots and lots of data [can beat] a clever one with modest amounts of it."}.
-It follows, that more data lead to better performing algorithms and \ac{ML} models.
-Since we discarded almost the half of all requirements when creating $D_{crowd}$, the concern raises whether our models have had enough data to train properly.
-To encounter this concern and to include all available requirements in the dataset we relabeled all discarded requirements like we described in \cref{chp:study:sec:study_objects:dataset_creation:manual_labeling}.
-
-% Execution with D_{all}
-For the second run we now use the more extensive dataset $D_{all}$.
-We again split it in a training partition $D_{all_{train}}$ and test dataset $D_{all_{test}}$ with the proportion $1\mathrm{:}9$ preserving the distribution of vague requirements for both.
-We then train all of our models on the new dataset $D_{all_{train}}$ with the hyperparameters obtained by the preceding grid search.
-Analogically to the first run, we obtain predictions for the dataset $D_{all_{test}}$ and then calculated metrics for the evaluation considering the correctly as vague classified requirements as \ac{TP}.

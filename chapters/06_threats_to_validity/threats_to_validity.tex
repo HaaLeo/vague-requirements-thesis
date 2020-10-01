@@ -1,33 +1,32 @@
 \chapter{Threats to Validity}
 \label{chp:threats_to_validity}
 In the prior chapters we introduced a transformer based approach to classify requirements as vague or not-vague.
-We used it to conduct a study whose result is that transformer based models must be further enhanced to be used for reliable requirement predictions.
-The approaches performed rather poorly.
-Therefore, in this chapter we want to elaborate possible threats to the study's validity.
+We used it to conduct a study whose result is that transformer based models must be further enhanced to be used as reliable requirement predictors.
+In this chapter we therefore want to elaborate possible threats to the study's validity.
 
 % Paragraph on dataset quality
 The first valid concern raising is the datasets' quality.
 Although we define a quality condition to ensure a dataset's quality which is quite intuitive, the condition is arbitrary similar to the thresholds defined by \textcite{Landis:1977}.
 This means that that even our crowdsourced dataset meets the condition it is questionable whether the condition itself is sufficient for a high quality dataset.
 However, this concern is only valid for a part of our dataset.
-The dataset $D_{manual}$ is excluded from this threat, because it was labeled by an expert.
+The portion $D_{manual}$ is excluded from this threat, because it was labeled by an expert.
 Further, our dataset is imbalanced.
 For example $D_{all}$ consists of $21\%$ vague datapoints.
 Although we took this imbalance into account by applying a re-sampling strategy on the training dataset, the vagueness could still be underrepresented in our dataset and consequently harder to learn by the models.
 
 % Paragraph on Implementation Mistakes
 For the study execution and its evaluation we have written hundreds lines of code.
-The code was manually tested as well as by some unit tests.
+The code was manually tested as well as by unit tests.
 The implementation follows the study design and we removed all flaws which we found.
-Nevertheless, there remains a small chance that the implemented program still contains mistakes made either by the author or included in third party software libraries.
+Nevertheless, there remains a small chance that the implemented program still contains mistakes made either by the author or included in used third party software libraries.
 Since we cannot guarantee that all components of our program are flawless, this is a valid threat to the validity.
 
 % Paragraph on bad grid search
 The hyperparameters used for the training pose another threat.
-Finding suitable hyperparameters is very challenging \parencite{Zeiler:2012} and has become its own field of research.
+Finding suitable hyperparameters is very challenging \parencite{Zeiler:2012} and has became its own research field.
 In our study we aim to determine good hyperparameters with a rather simple grid search.
 With this technique one can detect the best parameter configuration of the earlier defined parameter, but we do not know how good the parameter grid itself is.
-Although we created a parameter grid based on the recommendations of the models' authors, it is likely that we obtained not optimal hyperparameters which can lead to worse training and consequently to a less performant models.
+Although we created a parameter grid based on the recommendations of the models' authors, it is likely that we obtained not optimal hyperparameters which can lead to worse training and consequently to less performant models.
 Therefore, the non optimal hyperparameters are a threat as well.
 
 % Paragraph on "to easy" downstream NN
@@ -36,3 +35,5 @@ All three models output multiple tokens whose first one can be used for downstre
 For this downstream classification we used a fully connected feed forward \ac{NN} with around 1500 learnable parameters.
 Using a low-parameter \ac{NN} harbors the the risk that it cannot map the vagueness' complexity to the correct prediction.
 Since we cannot preclude that the downstream \ac{NN} is incapable for this specific classification task, this is considered as a threat to validity.
+
+%Todo: Paragraph on generalization

@@ -4,8 +4,8 @@ The modern software engineering process includes the specification of requiremen
 Defining proper requirements which are understood by all stakeholders can be difficult.
 Faults which occur during this phase cost time and money in subsequent process steps \parencite{Mendez:2016} and even result in sever project delay \parencite{Femmer:2014}.
 To tackle these issues and offer possible solutions for them, the research field \ac{RE} emerged.
-Until now \ac{RE} mostly considered rule-based approaches which already lead to promising results.
-Although in recent years \ac{ML} based approaches returned astonishing results, there is rather little research in the domain of \ac{RE} ongoing using state of the art \ac{ML} approaches.
+Until now, \ac{RE} mostly considered rule-based approaches which already lead to promising results.
+Although in recent years \ac{ML} based approaches returned astonishing results on various \ac{NLP} tasks, there is rather little research in the domain of \ac{RE} ongoing using state of the art \ac{ML} approaches.
 The aim of this thesis is to bridge this gap and evaluate whether and to what extent state of the art \ac{ML} based approaches are capable to to detect vague requirements.
 
 Within this thesis we first discuss how different research fields define and use the term "vagueness" before we define what we consider a \textit{vague requirement} throughout this work.
@@ -14,10 +14,10 @@ All those models are trained with supervised learning.
 This technique requires an annotated dataset which, to our knowledge, was not contributed by earlier research.
 Therefore, with this thesis we contribute a dataset including $2776$ datapoints of which $589$ are labeled as vague and $2187$ are annotated not-vague.
 The dataset is created partially via crowdsourcing and manual labeling by an expert.
-We now use this dataset to apply transfer learning to the models.
-This means that we take a pre-trained version of each model and then train it on our domain specific dataset.
-With the trained models we then generate predictions on new unseen data which are used to calculate precision, recall, $F_1$ score and \ac{AP}.
-The models' maximum values on these metrics are $45\%$ precision, $85\%$ recall, $50\%$ $F_1$ score and $46\%$ \ac{AP}.
+We then use this dataset to apply transfer learning to the models.
+This means that we take a pre-trained version of each model and train it on our domain specific dataset.
+With the trained models we generate predictions on new unseen data which are used to calculate precision, recall, $F_1$ score and \ac{AP}.
+The models' maximum values for these metrics are $45\%$ precision, $85\%$ recall, $50\%$ $F_1$ score and $46\%$ \ac{AP}.
 Comparing these results with other rule based approaches yields that in this thesis introduced approaches perform worse.
 In order to verify this conclusion we take a look at other transformer based approaches from different domains.
 All those approaches return rather poor results for the vanilla implementation of \ac{BERT} using a simple downstream classifier.
@@ -28,7 +28,7 @@ But on the contrary, these approaches perform even worse than traditional approa
 However, this does not mean the end for transformers in the field of \ac{RE}.
 As our study includes several \hyperref[chp:threats_to_validity]{\textit{threats to validity}}, future research should tackle these.
 One should consider a more sophisticated downstream classifier like \textcite{Martino:2019} or \textcite{Gao:2019}.
-Also a more advanced technique than a grid search can be chosen to obtain a better set of hyperparameters and with that a better performing model.
+Also a more advanced method than a grid search can be chosen to obtain a better set of hyperparameters and with that a better performing model.
 The results of \textcite{Xu:2019} indicate that a model's performance may be limited by the used dataset's size.
 To examine whether this statement applies also for models trained on the \ac{RE} domain one should extend the contributed dataset and rerun a study.
 
