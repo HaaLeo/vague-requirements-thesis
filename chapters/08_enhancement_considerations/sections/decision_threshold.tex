@@ -1,0 +1,10 @@
+\section{Decision Threshold}
+\label{chp:enhancement_considerations:sec:decision_threshold}
+% Paragraph on why we do not use thresholds to "enhance" results.
+Another way to increase a model's performance and account for an imbalanced dataset is the adjustment of the \textit{decision threshold} which is by default $0.5$.
+It can be challenging to choose an optimal threshold because a \ac{NN} allows to set the threshold arbitrary which means many values are a valid choice \parencite{Mazurowski:2008}.
+According to \textcite{Mazurowski:2008}, it is even impossible to directly compare systems which use different thresholds.
+Further, the optimal threshold is coupled to the problem itself and depends on the objective to optimize for \parencite{Brown:2019}.
+For example one would choose a more conservative threshold when classifying safety critical requirements which could endanger lives, than when classifying less critical requirements and reminds of the earlier trade-off between precision and recall.
+The scope of this thesis is \textit{not} to optimize a requirement classification system to a specific objective but to evaluate whether a transformer based system is generally capable to classify the requirements.
+Therefore, we do not further consider the adjustment of thresholds in this thesis.
