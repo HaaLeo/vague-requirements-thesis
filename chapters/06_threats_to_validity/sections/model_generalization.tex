@@ -1,5 +1,25 @@
 \section{Model Generalization}
 \label{chp:threats_to_validity:sec:model_generalization}
-TBD
 
-Question the models' capabilities of generalization here (due to small dataset).
+Within the study we calculated the metrics used for evaluation and comparison to other models with the datasets $D_{crowd_{test}}$ and $D_{all_{test}}$.
+The crowdsourced dataset consists of $29$ vague and $126$ not-vague requirements.
+The overall test dataset is almost twice as big and includes $59$ requirements annotated as vague and $219$ requirements labeled as not-vague.
+The properties of the test datasets are visualized in \cref{tab:threats_to_validity:sec:model_generalization:test_datasets}.
+
+\begin{table}[htpb]
+    \centering
+    \begin{tabular}{l l l l l}
+        \toprule
+        Dataset & Vague & Not-Vague & Overall & Proportion Vague Labels \\
+        \midrule
+        $D_{crowd_{test}}$ & 29 & 126 & 155 & $\approx19\%$\\
+        $D_{all_{test}}$ & 59 & 219 & 278 &  $\approx21\%$\\
+        \bottomrule
+    \end{tabular}
+    \caption[Overview of test datasets]{Overview of the test datasets and their properties.}\label{tab:threats_to_validity:sec:model_generalization:test_datasets}
+\end{table}
+
+The test datasets include requirements from various domains \parencite{Kummeth:2020} and are unknown to the models.
+Nevertheless, they consist of only $29$ and $59$ vague requirements and it is questionable whether those requirements represent all facets of vagueness.
+Therefore, it is unsure whether the results obtained with the test datasets sufficiently represent the models' generalization capabilities.
+Since we have not access to more requirements to further investigate this doubt, this remains a threat to validity.
