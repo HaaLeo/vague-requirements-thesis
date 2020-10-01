@@ -1,0 +1,11 @@
+\section{Dataset Quality}
+\label{chp:threats_to_validity:sec:dataset_quality}
+
+The first valid concern raising is the datasets' quality.
+Although we define a quality condition to ensure a dataset's quality which is quite intuitive, the condition is arbitrary similar to the thresholds defined by \textcite{Landis:1977}.
+This means that that even our crowdsourced dataset meets the condition it is questionable whether the condition itself is sufficient for a high quality dataset.
+However, this concern is only valid for a part of our dataset.
+The portion $D_{manual}$ is excluded from this threat, because it was labeled by an expert.
+Further, our dataset is imbalanced.
+For example $D_{all}$ consists of $21\%$ vague datapoints.
+Although we took this imbalance into account by applying a re-sampling strategy on the training dataset, the vagueness could still be underrepresented in our dataset and consequently harder to learn by the models.
