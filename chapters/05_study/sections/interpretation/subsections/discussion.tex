@@ -1,6 +1,34 @@
 \subsection{Discussion}
 \label{chp:study:sec:interpretation:subsec:discussion}
 
+% Paragraph on what are the results and intro
+The results introduced in \cref{chp:study:sec:results} are the metrics precision, recall, $F_1$ score and \ac{AP} which are obtained by comparing the models' predictions with the truth labels.
+With those we can now discuss whether and to what extent the models are capable to uncover vague requirements.
+For the following discussion we use the results of the \ac{BERT} based model.
+The discussion also applies to the results of \ac{ERNIE2.0} and \ac{DistilBERT}, because their results scale similarly.
+
+\subsubsection{Precision}
+\label{chp:study:sec:interpretation:subsec:discussion:precision}
+The first metric we consider is \textit{precision}.
+Our three models achieve a maximum precision of $45\%$.
+This means that if the model is given a corpus for classification and it classifies $100$ requirements as vague, only $45$ requirements are truly vague but more than half of its selection is not vague.
+If one uses this model with the aim of identifying vague requirements of a dataset, the model causes a lot of additional work.
+The practitioner would have to rewrite $100$ requirements, although only $45$ requirements are vague.
+
+\subsubsection{Recall}
+\label{chp:study:sec:interpretation:subsec:discussion:recall}
+Next we take a look how our models perform regarding \textit{recall}.
+The maximum value a model achieves is $0.53\%$.
+Continuing with the previous example this means the $45$ correct as vague identified requirements represent $0.53\%$ of all truly vague requirements.
+Although \ac{BERT}'s precision is quite low, it is also only capable to identify $0.53\%$ of all present vague requirements.
+Uncovered vague requirements can lead to significantly increasing costs \parencite{Femmer:2017}.
+Therefore, it is very likely that in an real world application a practitioner would not be satisfied by detecting half of all vague requirements (with bad precision, too) and additionally, would scan through the remaining corpus as well to uncover more vague requirements.
+
+\subsubsection{$F_1$ Score}
+\label{chp:study:sec:interpretation:subsec:discussion:recall:f1_score}
+
+
+% Paragraph on what does each metric and its value mean
 Discuss here what these metrics from the results mean?
 
 Is this good is it bad?
