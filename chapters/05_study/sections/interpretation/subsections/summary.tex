@@ -1,10 +1,11 @@
 \subsection{Summary}
 \label{chp:study:sec:interpretation:subsec:summary}
 % Answer the research question
-In this section we compared our results to more traditional approaches and found out that the transformer based models perform worse.
+In this section we interpreted the models' results and found out that the models perform bad in uncovering vague requirements reliably.
 We tried to comprehend and explain their predictions by applying \ac{LIME} which yielded no conclusive explanation.
-After that we investigated the models' output tokens and their self-attention layers to find clues for the bad prediction results.
+After that, we investigated the models' output tokens and their self-attention layers to find clues for the bad prediction results.
+Further, we identified the simple downstream classifier of our models as potential cause for the bad results.
 Due to the models' architecture we suspect that transformer based models are not capable to aggregate requirements with regards to their vagueness.
 
 With this in mind, we can now answer our \ac{RQ} from \cref{chp:study:sec:goal}.
-Due to the poor results compared to other approaches and concerns regarding the models' architecture we conclude that transformer based models in their current implementation are not capable to reliably classify requirements as vague or not-vague.
+Due to the poor results and concerns regarding the models' architecture we conclude that vanilla transformer based models in their current implementation are not capable to reliably classify requirements as vague or not-vague.

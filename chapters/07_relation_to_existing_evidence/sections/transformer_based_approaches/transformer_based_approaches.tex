@@ -1,6 +1,7 @@
 \section{Transformer Based Approaches}
 \label{chp:relation_to_existing_evidence:sec:transformer_based_approaches}
 
+\subsection{BERT Post-Training for Review Reading Comprehension}
 \Textcite{Xu:2019} use \ac{BERT} for \ac{ASC} on product reviews.
 Their derived \ac{ASC} model is based on \ac{BERT} and takes as input a \textit{review} and an \textit{aspect}.
 The model then outputs the passed aspect's polarity in the review.
@@ -18,6 +19,7 @@ The authors conclude that their post-training technique is a legitimate techniqu
 Further, their initial smaller dataset significantly limited \ac{BERT}'s performance gain.
 Since their initial dataset is even larger than our dataset $D_{all}$, this indicates that our results may are limited by the dataset's capacity, too.
 
+\subsection{Analysis of Propaganda in News Article}
 \Textcite{Martino:2019} use a model based on \ac{BERT} to classify sentences whether they are propaganda or not.
 They first define $18$ different \textit{propaganda techniques}.
 With this definitions they annotate $7,485$ of $21,230$ sentences to indicate which propaganda techniques each sentence contains.
@@ -31,6 +33,7 @@ This new model achieved $60.41\%$ precision, $61.58\%$ recall and $60.98\%$ $F_1
 The authors conclude that the use of all output tokens can be utilized to increase a model's performance.
 Since we only use as simple downstream \ac{NN}, the usage of a more complex classifier which leverages all output tokens could increase our models' performance as well.
 
+\subsection[Target-Dependent Sentiment Classification With BERT]{Target-Dependent Sentiment Classification With \ac{BERT}}
 \Textcite{Gao:2019} use \ac{BERT} to derive different models for aspect based sentiment analysis whose aim is to predict the polarity of a sentence's phrase.
 They use the vanilla implementation of \ac{BERT} as baseline and use a dataset which consists of over $3,000$ restaurant as well as $3,000$ laptop reviews.
 The baseline model again only uses the [CLS] token which is the input for a downstream \ac{NN}.
@@ -40,6 +43,7 @@ Those token are then aggregated by an max-pooling layer before and then passed t
 The authors obtained with vanilla \ac{BERT} a macro $F_1$ score of about $69\%$.
 Their proposed model which uses more output token is able to boost the performance up to $79\%$ indicating that more complex downstream classifier can enhance the performance significantly.
 
+\subsection{PatentBERT}
 Another transformer based approach is introduced by \textcite{Lee:2019}.
 They use \ac{BERT} to classify patents and call it PatentBERT.
 In their work the authors use the vanilla \ac{BERT} with hyperparameters recommended by \textcite{Devlin:2018} and only use the [CLS] output token for the downstream classification.
@@ -47,6 +51,7 @@ The model is trained with different portions of overall $3,050,615$ patents.
 Although PatentBERT was trained on a massive dataset, this rather simple approach achieves $32.19\%$ precision, $86.06\%$ recall and a $F_1$ score of $46.85\%$.
 This indicates that an extensive dataset is not sufficient to significantly enhance the performance of a model.
 
+\subsection{Summary}
 All previously presented approaches try to solve different classification problems using variants of \ac{BERT}.
 Most authors use the vanilla version of \ac{BERT} as baseline and observe that this implementation performs rather poorly compared to altered and complexer versions.
 Since the models we use correspond to the baseline models of the presented approaches which use a simple feed forward \ac{NN} for the downstream classification, we consider our results as plausible.

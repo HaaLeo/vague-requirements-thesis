@@ -21,7 +21,7 @@ The maximum value a model achieves is $0.53\%$.
 Continuing with the previous example this means the $45$ correct as vague identified requirements represent $0.53\%$ of all truly vague requirements.
 Although \ac{BERT}'s precision is quite low, it is also only capable to identify $0.53\%$ of all present vague requirements.
 Uncovered vague requirements can lead to significantly increasing costs \parencite{Femmer:2017}.
-Therefore, it is very likely that in an real world application a practitioner is not be satisfied by detecting half of all vague requirements (with bad precision, too).
+Therefore, it is very likely that in an real world application a practitioner is not satisfied by detecting half of all vague requirements (with bad precision, too).
 Moreover to detect additional vague requirements, one must scan through the remaining corpus.
 
 \subsubsection{$F_1$ Score}
@@ -47,6 +47,6 @@ Knowing that less than half of the top $n$ as vague ranked requirements are trul
 In this section we took a closer look at the results presented in \cref{chp:study:sec:results}.
 For each of the metrics precision, recall, $F_1$ score and \ac{AP} we examined their values and reasoned what those values actually mean.
 All metrics indicate that the used transformer based approaches only uncover half of all vague requirements with poor precision.
-All three models have the same $F_1$ score indicating that if one of the models is more precise than the others its recall is worse instead.
-Evaluating the \ac{AP} lead to the result that less than every second requirement of the top ranked ones is truly vague.
+All three models have the same $F_1$ score indicating that their individual trade-off of precision and recall is very similar, meaning if one of the models is more precise than the others its recall is worse instead.
+Evaluating the \ac{AP} leads to the result that less than every second requirement of the top ranked ones is truly vague.
 We therefore conclude that the models perform rather bad in uncovering vague requirements.

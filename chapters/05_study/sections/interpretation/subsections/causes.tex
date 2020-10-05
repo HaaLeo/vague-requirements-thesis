@@ -1,16 +1,23 @@
 \subsection{Causes}
 \label{chp:study:sec:interpretation:subsec:causes}
+In the section before we discuss the study's results.
+We concluded that our transformer based models perform rather poorly.
+Therefore, in this section we want to address possible \textit{causes} for the models' bad results.
 
 \subsubsection{Word Occurrences}
 \label{chp:study:sec:interpretation:subsec:causes:word_occurrences}
-% Paragraph for LIME
-The occurrence of a word can have an impact on a model's classification results.
-Our hypothesis is that if a particular word occurs in the training data much more often in a requirement with a particular label, a requirement of the test dataset that also contains that word is more likely to be assigned that same label as well.
+% Introduction: Requirements include special words more often -> Influence?
+Requirements often consist of special words which occur more often than others.
+One example are the in \textcite{Bradner:1997} defined words which indicate a requirement's level.
+This leads to the hypothesis that the some words which occur significantly more often in one category of requirements in the training dataset also influence the classification of the test dataset more towards that category.
+In the following, we want to examine our used datasets and present findings which support or refute this hypothesis.
+
 To check this hypothesis we first determine which word of a sentence contributes most to the model's classification result using \ac{LIME}.
-After that we count the occurrences of those words in $D_{all_{train}}$ and try to derive \textit{why} our models classify a majority of the dataset wrongly.
+After that we count the occurrences of those words in $D_{all_{train}}$.
 With this procedure we analyze the top four \ac{TP}, \ac{TN}, \ac{FP} and \ac{FN} of a model.
 An example for a false positive analyzed by \ac{LIME} is given in \cref{fig:study:interpretation:LIME}.
 The more a word's background is highlighted in green, the more it contributes to the overall prediction, in case of \cref{fig:study:interpretation:LIME} the prediction is \textit{vague}.
+\newpage % Todo: check page break
 \begin{figure}[htpb]
     \centering
     \def\svgwidth{\columnwidth}
@@ -18,8 +25,7 @@ The more a word's background is highlighted in green, the more it contributes to
     \caption[Study Interpretation: Example for LIME]{LIME scores for a false positive.}\label{fig:study:interpretation:LIME}
 \end{figure}
 
-% \newpage % Todo check page break
-After we we determined the occurrences of the requirements' words in the dataset we could not identify a pattern among how often a word occurs in the dataset and how it influences the prediction, meaning our hypothesis does not apply.
+After that, we determine those words' occurrences in the training data.
 How often the words of above figure occur in vague and not-vague requirements in $D_{all_{train}}$ is shown in \cref{tab:study:interpretation:LIME}.
 
 \begin{table}[htpb]
@@ -38,28 +44,38 @@ How often the words of above figure occur in vague and not-vague requirements in
     \caption[Study Interpretation: Word Occurrences]{The occurrences of a requirement's words in $D_{all_{train}}$.}\label{tab:study:interpretation:LIME}
 \end{table}
 
+Using the words which, according to \ac{LIME}, influence the predictions most, we cannot identify increased occurrences of those words in the training dataset.
+Also those words do not tend to occur significantly more often in one requirement category.
+Therefore, we conclude that the earlier defined hypothesis does not hold and there is no obvious relationship between a words influence in the prediction and its occurrences in a requirement category.
+
 \subsubsection{Transformer's Output Token}
 \label{chp:study:sec:interpretation:subsec:causes:transformer_ouput_token}
 % Paragraph for Architecture Output Token
-As next approach to reason about why the model's perform rather bad we take a closer look at their underlying architecture.
+As next possible cause to reason about why the models perform rather bad we take a closer look at their underlying architecture.
 All three models are based upon the transformer introduced by \textcite{Vaswani:2017}.
 It is noticeable that for the downstream classification task only the very first output token is used.
 \Textcite{Devlin:2018} describe this token as \textit{"the aggregate sequence representation for classification tasks"}.
-Although, \ac{BERT} and the other transformer based models output a sequence's aggregation, this aggregation could be created with respect to other criteria and not vagueness.
-
+Although \ac{BERT} and the other transformer based models output a sequence's aggregation, it remains unclear regarding which subject the sequence is aggregated.
+This leads to the presumption that the vagueness is underrepresented in a sequence's aggregation and therefore harder to be detected by a downstream classifier.
 
 \subsubsection{Downstream Classifier}
 \label{chp:study:sec:interpretation:subsec:causes:downstream_classifier}
-% Idea with hyperplanes are to simple to divide multi dimensional space
-This would mean, that the sequence's vagueness is split among the different dimensions of the output vector which is then complexer to identify by a downstream classifier.
-In our case even too complex.
-This would indicate that only two labels, "vague" or "not vague" are not sufficient to capture all facets of vagueness.
-It could be easier to train a  classifier to uncover different subcategories of vagueness by using more labels.
-This leads to the hypothesis that transformer based models are not capable to aggregate sequences regarding their vagueness in a fashion that it can be reliably classified by the chosen downstream \ac{NN}.
+Contrary to the transformers' incapability to aggregate a sequence regarding its vagueness, it is also possible that the vagueness is captured in the transformers' output, but not uncovered by the downstream classifier.
+For instance \ac{BERT}'s [CLS] classification output token $\bm{c}$ is high dimensional, $\bm{c} \in \mathbb{R}^{768}$.
+In our approaches we use a single feed forward \ac{NN} for the classification which consists of 2 neurons yielding $2 \cdot 768 = 1536$ parameters $\bm{w} \in \mathbb{R}^{768 \times 2}$ and bias $\bm{b} \in \mathbb{R}^2$ which overall results in 1538 trainable parameters.
+We then apply a softmax layer to obtain probabilities.
+By using two neurons and a softmax layer we implicitly try to fit a hyperplane given by its Hesse normal form $ \bm{w}^T \cdot \bm{c} + \bm{b} = \begin{pmatrix} 0 & 0 \end{pmatrix}^T$.
+However, for this approach to succeed we implicitly presuppose that after we generate encodings $\bm{c}_i$ for each requirement $i$, all $c_i$s are linear separable.
+
+Due to the bad results of our models it is likely that the generated $c_i$s are not linear separable.
+This would mean, that the sequence's vagueness is split across the 768 dimensions of the output vector which is then too complex to be classified by a linear classifier.
+Further, it is possible that there exist different clusters of vagueness in the $\mathbb{R}^{768}$ space which indicates that fitting to two clusters (vague and not-vague) is not sufficient.
+It could be easier to train a classifier to uncover different subcategories of vagueness by using more labels.
+This leads to the hypothesis that transformer based models are not capable to aggregate sequences regarding their vagueness in a fashion that it can be linearly separated by a downstream classifier.
 
 \subsubsection{Self Attention}
 \label{chp:study:sec:interpretation:subsec:causes:self_attention}
-Looking closer at the architecture of a transformer one notices that it is a stack of encoders where one encoder itself is composed of one self-attention layer and one feed forward \ac{NN}.
+A transformer is a stack of encoders where one encoder itself is composed of one self-attention layer and one feed forward \ac{NN}.
 The self-attention mechanism allows the transformer to attend and incorporate information from neighboring positions to find a better encoding for the word of the current position \parencite{Vaswani:2017}.
 As explained in \cref{chp:fundamentals:sec:machine_learning} self-attention is constructed by multiplying the input token with different matrices which are learned during the training phase.
 Knowing how self-attention is calculated and intended to work, this leads to the hypothesis that a sequence's vagueness is too diverse and therefore to complex to be sustainable learned by self-attention layers.
