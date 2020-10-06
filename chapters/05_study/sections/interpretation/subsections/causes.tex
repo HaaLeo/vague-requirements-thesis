@@ -64,7 +64,7 @@ Contrary to the transformers' incapability to aggregate a sequence regarding its
 For instance \ac{BERT}'s [CLS] classification output token $\bm{c}$ is high dimensional, $\bm{c} \in \mathbb{R}^{768}$.
 In our approaches we use a single feed forward \ac{NN} for the classification which consists of 2 neurons yielding $2 \cdot 768 = 1536$ parameters $\bm{w} \in \mathbb{R}^{768 \times 2}$ and bias $\bm{b} \in \mathbb{R}^2$ which overall results in 1538 trainable parameters.
 We then apply a softmax layer to obtain probabilities.
-By using two neurons and a softmax layer we implicitly try to fit a hyperplane given by its Hesse normal form $ \bm{w}^T \cdot \bm{c} + \bm{b} = \begin{pmatrix} 0 & 0 \end{pmatrix}^T$.
+By using two neurons and a softmax layer we try to fit a hyperplane given by its Hesse normal form $ \bm{w}^T \cdot \bm{c} + \bm{b} = \begin{pmatrix} 0 & 0 \end{pmatrix}^T$.
 However, for this approach to succeed we implicitly presuppose that after we generate encodings $\bm{c}_i$ for each requirement $i$, all $c_i$s are linear separable.
 
 Due to the bad results of our models it is likely that the generated $c_i$s are not linear separable.
