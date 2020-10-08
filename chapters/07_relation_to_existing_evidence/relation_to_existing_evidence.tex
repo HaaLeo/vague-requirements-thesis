@@ -47,7 +47,10 @@ Their proposed model which uses more output token is able to boost the performan
 
 \section{PatentBERT}
 Another transformer based approach is introduced by \textcite{Lee:2019}.
-They use \ac{BERT} to classify patents and call it PatentBERT.
+To structure and classify patents according their topics a patent is assigned multiple labels.
+The labels are structured hierarchical, where each child label is more specific as its parent label.
+The authors use \ac{BERT} to classify patents and call it PatentBERT, because doing this by hand is a laborious task.
+Their dataset is based on the large \ac{CPC} system which which is a cooperation of the United States Patent and Trademark Office and the European Patent Office.
 In their work the authors use the vanilla \ac{BERT} with hyperparameters recommended by \textcite{Devlin:2018} and only use the [CLS] output token for the downstream classification.
 The model is trained with different portions of overall $3,050,615$ patents.
 Although PatentBERT was trained on a massive dataset, this rather simple approach achieves $32.19\%$ precision, $86.06\%$ recall and a $F_1$ score of $46.85\%$.
@@ -60,7 +63,7 @@ It uncovers \textit{requirement smells} with a precision of $59\%$ and a recall 
 In contrast to our \textit{vague requirements} Smella's objective is to identify requirement smells.
 Although these objectives are not identical, they are very similar.
 Therefore, we can follow that Smella as an example and rule based approaches in general are severely better in identifying poor requirements.
-This is a very interesting finding, because this indicates that very sophisticated rule-based approaches currently outperform simple transformer-based \ac{ML} approaches.
+This is a very interesting finding, because this indicates that a sophisticated rule-based approaches currently outperform simple transformer-based \ac{ML} approaches.
 
 \section{Summary}
 All previously presented approaches try to solve different classification problems using variants of \ac{BERT}.

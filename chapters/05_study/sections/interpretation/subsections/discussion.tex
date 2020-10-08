@@ -17,9 +17,9 @@ The practitioner would have to rewrite $100$ requirements, although only $45$ re
 \subsubsection{Recall}
 \label{chp:study:sec:interpretation:subsec:discussion:recall}
 Next we take a look how our models perform regarding \textit{recall}.
-The maximum value a model achieves is $0.53\%$.
-Continuing with the previous example this means the $45$ correct as vague identified requirements represent $0.53\%$ of all truly vague requirements.
-Although \ac{BERT}'s precision is quite low, it is also only capable to identify $0.53\%$ of all present vague requirements.
+The maximum value a model achieves is $53\%$.
+Continuing with the previous example this means the $45$ correct as vague identified requirements represent $53\%$ of all truly vague requirements.
+Although \ac{BERT}'s precision is quite low, it is also only capable to identify $53\%$ of all present vague requirements.
 Uncovered vague requirements can lead to significantly increasing costs \parencite{Femmer:2017}.
 Therefore, it is very likely that in an real world application a practitioner is not satisfied by detecting half of all vague requirements (with bad precision, too).
 Moreover to detect additional vague requirements, one must scan through the remaining corpus.
@@ -28,7 +28,7 @@ Moreover to detect additional vague requirements, one must scan through the rema
 \label{chp:study:sec:interpretation:subsec:discussion:f1_score}
 As described in \cref{chp:fundamentals:sec:metrics:subsec:f1_score} the $F_1$ score is the harmonic mean between between precision and recall, but adds no additional information.
 It is used to express the trade-off among those two metrics.
-The \ac{BERT} based model, with precision of $45\%$ and $0.53\%$ yields a $F_1$ score of $48\%$.
+The \ac{BERT} based model, with precision of $45\%$ and $53\%$ yields a $F_1$ score of $48\%$.
 Although the \ac{ERNIE2.0} and \ac{DistilBERT} based models differ in precision and recall, with $50\%$ and $48\%$ respectively, they achieve a very similar $F_1$ score to \ac{BERT}.
 This means that the overall performance among all three models is very similar with only $2\%$ difference in the $F_1$ score.
 
