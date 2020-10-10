@@ -5,12 +5,72 @@ However, it is quite difficult to give a precise and concise definition of vague
 Therefore, this chapter gives an overview how vagueness is defined across other research fields.
 At the end of this chapter it is defined what a \textit{vague requirement} is.
 
+\subsection{Philosophy}
+\label{chp:fundamentals:sec:vagueness:subsec:philosophy}
+
 The first discipline to look at is philosophy.
-According to \textcite{Braun:2007} an expression is vague when a speaker cannot determine whether the expression applies correctly although he/her knows all relevant information.
+The philosophical roots of vagueness are described in the \textit{Sorites Paradox} which is attributed to the greek philosopher Eubulides of Miletus \parencite{Barnes:1982}.
+The central question of the Sorites Paradox is "what is a heap?".
+If one asks whether a single sand grain is a heap, one would clearly answer no.
+When we now add one grain more is it then a heap?
+Clearly not.
+This concludes to the premise that when we have $n$ grains of sand which are no heap, adding one more grain will not make it a heap.
+However, if we use a large number of grains, for example $1,000,000,000$ we draw a wrong conclusion.
+
+The paradox is that we have an initial \textit{true} condition, namely that $1$ grain of sand is not a heap.
+Further, we consider the premise "$1$ grain of sand cannot change a non-heap into a heap" to be \textit{true}.
+Drawing a \textit{wrong} conclusion by applying a sequence of \textit{true} premises yields a paradox \parencite{Sainsbury:2009}.
+
+According to \textcite{Braun:2007} an expression is vague when a speaker cannot determine whether the expression applies correctly although he/she knows all relevant information.
 An example is a series of different color panels which continuously vary from blue to yellow.
 Although one can clearly see each patch, it is hard to distinguish whether some intermediate color panel is blue or yellow.
-\textcite{Braun:2007} \textit{"think that vagueness occurs when there exist multiple equally good candidates to be the meaning of a given linguistic expression"}.
+\Textcite{Braun:2007} \textit{"think that vagueness occurs when there exist multiple equally good candidates to be the meaning of a given linguistic expression"}.
 Applying their understanding of vagueness in the upper example "Blue" is vague since their exist multiple colors which are referred to as "Blue".
 
-%Todo:
-To be continued
+In the context of requirements this means that "The new car must accelerate in 3 seconds or less from 0 km/h to 100 km/h." is vague according to \textcite{Braun:2007}, because there are multiple equally good candidates to fulfill this requirement.
+Following the authors understanding, "3 seconds or less" is from a linguistic point of view equally good fulfilled by a car that accelerates in 2.5 seconds to the desired velocity and also by a car which takes 3 seconds.
+However, in the context of engineering this requirement is just fine since it describes an upper bound which is clearly defined and can be tested whether it is fulfilled or not.
+
+\subsection{Mathematics}
+\label{chp:fundamentals:sec:vagueness:subsec:mathematics}
+Vagueness does not only occur in philosophical research areas.
+Also the field of mathematics has to deal with vagueness.
+Boolean set theory tries to account vagueness in the boundaries of a set whereas classical set theory an object either belongs to a class or not \parencite{Fisher:2000}.
+Whether an entity belongs to a class or not is determined by a membership function.
+This function assigns an object $1$ if the object belongs to the class and $0$ otherwise.
+
+As seen before, there exist classes that are vague.
+Examples are classes like "heaps of sand", "tall women" or "beautiful men".
+To take account for this uncertainty, \textcite{Zadeh:1965} introduced \textit{fuzzy sets}.
+Fuzzy sets are a generalization of classical set theory.
+Instead of the binary membership indicated by $0$ or $1$ in classical set theory, fuzzy set theory allows infinite values between $0$ and $1$ as membership.
+As an example, a women who is $1.85m$ tall one could assign a value of $0.90$ as membership for the class "tall women".
+
+\subsection{Requirements Engineering}
+\label{chp:fundamentals:sec:vagueness:subsec:requirement_engineering}
+The field of \ac{RE} a lot of research addresses so called \textit{requirement defects}.
+Examples are \textcite{Lausen:2001}{Kosman:1997}{Blackburn:2001} to name a few.
+According to \textcite{Lausen:2001}, a requirement defect is present when the resulting application works as intended by the programmers but other stakeholders are unsatisfied.
+An example is when the product is to difficult to use for the users.
+The authors identify misunderstood existing software or requirements as main causes for requirement defects.
+
+The next sub area concerns \textit{ambiguous requirements}.
+This research field aims to prevent the creation of ambiguous requirements, but also identify ambiguous ones within a corpus of requirements.
+\Textcite{Kamsties:2000} defines a a requirement ambiguous \textit{"if it admits multiple interpretations despite the reader’s knowledge of the RE context"}.
+Although \textcite{Kamsties:2000} mention vagueness, they do not define what a vague requirement is.
+To the extent of our knowledge only \textcite{Berry:2003} define what a vague requirement is.
+According to the authors \textit{"[a] requirement is vague if it is not clear how to measure whether the requirement is fulfilled or not"}.
+
+\subsection{Vague Requirement}
+\label{chp:fundamentals:sec:vagueness:subsec:vague_requirement}
+In the previous subsections we see that vagueness has its root in the Sorites Paradox and is actively discussed in the field of philosophy until today.
+In mathematics \textcite{Zadeh:1965} generalized classical set theory to \textit{fuzzy sets} to take account for vagueness.
+\Ac{RE} mainly addresses requirement defects and ambiguous requirements.
+We only know of \textcite{Berry:2003} who define a vague requirement.
+
+In this thesis we adhere to definition of \textcite{Berry:2003}.
+In order to make this definition accessible to a wider audience, we further detail it.
+This leads to the following definition for a vague requirement which we use throughout this thesis:
+\begin{description}
+    \item[Vague Requirement:] A requirement is vague if it is not clear how to measure whether the requirement is fulfilled or not, it must be further specified that it can be implemented and tested.
+\end{description}
