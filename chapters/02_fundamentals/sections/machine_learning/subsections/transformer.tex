@@ -1,0 +1,61 @@
+
+\subsection{Transformer}
+\label{chp:fundamentals:sec:machine_learning:subsec:transformer}
+The \textit{transformer} was introduced in \citeyear{Vaswani:2017} by \textcite{Vaswani:2017}.
+In this subsection we want to introduce the transformer and its architecture.
+
+\subsubsection{High Level Architecture}
+As its name suggests a transformer takes an input sequence and transforms it to a different output sequence.
+In the context of machine translation it could take the sequence "Tom went home, because he was tired." and translate it to another language, for example german: "Tom ging nach Hause, weil er müde war.".
+The transformer consists of two main components: A stack of \textit{encoders} and a corresponding \textit{decoder} stack.
+\Textcite{Vaswani:2017} use in each stack six encoders and six decoders, but the number six is arbitrary and one could use more or less en-/decoders.
+The high level architecture is shown in \cref{fig:fundamentals:machine_learning:transformer}.
+\begin{figure}[htpb]
+    \centering
+    % \def\svgwidth{\columnwidth} % Scale for height instead
+    \input{figures/machine_learning/Transformer.pdf_tex}
+    \caption[High Level Transformer Architecture]{The high level architecture of a transformer.}\label{fig:fundamentals:machine_learning:transformer}
+\end{figure}
+
+\subsubsection{Encoder}
+In the following, we will focus on the encoders, because we will not further use decoders in this work.
+Before the input can be passed to the encoder stack must be embedded, meaning that the input sequence is converted to a tensor.
+This tensor is then passed through the encoder stack.
+One encoder itself consists of an attention layer and and a subsequent fully connected feed forward \ac{NN} as shown in fig \cref{fig:fundamentals:machine_learning:encoder}.
+\pagebreak % Todo check page breaks
+\begin{figure}[htpb]
+    \centering
+    % \def\svgwidth{\columnwidth} % Scale for height instead
+    \input{figures/machine_learning/Encoder.pdf_tex}
+    \caption[High Level Encoder Architecture]{The high level architecture of a single encoder.}\label{fig:fundamentals:machine_learning:encoder}
+\end{figure}
+
+\subsubsection{Self Attention}
+The layer which enables the transformer to perform very well on a wide range of \ac{NLP} tasks is its attention layer.
+\Textcite{Vaswani:2017} describe attention as \textit{"as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors"}.
+The authors use the "Scaled Dot-Product Attention".
+It is built by computing the dot product of all keys with all queries.
+Then the it is scaled by $\frac{1}{\sqrt{d_k}}$ where $d_k$ is the dimension of the keys.
+According to the authors, this leads to more stable gradients.
+The weights for the values are obtained by applying the softmax function.
+The overall attention is computed as in \cref{eq:attention}.
+
+\begin{equation}\label{eq:attention}
+    \text{Attention}(\bm{Q},\bm{K},\bm{V}) = \text{softmax}(\frac{\bm{Q}\bm{K}^T}{\sqrt{d_k}}) \bm{V}
+\end{equation}
+
+\subsubsection{Multi Head Attention}
+According to \textcite{Vaswani:2017} it is beneficial to project all values, keys and queries $h$ times instead of computing a single attention function with $d_{model}$ dimensional values, keys, and queries with $d_{model}$ being the model's output dimension.
+They perform on each of the projected versions one attention function and concatenate their outputs.
+These outputs are then once more projected to obtain the final values.
+The calculation of multi head attention is shown in \cref{eq:multi_head_attention}.
+\begin{equation}\label{eq:multi_head_attention}
+    \begin{aligned}
+        \text{MultiHead}(\bm{Q},\bm{K},\bm{V}) &= \text{Concat}(head_1,\dots, head_h)\bm{W}^O\\
+        \text{where }head_i &= \text{Attention}(\bm{Q}\bm{W}^Q_i, \bm{K}\bm{W}^K_i, \bm{V}\bm{W^V_i})
+    \end{aligned}
+\end{equation}
+
+With $d_v$ being the dimension of the values and parameter matrices $\bm{W}^K_i \in \mathbb{R}^{d_{model} \times d_k}$, $\bm{W}^Q_i \in \mathbb{R}^{d_{model} \times d_k}$, $\bm{W}^V_i \in \mathbb{R}^{d_{model} \times d_v}$ and $\bm{W}^O_i \in \mathbb{R}^{hd_v \times d_{model}}$.
+This mechanism \textit{"allows the model to jointly attend to information from different representation subspaces at different positions"} \parencite{Vaswani:2017}.
+In the example of the input sequence "Tom went home, because he was tired." multi head attention allows the model to attend to "Tom" and incorporate the information when it encodes "he".
