@@ -3,7 +3,8 @@
 
 We previously introduced the two metrics \textit{precision} and \textit{recall}.
 From their definition in \cref{eq:precision} and \cref{eq:recall} one concludes immediately that both are only optimal if an algorithm manages to select \textit{exclusively} \ac{TP} which would lead to $prec = rec = 1$.
-However, in most scenarios there is a trade-off among whether one wants to identify all available relevant items (recall) or all of the selected items should be relevant (precision).
+However, in most scenarios there do not only exist \ac{TP}.
+If that is the case, it is proven that there is a trade-off among whether one wants to identify all available relevant items (recall) or all of the selected items should be relevant (precision) \parencite{Gordon:1989}.
 Here we do not focus on the formal derivation of this well known trade-off, instead excellent derivations can be found in \textcites{Gordon:1989}{Zhu:2004}.
 To measure and express this trade-off one can build the \textit{harmonic mean} of precision and recall which is called \textit{$F_1$ score} \parencite{Powers:2011}.
 This metric is defined by the following equation:
@@ -12,5 +13,5 @@ This metric is defined by the following equation:
     F_1 = 2 \frac{prec \cdot rec}{prec+rec}
 \end{equation}
 
-For the example data of \cref{fig:metrics:tp_vis} its algorithm achieves an F$_1$ score of $F_1 = 2 \frac{\frac{3}{7} \cdot \frac{1}{4}}{\frac{3}{7}+\frac{1}{4}}$.
-The $F_1$ score's generalization for multi-class scenario is called \textit{Macro $F_1$} score \parencite{Opitz:2019}.
+For the example data of \cref{fig:metrics:tp_vis} its algorithm achieves an F$_1$ score of $F_1 = 2 \frac{\frac{3}{7} \cdot \frac{1}{4}}{\frac{3}{7}+\frac{1}{4}} \approx 0.32$.
+The $F_1$ score's generalization for a multi-class scenario is called \textit{Macro $F_1$} score \parencite{Opitz:2019}.

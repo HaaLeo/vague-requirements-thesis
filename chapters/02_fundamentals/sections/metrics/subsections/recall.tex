@@ -7,7 +7,7 @@ The next metric we want to introduce is called \textit{recall} and is defined \t
     rec = \frac{TP}{TP+FN}
 \end{equation}
 
-This metric expresses the performance of an algorithm as whether most of the relevant items are selected.
+This metric expresses the performance of an algorithm in terms of how many of the relevant items it manages to select.
 However, irrelevant items which may also be selected are not be penalized.
 Therefore, an algorithm which simply selects \textit{all} available items always achieves a recall $rec=1$.
 For the data shown in \cref{fig:metrics:tp_vis}, the corresponding algorithm achieves a recall of $rec = \frac{3}{3+9} = 0.25$.
