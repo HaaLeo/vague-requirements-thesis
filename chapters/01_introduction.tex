@@ -7,6 +7,15 @@
 Recent research found that a software product is only as good as its development process \parencite{Hsia:1993}.
 Correctly specifying and understanding requirements is an integral part of this process, known as \ac{RE}.
 Research has shown that \ac{RE} is prone to faults which can cost additional time and money \parencite{Mendez:2016} and may lead to severe project delay \parencite{Femmer:2014}.
+Further, the later design changes are introduced in the development process, the costlier these changes are \parencite{Folkestad:2001}.
+\Cref{fig:introduction:relation} visualizes the relation of the costs of a change to the development process phase.
+\begin{figure}[htpb]
+    \centering
+    \def\svgwidth{\columnwidth}
+    \input{figures/introduction/Relation.pdf_tex}
+    \caption[Relation of Development Phase to Cost per Change]{The relation of the development phase to the cost of design changes adapted from \textcite{Folkestad:2001}}\label{fig:introduction:relation}
+\end{figure}
+
 It is therefore desirable to avoid those drawbacks by recognizing misleading requirements at an early stage so that faulty requirements can be reformulated in an unambiguous way before the next development step.
 However, this is not trivial since often domain knowledge is required to uncover and resolve the issues \parencite{Femmer:2017}.
 For example in "The software must include a service \textit{which} must be accessible via a user interface." it is unclear whether \textit{which} relates to \textit{The software} or \textit{service}.
