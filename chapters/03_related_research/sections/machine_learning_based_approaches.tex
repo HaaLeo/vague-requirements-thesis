@@ -4,6 +4,7 @@
 Next to solely rule-based approaches, there exist \ac{ML} based approaches which use \ac{ML} techniques to classify a requirement.
 In this chapter \ac{ML} based approaches for requirement classification are presented.
 
+\subsection{Hedge Classification in Scientific Literature}
 \textcite{Medlock:2007} present an approach which examines hedge classification in scientific literature.
 The subject of hedge classification is to detect speculative language.
 First they introduce a probabilistic model to gather training data.
@@ -11,6 +12,7 @@ The same model is used to derive a weakly supervised learner which classifies a 
 This iterative learning approach is capable to perform hedge classification with similar accuracy as other approaches based on \acp{SVM}.
 They conclude that their simple \ac{ML} based approach is capable to perform hedge classification and more complex \ac{ML} approaches are likely to perform even better.
 
+\subsection{Decision Trees}
 \textcite{Ormandjieva:2007} present an approach which utilizes decision trees for the classification task.
 Their quality model distinguishes among \textit{surface understanding} and \textit{conceptual understanding}.
 Surface understanding means the literal meaning like how difficult or easy it is to understand a requirements documents' passages.
@@ -27,6 +29,7 @@ However, due to the lack of data a decision tree is preferred.
 The trained decision tree was capable to solve the classification task with 86.67\% accuracy.
 \textcite{Ormandjieva:2007} conclude that it is indeed feasible to uncover faults related to surface understanding using a decision tree and see their quality model approved as suitable.
 
+\subsection{Conditional Random Fields}
 \textcite{Yang:2012} use \ac{CRF} to extract uncertainty cues from requirements documents.
 They manually labeled several requirements documents for uncertainty cues and their corresponding scopes.
 The detection problem was formulated as a labelling task of a sequence on token-level.
@@ -42,6 +45,7 @@ Speculative sentences were detected with 85.58\% precision and 77.65\% recall co
 Regarding uncertainty scope identification the presented system performs worse: 54.37\% precision and 49.95\% recall were achieved.
 They conclude that their implemented approach works well on uncovering speculative sentences and suggest that different supervised \ac{ML} techniques could be promising in solving this task.
 
+\subsection{Rule Induction}
 \textcite{Parra:2015} use \ac{ML} techniques to classify requirement regarding their quality.
 The approach of choice is rule induction.
 The authors use this technique because of its robustness against noise due to insufficient data.
@@ -53,6 +57,7 @@ The achieved recall remains unknown.
 The authors conclude that it is possible to learn the quality features of a requirement and use the obtained models for quality prediction of new requirements.
 They endorse to enhance the model creation process to further improve the performance.
 
+\subsection{Linguistic Hedging in the Monetary Political Domain}
 \textcite{Stajner:2017} examine linguistic hedging in the monetary political domain.
 They create two different datasets.
 One includes transcribed \textit{debates} of different meetings of several committees.
@@ -66,6 +71,7 @@ The authors benchmarked their \ac{SVM} approach with a \ac{CNN} and the best per
 The conclude that a general domain dataset can be used to train a model for a hedge classification task in this domain.
 Further they showed that their \ac{SVM} approach including lists of speculation triggers performs as well as other state of the art systems in other domains and could outperform the \ac{CNN} classifier on the debates dataset.
 
+\subsection{Summary}
 All of the presented works use \ac{ML} techniques in order to improve their results.
 Some try to build classifier which are capable to predict a new requirement's quality.
 Others use those techniques to extract specific cues and their location.
