@@ -1,7 +1,7 @@
 \subsection{Causes}
 \label{chp:study:sec:interpretation:subsec:causes}
 In the section before we discuss the study's results.
-We concluded that our transformer based models perform rather poorly.
+We concluded that our transformer-based models perform rather poorly.
 Therefore, in this section we want to address possible \textit{causes} for the models' bad results.
 
 \subsubsection{Word Occurrences}
@@ -55,7 +55,7 @@ As next possible cause to reason about why the models perform rather bad we take
 All three models are based upon the transformer introduced by \textcite{Vaswani:2017}.
 It is noticeable that for the downstream classification task only the very first output token is used.
 \Textcite{Devlin:2018} describe this token as \textit{"the aggregate sequence representation for classification tasks"}.
-Although \ac{BERT} and the other transformer based models output a sequence's aggregation, it remains unclear regarding which subject the sequence is aggregated.
+Although \ac{BERT} and the other transformer-based models output a sequence's aggregation, it remains unclear regarding which subject the sequence is aggregated.
 This leads to the presumption that the vagueness is underrepresented in a sequence's aggregation and therefore harder to be detected by a downstream classifier.
 
 \subsubsection{Downstream Classifier}
@@ -71,7 +71,7 @@ Due to the bad results of our models it is likely that the generated $c_i$s are 
 This would mean, that the sequence's vagueness is split across the 768 dimensions of the output vector which is then too complex to be classified by a linear classifier.
 Further, it is possible that there exist different clusters of vagueness in the $\mathbb{R}^{768}$ space which indicates that fitting to two clusters (vague and not-vague) is not sufficient.
 It could be easier to train a classifier to uncover different subcategories of vagueness by using more labels.
-This leads to the hypothesis that transformer based models are not capable to aggregate sequences regarding their vagueness in a fashion that it can be linearly separated by a downstream classifier.
+This leads to the hypothesis that transformer-based models are not capable to aggregate sequences regarding their vagueness in a fashion that it can be linearly separated by a downstream classifier.
 
 \subsubsection{Self Attention}
 \label{chp:study:sec:interpretation:subsec:causes:self_attention}

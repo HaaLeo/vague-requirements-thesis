@@ -9,8 +9,8 @@ Further, we take a re-sampling strategy of our dataset into account for the grid
 
 \subsubsection{Parameter Grid}
 \label{chp:study:sec:execution:subsec:gridsearch:parameter_grid}
-All our models are transformer based and involve multiple hyperparameters.
-Transformer based models have the \textit{maximum length} of a sequence as hyperparameter.
+All our models are transformer-based and involve multiple hyperparameters.
+Transformer-based models have the \textit{maximum length} of a sequence as hyperparameter.
 Input sequences are truncated when they exceed this limit and are padded with 0 if they are shorter than this parameter.
 Due to our limited dataset we want to perform $k$-fold cross validation.
 In order to determine how many \textit{folds} we want to use we add this as parameter to our grid as well.
@@ -19,7 +19,7 @@ To take account for that imbalance we consider different \textit{re-sampling} st
 \textit{Random down-sampling} randomly discards datapoints of the majority class to create a balanced dataset for the training phase.
 \textit{Random up-sampling} achieves the same by randomly duplicating requirements of the minority class.
 The parameters for \textit{learning rate}, \textit{epochs} and \textit{batch size} follow the the recommendations of the base models' authors.
-Since all models are transformer based the parameter grids are similar.
+Since all models are transformer-based the parameter grids are similar.
 The parameter grid for \ac{BERT} and \ac{DistilBERT} is shown in \cref{tab:study:execution:paramter_grid:BERT}.
 \begin{table}[htpb]
     \centering

@@ -9,7 +9,7 @@ Although in recent years \ac{ML} based approaches returned astonishing results o
 The aim of this thesis is to bridge this gap and evaluate whether and to what extent state of the art \ac{ML} based approaches are capable to to detect vague requirements.
 
 Within this thesis we first discuss how different research fields define and use the term "vagueness" before we define what we consider a \textit{vague requirement} throughout this work.
-As state of the art \ac{ML} models we use transformer based models, namely \ac{BERT}, \ac{DistilBERT} and \ac{ERNIE2.0}.
+As state of the art \ac{ML} models we use transformer-based models, namely \ac{BERT}, \ac{DistilBERT} and \ac{ERNIE2.0}.
 All those models are trained with supervised learning.
 This technique requires an annotated dataset which, to our knowledge, was not contributed by earlier research.
 Therefore, with this thesis we contribute a dataset including $2776$ datapoints of which $589$ are labeled as vague and $2187$ are annotated not-vague.
@@ -19,7 +19,7 @@ This means that we take a pre-trained version of each model and train it on our 
 With the trained models we generate predictions on new unseen data which are used to calculate precision, recall, $F_1$ score and \ac{AP}.
 The models' maximum values for these metrics are $45\%$ precision, $85\%$ recall, $50\%$ $F_1$ score and $46\%$ \ac{AP}.
 Comparing these results with other rule based approaches yields that in this thesis introduced approaches perform worse.
-In order to verify this conclusion we take a look at other transformer based approaches from different domains.
+In order to verify this conclusion we take a look at other transformer-based approaches from different domains.
 All those approaches return rather poor results for the vanilla implementation of \ac{BERT} using a simple downstream classifier.
 Most of the approaches are capable to significantly enhance the models' performance by using a larger dataset or a more sophisticated downstream classification strategy.
 

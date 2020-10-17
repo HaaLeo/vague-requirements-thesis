@@ -1,7 +1,7 @@
 \chapter{Relation to Existing Evidence}
 \label{chp:relation_to_existing_evidence}
 From the previous section we see that our models perform rather poorly compared to traditional approaches.
-In this section we want to introduce approaches which also use transformer based models and discuss differences and similarities of their approaches and ours.
+In this section we want to introduce approaches which also use transformer-based models and discuss differences and similarities of their approaches and ours.
 
 \section{BERT Post-Training for Review Reading Comprehension}
 \Textcite{Xu:2019} use \ac{BERT} for \ac{ASC} on product reviews.
@@ -46,7 +46,7 @@ The authors obtained with vanilla \ac{BERT} a macro $F_1$ score of about $69\%$.
 Their proposed model which uses more output token is able to boost the performance up to $79\%$ indicating that more complex downstream classifier can enhance the performance significantly.
 
 \section{PatentBERT}
-Another transformer based approach is introduced by \textcite{Lee:2019}.
+Another transformer-based approach is introduced by \textcite{Lee:2019}.
 To structure and classify patents according their topics a patent is assigned multiple labels.
 The labels are structured hierarchical, where each child label is more specific as its parent label.
 The authors use \ac{BERT} to classify patents and call it PatentBERT, because doing this by hand is a laborious task.
@@ -69,7 +69,7 @@ This is a very interesting finding, because this indicates that a sophisticated 
 All previously presented approaches try to solve different classification problems using variants of \ac{BERT}.
 Most authors use the vanilla version of \ac{BERT} as baseline and observe that this implementation performs rather poorly compared to altered and complexer versions.
 In \cref{tab:relation_to_existing_evidence:overview} we first list all the results of the vanilla implementation based on \ac{BERT} and the results of \textcite{Femmer:2017}.
-Below that, the results our transformer based models are shown.
+Below that, the results our transformer-based models are shown.
 \pagebreak % Todo check page break
 \begin{table}[htpb]
     \centering
@@ -93,5 +93,5 @@ Below that, the results our transformer based models are shown.
 \end{table}
 
 From the table above we conclude that the baseline \ac{BERT} based models perform rather bad on their tasks.
-Further, the rule-based approach introduced by \textcite{Femmer:2017} clearly outperforms our vanilla transformer based models.
-Since the results of our implementations are similar to the baseline models of other transformer based approaches, we consider our results as plausible.
+Further, the rule-based approach introduced by \textcite{Femmer:2017} clearly outperforms our vanilla transformer-based models.
+Since the results of our implementations are similar to the baseline models of other transformer-based approaches, we consider our results as plausible.
