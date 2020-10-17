@@ -1,0 +1,170 @@
+%% Creator: Inkscape 1.0.1 (c497b03c, 2020-09-10), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Input_Embedding.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{890.46556037bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.1591535)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.50627656,0.14132035){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{write}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.31527674,0.09694692){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{i}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.44260991,0.09694692){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{to}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.37894334,0.09694692){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{like}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.50627656,0.09694692){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{write}}$}\end{tabular}}}}%
+    \put(0.06093191,0.14176027){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{Input}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.56994316,0.09694692){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{thesis}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.25161017,0.14132035){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{[CLS]}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.31527676,0.14132035){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{i}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.44260994,0.14132035){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{to}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.37894336,0.14132035){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{like}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.56994316,0.14132035){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{thesis}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.25161017,0.05125651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.31527674,0.05125651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.44260991,0.05125651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.37894336,0.05125651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.50627656,0.05125651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.56994311,0.05125651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.25161017,0.00763439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{0}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.31527674,0.00763439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{1}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.44260991,0.00763439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{3}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.37894336,0.00763439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{2}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.50627656,0.00763439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{4}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.56994311,0.00763439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{5}$}\end{tabular}}}}%
+    \put(0.25161031,0.07477881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.31527689,0.07477881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.44261008,0.07477881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.37894348,0.07477881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.50627671,0.07477881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.5699433,0.07477881){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.2516118,0.0303817){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.31527839,0.0303817){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.44261161,0.0303817){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.37894499,0.0303817){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.50627821,0.0303817){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.56994481,0.0303817){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.8246095,0.14132124){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{fun}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.63360971,0.14132124){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{[SEP]}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.76094291,0.14132124){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{is}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.69727631,0.14132124){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{it}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.8882761,0.14132124){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{[SEP]}\end{tabular}}}}%
+    \put(0.25161017,0.09694692){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{[CLS]}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.63360976,0.05125504){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{A}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.69727631,0.05125504){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{B}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.8246095,0.05125504){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{B}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.76094295,0.05125504){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{B}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.88827615,0.05125504){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{B}$}\end{tabular}}}}%
+    \put(0.6336099,0.07477734){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.6972765,0.07477734){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.82460965,0.07477734){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.76094305,0.07477734){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.8882763,0.07477734){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.63360971,0.00763531){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{6}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.76094291,0.00763531){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{8}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.69727636,0.00763531){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{7}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.82460955,0.00763531){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{9}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=38]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.8882761,0.00763531){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_\text{10}$}\end{tabular}}}}%
+    \put(0.63361136,0.03038262){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.76094461,0.03038262){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.69727796,0.03038262){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.8246112,0.03038262){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0.8882778,0.03038262){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{+}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=39]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.63360976,0.09694562){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{[SEP]}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=40]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.69727631,0.09694562){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{it}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=41]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.8246095,0.09694562){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{fun}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=42]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.76094295,0.09694562){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{is}}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=43]{./figures/approach/Input_Embedding.pdf}}%
+    \put(0.88827615,0.09694562){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{E$_{\text{[SEP]}}$}\end{tabular}}}}%
+    \put(0.11395742,0.09315383){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{Token Embeddings}\end{tabular}}}}%
+    \put(0.12374864,0.04916726){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{Segment Embeddings}\end{tabular}}}}%
+    \put(0.11984004,0.01104555){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\scriptsize{Position Embeddings}\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

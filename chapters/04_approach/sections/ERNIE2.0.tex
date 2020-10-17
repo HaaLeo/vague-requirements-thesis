@@ -7,15 +7,15 @@ To solve this issue, they proposed a new learning framework called \ac{ERNIE2.0}
 This framework enables a model to learn multiple tasks without forgetting the the knowledge learned by the previous tasks.
 To accomplish this, their continual multi-task learning method integrates the new task by initializing a model with the previously learned parameters and then trains for the newly added task together with the prior tasks.
 
-To showcase that their approach works they pre-train a model, called \ac{ERNIE2.0} model, using the \ac{ERNIE2.0} framework.
-Like \ac{BERT} and \ac{DistilBERT} the model is based on the transformer architecture of \textcite{Vaswani:2017} and consists of multiple encoder layer.
+They pre-train a model, called \ac{ERNIE2.0} model, using the \ac{ERNIE2.0} framework to showcase that their approach works .
+Like \ac{BERT} and \ac{DistilBERT} the model is based on the transformer architecture of \textcite{Vaswani:2017} and consists of multiple encoder layers.
 To ease the comparison with \ac{BERT} they decide to use the same architecture but pre-train it with the \ac{ERNIE2.0} framework.
 However, the input of the \ac{ERNIE2.0} model is slightly different.
 In addition to the position, segment and token embedding they use another \textit{task embedding}.
 The purpose of this new embedding is \textit{"to represent the characteristic of different tasks"} \parencite{Sun:2019a}.
-To capture lexical and syntactic information during the training phase they define word-aware and semantic aware pre-training tasks.
+They define word-aware and semantic aware pre-training tasks to capture lexical and syntactic information during the training phase.
 The exact explanation of those tasks is not in the scope of this thesis. \parencite{Sun:2019a}
 
 For our classification task we use the \ac{ERNIE2.0} model which was pre-trained using the \ac{ERNIE2.0} framework.
 Due to the similar architecture to \ac{BERT} the \ac{ERNIE2.0} model again has a [CLS] output token which can be used for downstream classification tasks.
-Analogical to the prior two models we use a single layer feed forward \ac{NN} with 1,500 trainable parameters to classify requirements as vague or not.
+Analogically to the prior two models, we use a single layer feed forward \ac{NN} with 1,538 trainable parameters to classify requirements as vague or not.

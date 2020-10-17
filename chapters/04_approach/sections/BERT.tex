@@ -2,15 +2,16 @@
 \label{chp:approach:sec:BERT}
 
 % Paragraph on architecture
-\Ac{BERT} is based on \textit{encoder} of the original transformer model of \textcite{Vaswani:2017}.
+\Ac{BERT} is based on \textit{encoders} of the original transformer model of \textcite{Vaswani:2017}.
 It is simply a stack of encoders.
 There exist two variants of \ac{BERT}: \ac{BERT}$_{base}$ and \ac{BERT}$_{large}$.
-The first consists of 12 encoder layers, second of 24 which yields to 110 million parameters and 310 million respectively.
+The first consists of 12 encoder layers, the second of 24 which yields to 110 million parameters and 310 million respectively.
 Since the 24 layer variant takes severely longer to train we use the 12 encoder layer variant in this approach. \parencite{Devlin:2018}
 
 % Paragraph on in- / outputs
 \Ac{BERT} is suitable for different kinds of downstream tasks, since it is capable to embed also sentence pairs in a single sequence.
 This is achieved by introducing special input tokens which have a designated meaning.
+For example the [SEP] token indicates the start of a new sequence when two sequences are passed to the model.
 For our approach most important special token is the \textit{[CLS]} token, because its corresponding final hidden state represents the aggregation of the input sequence and can be used for further downstream classification tasks.
 \Ac{BERT}'s input is the summation of three different embeddings.
 The first embedding is the \textit{token embedding}.
@@ -18,11 +19,17 @@ Here each input token (for example each word of a sentence) is embedded using Wo
 The second embedding is called \textit{segment embedding} and indicates to which input sequence a token belongs.
 The third embedding embeds a tokens position.
 The input of \ac{BERT} is obtained by summing up those three embeddings for each input token.
-% Todo Figure for visualization of embedding creation here?
+\Cref{fig:approach:BERT:input_embedding} visualizes how two sequences are embedded. \parencite{Devlin:2018}
+\begin{figure}[htpb]
+    \centering
+    \def\svgwidth{\columnwidth}
+    \scalebox{1.07}{\input{figures/approach/Input_Embedding.pdf_tex}}
+    \caption[BERT Input Embeddings]{The input embeddings for \ac{BERT}. The figure is adapted from \textcite{Devlin:2018}.}\label{fig:approach:BERT:input_embedding}
+\end{figure}
 
 % Paragraph on downstream classification
-Once we embed our input sentences and pass them to \ac{BERT}, \ac{BERT} aggregates the sequence in the output of the [CLS] token.
+Once we embed our input sentences and pass them to \ac{BERT}, it aggregates the sequence in the output of the [CLS] token.
 However, this raw token does not yet indicate whether a requirement is vague or not.
 In order to finally classify a requirement, the [CLS] token is passed to a single layer feed forward \ac{NN}.
 The output of this layer then indicates in percent how certain the model is whether a requirement is vague or not.
-It consists of 1,500 parameters.
+It consists of 1,538 parameters.
