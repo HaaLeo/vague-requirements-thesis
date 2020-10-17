@@ -16,7 +16,7 @@ It remains unclear how the approach performed regarding precision and recall.
 Moreover, the tool shall help its users to create awareness that the detected problems are earnest and explain the cause of the detected ambiguous phrases to train the users.
 The tool is similar to Unix' \textit{grep} command line tool.
 %TODO print grep in "coding font"
-It analyzes each line and applies recognizes patterns using regular expressions.
+It analyzes each line and applies recognition patterns using regular expressions.
 Each matched ambiguity is categorized according to its severity.
 All matches are highlighted and the users get additional information when they hover over a match explaining the found ambiguity.
 The tool was evaluated using 50 German as well as 50 English sentences and achieved a precision up to 97\% and 86\% recall.
@@ -28,6 +28,7 @@ The study was conducted using the \ac{GATE} tool \parencite{Cunningham:2002}.
 The dataset was obtained by verification engineers that assigned each of 1866 requirements to defect classes which were defined beforehand.
 For each defect class the engineers implement rules such as matching a list of predefined terms.
 In the experiment a recall of 100\% is achieved for some defect classes which were implemented using \ac{POS} tagging.
+
 In their second, large-scale study a larger requirements dataset was used to determine whether their approach is applicable in an industrial environment.
 The studies suggest that the implemented tool is suitable to detect the requirement defects with high recall.
 Further, such tools are capable to enhance the quality assurance process in industries.
@@ -49,6 +50,7 @@ Similar to \textcite{Fabbrini:2002} they first define a quality model.
 The model is represented by so called \textit{requirement smells} which were derived from the domain known \textit{code smells}.
 They define a requirement smell based on ISO 29148 as \textit{"an indicator of a quality violation, which may lead to a defect, with a concrete location and a concrete detection mechanism"} \parencite{Femmer:2017}.
 This standard was chosen, because it aims to unify different existing standards and it supports to choose proper language specifically to formulate requirements.
+
 They introduce a prototype called \textit{Smella} for rapid requirement smell detection.
 It is capable to parse requirements from different file formats like \ac{PDF} and \ac{CSV}.
 Once a file is parsed, the requirements are annotated using a combination of \ac{POS} tagging, morphological analysis and dictionaries \& lemmatization.
@@ -63,8 +65,9 @@ They conclude that their prototype can uncover requirement smells quite precise 
 A further rule-based approach is introduced by \textcite{Tjong:2013}.
 They aim to build an \ac{AFT} to achieve 100\% recall in highly critical systems even if it costs having less than 100\% precision.
 They identify a drawback of common \acp{AFT}:
-Tools that use \ac{POS} tagger or auxiliary parser to detect entities with several parses is imperfect.
+Tools which use \ac{POS} tagger or auxiliary parser to detect entities with several parses are imperfect.
 They argue that in safety-, security- or life-critical systems \acp{AFT} must identify \textit{all} ambiguities in order to really support the user who then must only check the reported ambiguities instead of the whole document.
+
 To accomplish this task a prototype was implemented which consists mostly of two parts.
 First a \ac{AIC} which includes multiple phrases which indicate ambiguity.
 It can also be extended by the user so it can be tailored to the requirements.
@@ -74,13 +77,14 @@ Although the authors could not achieve their initial goal of 100\% recall, they 
 
 \subsection{Ambiguities as Indicators for Variability}
 \textcite{Fantechi:2018} state that ambiguities are not only introduced unintentionally to requirements documents and cause severe drawbacks in the software engineering process.
-They may also be inserted on purpose to capture variable facets which are solved in a downstream development step.
+They could be inserted on purpose to capture variable facets which are solved in a downstream development step.
 In order to further research this claim, first the existing tool \ac{QuARS} \parencite{Fabbrini:2002} is applied on requirements and its output is assessed whether ambiguities can be variation points.
 Second, \ac{QuARS} is altered with an additional tailored dictionary to check whether the variability detection process can be enhanced.
 For both cases \ac{QuARS}' output was assessed and manually classified as false positive, actual ambiguity or variability point.
+
 The authors conclude that ambiguities are possible indicators for variability.
-Specifically terms like "and/or", "may and "could" are likely to indicate variability instead of ambiguities.
-Further, it is shown that rule-based tools like \ac{QuARS} tend to output many false positive entities.
+Specifically terms like "and/or", "may" and "could" are likely to indicate variability instead of ambiguities.
+Further, it is shown that rule-based tools like \ac{QuARS} tend to output many \ac{FP}.
 This leads the authors to the question whether precision should be considered more important in non safety-critical systems since it speeds up requirement analysis.
 
 \subsection{Summary}

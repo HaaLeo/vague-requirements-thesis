@@ -1,7 +1,7 @@
 \section{Machine Learning Based Approaches}
 \label{chp:related_research:sec:machine_learingn_based_approaches}
 
-Next to solely rule-based approaches, there exist \ac{ML} based approaches which use \ac{ML} techniques to classify a requirement.
+Next to solely rule-based approaches, there exist \ac{ML} based approaches which use \ac{ML} techniques to classify requirements or more generally, documents.
 In this chapter \ac{ML} based approaches for requirement classification are presented.
 
 \subsection{Hedge Classification in Scientific Literature}
@@ -18,9 +18,11 @@ Their quality model distinguishes among \textit{surface understanding} and \text
 Surface understanding means the literal meaning like how difficult or easy it is to understand a requirements documents' passages.
 Whereas conceptual understanding aims for a passage's interpretation.
 For example how difficult it is for a developer to implement a system by only reading the paragraph.
+
 The dataset was obtained by manual reviews of four annotators.
 Each annotator carefully read a set of requirements documents and classified its passages once with respect to surface understanding and once with respect to conceptual understanding.
 The inter-rator agreement is indicated by Cohen's Kappa \parencite{Cohen:1960} and is 0.64 for conceptual understanding and 0.66 for surface understanding.
+
 For the classification task each sentence of the requirements documents was \ac{POS} tagged and its syntax parsed using the Stanford Parser \parencite{Klein:2002}.
 Then the number of occurrences of the indicators for little surface understanding were counted.
 Based on that information a decision tree was constructed.
@@ -36,11 +38,13 @@ The detection problem was formulated as a labelling task of a sequence on token-
 Each word of a sentence is assigned a class label indicating whether the word is the first word of the cue, inside a cue or not in a cue.
 To additionally gather further information regarding the semantics of a cue keyword, more linguistic features were extracted.
 Examples are the word lemma, \ac{POS} tag, \ac{POS} tags of the three neighboring words and grammatical relations.
+
 Those features and the class label are used to train a classification model using the \ac{CRF} algorithm \parencite{Lafferty:2001}.
 Further, a post-processing step is applied to to capture infrequent cues extracted from the training dataset.
 In this step the cues are detected using string matching.
 When a match occurs the sentence is classified as speculative.
-In the conducted study multiple models with a different amount of features was trained and tested.
+In the conducted study multiple models with a different amount of features were trained and tested.
+
 Speculative sentences were detected with 85.58\% precision and 77.65\% recall considering all features.
 Regarding uncertainty scope identification the presented system performs worse: 54.37\% precision and 49.95\% recall were achieved.
 They conclude that their implemented approach works well on uncovering speculative sentences and suggest that different supervised \ac{ML} techniques could be promising in solving this task.
@@ -52,6 +56,7 @@ The authors use this technique because of its robustness against noise due to in
 To generate the models they use the PART rule induction algorithm \parencite{Eibe:1998}.
 The obtained models use a requirement's different metrics to classify it.
 The models are used to induce rules which then can be used to evaluate a requirement's quality according to the corresponding metric.
+
 The models were examined using a dataset annotated by experts and achieved accuracy in a range between 83.27\% and 87.72\%.
 The achieved recall remains unknown.
 The authors conclude that it is possible to learn the quality features of a requirement and use the obtained models for quality prediction of new requirements.
@@ -65,6 +70,7 @@ The second dataset includes the meetings statement reports which are typically c
 The datasets were labeled \textit{speculative} or \textit{non-speculative} by three annotators.
 The averaged pairwise Cohen's Kappa \parencite{Cohen:1960} was 0.56 for the debates and 0.61 for the decisions dataset.
 The annotators marked phrases which indicate a speculative sentence in their opinion.
+
 For the classification task a \ac{SVM} was trained on both datasets.
 They used \ac{BoW}, the lists of speculation triggers or different combinations as input features for the \acp{SVM}.
 The authors benchmarked their \ac{SVM} approach with a \ac{CNN} and the best performing system for the CoNLL-2010 shared task \parencite{Farkas:2010}.
