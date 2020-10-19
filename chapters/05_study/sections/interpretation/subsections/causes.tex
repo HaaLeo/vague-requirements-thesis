@@ -1,15 +1,15 @@
 \subsection{Causes}
 \label{chp:study:sec:interpretation:subsec:causes}
 In the section before we discuss the study's results.
-We concluded that our transformer-based models perform rather poorly.
+We conclude that our transformer-based models perform rather poorly.
 Therefore, in this section we want to address possible \textit{causes} for the models' bad results.
 
 \subsubsection{Word Occurrences}
 \label{chp:study:sec:interpretation:subsec:causes:word_occurrences}
 % Introduction: Requirements include special words more often -> Influence?
 Requirements often consist of special words which occur more often than others.
-One example are the in \textcite{Bradner:1997} defined words which indicate a requirement's level.
-This leads to the hypothesis that the some words which occur significantly more often in one category of requirements in the training dataset also influence the classification of the test dataset more towards that category.
+One example are the in \citefield{Bradner:1997}{shorthand} \parencite{Bradner:1997} defined words which indicate a requirement's level.
+This leads to the hypothesis that some words which occur significantly more often in one category of requirements in the training dataset also influence the classification of the test dataset more towards that category.
 In the following, we want to examine our used datasets and present findings which support or refute this hypothesis.
 
 To check this hypothesis we first determine which word of a sentence contributes most to the model's classification result using \ac{LIME}.
@@ -65,7 +65,7 @@ For instance \ac{BERT}'s [CLS] classification output token $\bm{c}$ is high dime
 In our approaches we use a single feed forward \ac{NN} for the classification which consists of 2 neurons yielding $2 \cdot 768 = 1,536$ parameters $\bm{w} \in \mathbb{R}^{768 \times 2}$ and bias $\bm{b} \in \mathbb{R}^2$ which overall results in 1,538 trainable parameters.
 We then apply a softmax layer to obtain probabilities.
 By using two neurons and a softmax layer we try to fit a hyperplane given by its Hesse normal form $ \bm{w}^T \cdot \bm{c} + \bm{b} = \begin{pmatrix} 0 & 0 \end{pmatrix}^T$.
-However, for this approach to succeed we implicitly presuppose that after we generate encodings $\bm{c}_i$ for each requirement $i$, all $c_i$s are linear separable.
+However, for this approach to succeed we implicitly presuppose that after we generate encodings $\bm{c}_i$ for each requirement $i$, all $\bm{c}_i$s are linear separable.
 
 Due to the bad results of our models it is likely that the generated $c_i$s are not linear separable.
 This would mean, that the sequence's vagueness is split across the 768 dimensions of the output vector which is then too complex to be classified by a linear classifier.

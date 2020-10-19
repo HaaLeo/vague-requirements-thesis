@@ -1,9 +1,9 @@
 \subsection{Training}
 \label{chp:study:sec:design:subsec:training}
-Although the transformer we use as integral part of our models are already pre-trained, transfer learning intends to fine-tune those pre-trained models on a domain specific dataset \parencite{Pan:2010}.
-In our case this dataset consists of requirements which are labeled as \textit{vague} or not \textit{not vague}.
+Although the transformers we use as integral part of our models are already pre-trained, transfer learning intends to fine-tune those pre-trained models on a domain specific dataset \parencite{Pan:2010}.
+In our case this dataset consists of requirements which are labeled as \textit{vague} or \textit{not vague}.
 The raw training requirements are fed in our model which then generates predictions indicating how certain it is whether a requirement is vague or not.
-The predictions are used to calculate a loss indicating how well the model performed on classifying the requirements.
+The predictions and the truth labels are used to calculate a loss indicating how well the model performed on classifying the requirements.
 This loss in turn is passed back to the model and used to update the model's weights via backpropagation.
 This process is repeated several loops through the dataset.
 The overall training process is visualized in \cref{fig:study:design:training}.

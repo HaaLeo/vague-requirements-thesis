@@ -9,11 +9,13 @@ Their derived \ac{ASC} model is based on \ac{BERT} and takes as input a \textit{
 The model then outputs the passed aspect's polarity in the review.
 Possible values for the polarity are positive, neutral and negative.
 For instance should the model output "positive" for the aspect "Hard drive" and the review "This laptop has a lightning fast hard drive, but its graphics are really bad.", but "negative" for the same review with the aspect "graphics".
+
 They examine reviews from two domains, namely restaurants and laptops
 Their laptop dataset contains $3845$ review sentences and $3012$ aspects whereas the restaurant dataset is slightly smaller.
 It contains $2676$ sentences and $2365$ aspects.
 They train plain \ac{BERT} and a custom version of \ac{BERT} on both restaurant reviews and laptop reviews.
 The custom version includes a post-training on the extensive dataset which consists of ($100,000$+) sentences.
+
 Using vanilla \ac{BERT} they achieved an accuracy of $75.29\%$ and macro $F_1$ score of $71.91\%$ for the laptop domain and even better for the restaurant domain.
 However, the results obtained using plain \ac{BERT} are the \textit{worst} of their study.
 The post-trained model achieves up to $84.95\%$ accuracy and $76.96\%$ macro $F_1$ score.
@@ -29,6 +31,7 @@ Their dataset is also quite imbalanced with only $35\%$ of the sentences contain
 They train different models on the dataset.
 Their baseline model is similar to our \ac{BERT} based model.
 They use the pre-trained \ac{BERT} version and feed its [CLS] token in a downstream feed forward \ac{NN} for binary classification.
+
 With this model they achieve a precision of $63.20\%$, a recall of $53.16\%$ and a $F_1$ score of $57.74\%$.
 In contrast to the baseline model, their newly proposed \textit{multi-granularity network} additionally incorporates all output tokens of \ac{BERT}.
 This new model achieved $60.41\%$ precision, $61.58\%$ recall and $60.98\%$ $F_1$ score.
@@ -42,6 +45,7 @@ The baseline model again only uses the [CLS] token which is the input for a down
 The more complex model uses the more output token of \ac{BERT}.
 In addition to the [CLS] token, it also uses the output tokens of the sentence's target aspect.
 Those token are then aggregated by an max-pooling layer before and then passed to a fully connected layer.
+
 The authors obtained with vanilla \ac{BERT} a macro $F_1$ score of about $69\%$.
 Their proposed model which uses more output token is able to boost the performance up to $79\%$ indicating that more complex downstream classifier can enhance the performance significantly.
 
@@ -51,6 +55,7 @@ To structure and classify patents according their topics a patent is assigned mu
 The labels are structured hierarchical, where each child label is more specific as its parent label.
 The authors use \ac{BERT} to classify patents and call it PatentBERT, because doing this by hand is a laborious task.
 Their dataset is based on the large \ac{CPC} system which which is a cooperation of the United States Patent and Trademark Office and the European Patent Office.
+
 In their work the authors use the vanilla \ac{BERT} with hyperparameters recommended by \textcite{Devlin:2018} and only use the [CLS] output token for the downstream classification.
 The model is trained with different portions of overall $3,050,615$ patents.
 Although PatentBERT was trained on a massive dataset, this rather simple approach achieves $32.19\%$ precision, $86.06\%$ recall and a $F_1$ score of $46.85\%$.
@@ -62,8 +67,8 @@ One example is Smella, developed by \textcite{Femmer:2017}.
 It uncovers \textit{requirement smells} with a precision of $59\%$ and a recall of $82\%$ whereas our \ac{BERT} based model achieves same recall, but only a precision of $0.36$.
 In contrast to our \textit{vague requirements} Smella's objective is to identify requirement smells.
 Although these objectives are not identical, they are very similar.
-Therefore, we can follow that Smella as an example and rule based approaches in general are severely better in identifying poor requirements.
-This is a very interesting finding, because this indicates that a sophisticated rule-based approaches currently outperform simple transformer-based \ac{ML} approaches.
+Therefore, we can follow that Smella as an example and rule-based approaches in general are severely better in identifying poor requirements.
+This is a very interesting finding, because this indicates that sophisticated rule-based approaches currently outperform simple transformer-based \ac{ML} approaches.
 
 \section{Summary}
 All previously presented approaches try to solve different classification problems using variants of \ac{BERT}.

@@ -36,11 +36,11 @@ All four labeled batches are summarized in \cref{tab:study:objects:crowdsourcing
 % Todo: Is this paragraph necessary
 \subsubsection{\Ac{IRA} per Batch}
 We calculate the \ac{IRA} according to its definition in \cref{chp:fundamentals:sec:inter_rater_agreement:subsec:free_marginal_multirater_kappa} and observe that the results indicate low agreement within each batch.
-The agreement between the raters which contributed to a batch $B$ is indicated $IRA(B)$.
+The agreement between the raters which contributed to a batch $B$ is indicated by $IRA(B)$.
 The two experts achieved an agreement of $0.47$.
 The first crowdsourced batch $B_{C1}$ has an \ac{IRA} of $0$ which indicates no agreement at all.
 On the batch $B_{C2}$ the annotators have an \ac{IRA} of $0.29$.
-These low values for the \ac{IRA} within the crowdsourced batches as well as among the experts indicates the difficulty of judging whether a requirement is vague or not, it \textit{does not} indicate the overall labels' quality.
+These low values for the \ac{IRA} within the crowdsourced batches as well as among the experts indicate the difficulty of judging whether a requirement is vague or not, it \textit{does not} indicate the overall labels' quality.
 The values are listed in \cref{tab:study:objects:crowdsourcing:batches:IRA}.
 \begin{table}[htpb]
     \centering
@@ -66,7 +66,7 @@ However, it remains unclear what is an appropriate threshold for the \ac{IRA} to
 Although \textcite{Landis:1977} introduced a fixed threshold, others state doubts and even argue that inevitably, those are arbitrary \parencites{Dunn:1989}{Brennan:1992}.
 We indicate the \ac{IRA} between two datasets $Q$ and $P$ by $IRA(Q, P)$.
 For our experiment we set the baseline for sufficient similarity to the \ac{IRA} between the two experts $E1$ and $E2$.
-With this we can define the following sufficient \textit{quality condition}:
+With this we can define the following sufficient quality condition $QC$:
 \begin{description}
     \item[$QC$]: Given a dataset $Q$ and a dataset $P_E$ which was aggregated from two separate expert datasets $P_{E1}$ and $P_{E2}$,\\
     $Q$ is of sufficient quality if $IRA(Q, P_E) \ge IRA(P_{E1}, P_{E2})$ holds.
