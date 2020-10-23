@@ -1,10 +1,10 @@
 \section{ERNIE 2.0}
 \label{chp:approach:sec:ernie2.0}
 
-According to \textcite{Sun:2019a} the aim of most pre-training routines are based on the co-occurrence of sentences or words.
+According to \textcite{Sun:2019a} most pre-training routines aim to capture the co-occurrence of sentences or words.
 Further, they argue that with such a pre-training procedure other valuable information like lexical or semantic information is not considered.
 To solve this issue, they proposed a new learning framework called \ac{ERNIE2.0}.
-This framework enables a model to learn multiple tasks without forgetting the the knowledge learned by the previous tasks.
+This framework enables a model to learn multiple tasks without forgetting the knowledge learned by the previous tasks.
 To accomplish this, their continual multi-task learning method integrates the new task by initializing a model with the previously learned parameters and then trains for the newly added task together with the prior tasks.
 
 They pre-train a model, called \ac{ERNIE2.0} model, using the \ac{ERNIE2.0} framework to showcase that their approach works .
@@ -12,10 +12,10 @@ Like \ac{BERT} and \ac{DistilBERT} the model is based on the transformer archite
 To ease the comparison with \ac{BERT} they decide to use the same architecture but pre-train it with the \ac{ERNIE2.0} framework.
 However, the input of the \ac{ERNIE2.0} model is slightly different.
 In addition to the position, segment and token embedding they use another \textit{task embedding}.
-The purpose of this new embedding is \textit{"to represent the characteristic of different tasks"} \parencite{Sun:2019a}.
+The purpose of this new embedding is \textit{"to represent the characteristic[s] of different tasks"} \parencite{Sun:2019a}.
 They define word-aware and semantic aware pre-training tasks to capture lexical and syntactic information during the training phase.
 The exact explanation of those tasks is not in the scope of this thesis. \parencite{Sun:2019a}
 
 For our classification task we use the \ac{ERNIE2.0} model which was pre-trained using the \ac{ERNIE2.0} framework.
 Due to the similar architecture to \ac{BERT} the \ac{ERNIE2.0} model again has a [CLS] output token which can be used for downstream classification tasks.
-Analogically to the prior two models, we use a single layer feed forward \ac{NN} with 1,538 trainable parameters to classify requirements as vague or not.
+Similarly to the prior two models, we use a single layer feed forward \ac{NN} with 1,538 trainable parameters to classify requirements as vague or not.

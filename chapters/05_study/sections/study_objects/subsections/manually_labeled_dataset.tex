@@ -2,28 +2,28 @@
 \label{chp:study:sec:study_objects:dataset_creation:manual_labeling}
 The crowdsourced dataset introduced in \cref{chp:study:sec:study_objects:crowdsourced_dataset} resulted in discarding a major part of the source dataset's requirements.
 To avoid this data loss we decide to manually label the requirements which were discarded when generating $D_{crowd}$.
-This dataset is called $D_{manual}$ and includes of all the remaining 1228 requirements.
-It was labeled by the author of this thesis as an expert and consists of 301 as \textit{vague} labeled requirements and 927 requirements with \textit{not-vague} annotations.
+This dataset is called $D_{manual}$ and includes of all the remaining $1,228$ requirements.
+It was labeled by the author of this thesis as an expert and consists of $301$ requirements labeled as \textit{vague} and 927 requirements with \textit{not-vague} annotations.
 Further, we want to introduce the union of those two datasets as $D_{all} = D_{crowd} \cup D_{manual}$.
 All study objects and their properties are shown in \cref{tab:study:objects:all_datasets}
 % Todo: check page break
-\newpage
+% \newpage
 \begin{table}[htpb]
     \centering
     \begin{tabular}{l | l l l l}
         \toprule
         Dataset & Vague & Not-Vague & Overall & Proportion Vague Labels \\
         \midrule
-        $D_{crowd}$ & 288 & 1260 & 1548 & $\approx19\%$\\
-        $D_{manual}$ & 301 & 927 & 1228 & $\approx25\%$\\
+        $D_{crowd}$ & $288$ & $1,260$ & $1,548$ & $\approx19\%$\\
+        $D_{manual}$ & $301$ & $927$ & $1,228$ & $\approx25\%$\\
         \midrule
-        $D_{all}$ & 589 & 2187 & 2776 &  $\approx21\%$\\
+        $D_{all}$ & $589$ & $2,187$ & $2,776$ &  $\approx21\%$\\
         \bottomrule
     \end{tabular}
     \caption[Overview of all study objects]{Overview of all study objects and their properties.}\label{tab:study:objects:all_datasets}
 \end{table}
 
-From \cref{tab:study:objects:all_datasets} one observers that all datasets contain a rather little amount of vague labeled requirements.
-The exact proportion of vague labels within a dataset is heavily coupled to the dataset's requirements, not to the rater/s who labeled it.
+From \cref{tab:study:objects:all_datasets} one observers that all datasets contain a rather small amount requirements labeled vague.
+The exact proportion of vague labels within a dataset is heavily dependent on the dataset's requirements, not on the rater/s who labeled it.
 Throughout the whole labelling process we aimed to obtain datasets whose quality is as close as possible to an expert dataset.
 Since $D_{manuall}$ was labeled by an expert we assume its quality is rather high.
