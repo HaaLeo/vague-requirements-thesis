@@ -20,7 +20,7 @@
 %%   \import{<path to file>}{<filename>.pdf_tex}
 %% Alternatively, one can specify
 %%   \graphicspath{{<path to file>/}}
-%% 
+%%
 %% For more information, please see info/svg-inkscape on CTAN:
 %%   http://tug.ctan.org/tex-archive/info/svg-inkscape
 %%
@@ -76,7 +76,7 @@
     \put(0.93657382,0.08087818){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$F_1$\end{tabular}}}}%
     \put(0.93940904,0.04489779){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$AP$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=10]{./figures/study/design/Evaluation.pdf}}%
-    \put(0.84089343,0.26093775){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$TP$, $FP$, $TN$ and $FN$\end{tabular}}}}%
+    \put(0.84089343,0.26093775){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$TPs$, $FPs$, $TNs$ and $FNs$\end{tabular}}}}%
     \put(0.95128886,0.00097713){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Metrics\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{./figures/study/design/Evaluation.pdf}}%
   \end{picture}%
