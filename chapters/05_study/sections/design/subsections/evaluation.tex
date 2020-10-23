@@ -9,7 +9,7 @@ To evaluate our models' generalization capabilities we use the to the models unk
 
 Although we use a different dataset for the evaluation, the overall process is quite similar to the training.
 The test data is passed to the model which again produces predictions.
-These predictions are again compared to the true labels but instead of calculating a loss and pass it back to the model for optimization, this comparison is used to determine the \ac{TP}, \ac{FP}, \ac{TN} and \ac{FN} of the model's prediction.
+These predictions are again compared to the true labels but instead of calculating a loss and pass it back to the model for optimization, this comparison is used to determine the \acp{TP}, \acp{FP}, \acp{TN} and \acp{FN} of the model's prediction.
 With those we can then calculate the metrics precision, recall, $F_1$ score and \ac{AP} as defined in \cref{chp:fundamentals:sec:metrics} with which we can judge the models' performance.
 This whole process is illustrated in \cref{fig:study:design:evaluation}.
 

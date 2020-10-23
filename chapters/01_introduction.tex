@@ -18,7 +18,7 @@ Further, the later design changes are introduced in the development process, the
 
 It is therefore desirable to avoid those drawbacks by recognizing misleading requirements at an early stage so that faulty requirements can be reformulated in an unambiguous way before the next development step.
 However, this is not trivial since often domain knowledge is required to uncover and resolve the issues \parencite{Femmer:2017}.
-For example in "The software must include a service \textit{which} must be accessible via a user interface." it is unclear whether \textit{which} relates to \textit{The software} or \textit{service}.
+For example in "The software must include a service \textit{which} must be accessible via a user interface." it is unclear whether \textit{which} relates to \textit{The software} or \textit{a service}.
 In this case the requirement contains a requirement defect called \textit{vague pronouns}.
 Another example for a requirement defect is that of \textit{loopholes}.
 A requirement stating that the software should be tested \textit{as far as possible} leaves the reader room for interpretation and thus is ambiguous.
@@ -47,19 +47,19 @@ The aim of this thesis is to further explore the capabilities of modern \acp{NN}
 In order to improve \ac{RE} we make the following contributions:
 \begin{enumerate}
     \item Since recent research endorses \acp{NN}' capabilities to solve complex tasks but has not yet explored this in the context of vague requirements, this thesis evaluates whether and to what extent state of the art \acp{NN} are capable to classify requirements as \textit{vague} and \textit{not vague}.
-    \item To successfully apply transfer learning one needs a set of labeled datapoints. However, there are no such datasets publicly available.
+    \item To successfully apply transfer learning one needs a set of labeled datapoints. However, as the time of writing there are no such datasets publicly available.
         Therefore, we create a dataset containing requirements and labels which indicate whether the corresponding requirement is vague or not.
     \item It is known that recent \ac{ML} approaches perform well on \ac{NLP} tasks.
         However, they have not been compared among each other in the context of vague requirements.
         Therefore, we compare different \ac{ML} approaches among each other to determine which performs best using dedicated metrics.
 \end{enumerate}
 
-The thesis is structured as follows.
-In \cref{chp:fundamentals} we establish the knowledge fundamentals which are required throughout this thesis.
+The thesis is structured as follows:
+In \cref{chp:fundamentals} we establish the fundamental knowledge fundamentals which is required throughout this thesis.
 After that, we examine related research in the field of \ac{RE}.
 The specific approach we use is introduced in \cref{chp:approach} and its sections.
-To assess how good this approach is we carry out a study which we describe in depth in \cref{chp:study}.
+To assess this approach is we carry out a study which we describe in depth in \cref{chp:study}.
 Threats to the study's validity are presented in \cref{chp:threats_to_validity}.
-\Cref{chp:relation_to_existing_evidence} includes the comparison of our approach and its results to other approaches.
+\Cref{chp:relation_to_existing_evidence} includes the comparison of our approach and its results to other existing approaches.
 In \cref{chp:future_work} we derive opportunities for future research.
-The conclusion of this thesis is given in \cref{chp:conclusion}.
+Finally, the conclusion of this thesis is given in \cref{chp:conclusion}.

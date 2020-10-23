@@ -447,7 +447,7 @@
          id="tspan977"
          x="167.74788"
          y="10.654004"
-         style="stroke-width:0.264583">$TP$, $FP$, $TN$ and $FN$</tspan></text>
+         style="stroke-width:0.264583">$TPs$, $FPs$, $TNs$ and $FNs$</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
