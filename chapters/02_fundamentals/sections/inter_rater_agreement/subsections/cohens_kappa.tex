@@ -1,7 +1,7 @@
 \subsection{Cohen's Kappa}
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:cohens_kappa}
 Cohen's Kappa $\kappa$ was introduced by \textcite{Cohen:1960} in 1960.
-He states the hypothesis that even if all raters are unaware of the correct answer and purely guessing, nevertheless some datapoints are congruent.
+He states the hypothesis that even if all raters are unaware of the correct answer and purely guess, nevertheless some datapoints are congruent.
 In his opinion random congruency should be considered by agreement statistics.
 To tackle this issue he introduced the kappa statistics to account for the random agreement among two raters.
 Similar to other correlation statistics, it can take values in the range from -1 to 1.
@@ -15,7 +15,7 @@ The overall formula of Cohen's $\kappa$ is then given by the following equation:
 \end{equation}
 
 Consider two raters, A and B respectively, assigning $N$ datapoints to $C$ categories.
-$n_{c_i, c_j}$ indicates how many datapoints were assigned by rater $A$ to class $c_i$ and to $c_j$ by rater $B$.
+$n_{c_i, c_j}$ indicates how many datapoints were assigned to class $c_i$ by rater $A$ while the same datapoints were assigned to class $c_j$ by rater $B$.
 $p_{A, c_i}$ represents the proportion of assignments that were assigned to class $c_i$ by rater $A$.
 An overview for $C=3$ is given in \cref{tab:cohens_kappa_sample_definition}.
 
@@ -67,4 +67,4 @@ Here two raters rated 50 requirements as \textit{Good} or \textit{Bad}.
 \end{table}
 
 Given \cref{tab:cohens_kappa_sample_data}, one can directly calculate $P_o = \frac{ 20 + 15 }{50} = 0.7$ and $P_e = 0.6 \cdot 0.5 + 0.4 \cdot 0.5 = 0.5$.
-Now $P_o$ and $P_e$ are plugged in \cref{eq:Cohens_kappa} which yields a kappa $\kappa = \frac{0.7 - 0.5}{1 - 0.5} = 0.4$.
+Now $P_o$ and $P_e$ are plugged into \cref{eq:Cohens_kappa} which yields a kappa $\kappa = \frac{0.7 - 0.5}{1 - 0.5} = 0.4$.

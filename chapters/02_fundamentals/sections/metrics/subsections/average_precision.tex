@@ -13,10 +13,9 @@ One metric which considers recall as well as precision is \ac{AP}.
     AP = \sum_{i=1}^n {p(i)\Delta r(i)}
 \end{equation}
 
-Where $p(i)$ is the precision taking into account the first $i$ elements.
-$\Delta r(i)$ indicates the the recall change from the $i-1$th to the $i$th item.
+Where $p(i)$ is the precision taking into account the first $i$ elements and $\Delta r(i)$ indicates the the recall change from the $i-1$th to the $i$th item.
 With this metric the order of the sequence is crucial.
-An algorithm which manages to sort a sequence of elements that all relevant items are listed first achieves higher AP than an algorithm that performs poorly on the sorting task.
+An algorithm which manages to sort a sequence of elements in a way that all relevant items are listed first achieves higher AP than an algorithm that performs poorly on the sorting task.
 
 Let us consider the following example.
 An algorithm was trained to return all relevant items from a dataset.
@@ -44,7 +43,7 @@ Now we can calculate the \ac{AP} according to \cref{eq:average_precision}:
 \label{chp:fundamentals:sec:metrics:subsec:average_precision:interpretation}
 The overall interpretation of \ac{AP} is intuitive: The more relevant documents are ranked at the top of the returned sequence the higher will \ac{AP} be.
 However, in contrast to precision and recall, it is more difficult to judge whether the retrieved value for \ac{AP} is "good" or "bad".
-Should we consider a system which yields $\ac{AP}=0.66$ as a good?
+Should we consider a system which yields $\ac{AP}=0.66$ as good?
 In this part we want to address this issue and provide a tangible interpretation of the \ac{AP} value.
 
 First we want to take a look at different example sequences and their corresponding \ac{AP} values.

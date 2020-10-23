@@ -6,7 +6,7 @@ In this subsection we want to introduce the transformer and its architecture.
 
 \subsubsection{High Level Architecture}
 As its name suggests a transformer takes an input sequence and transforms it to a different output sequence.
-In the context of machine translation it could take the sequence "Tom went home, because he was tired." and translate it to another language, for example german: "Tom ging nach Hause, weil er müde war.".
+In the context of machine translation it could take the sequence "Tom went home, because he was tired." and translate it to another language, for example to german: "Tom ging nach Hause, weil er müde war.".
 The transformer consists of two main components: A stack of \textit{encoders} and a corresponding \textit{decoder} stack.
 \Textcite{Vaswani:2017} use six encoders and six decoders in each stack, but the value six is arbitrary and one could use more or less en-/decoders.
 \Cref{fig:fundamentals:machine_learning:transformer} shows an arbitrary number of decoders and encoders which illustrates the high level architecture of a transformer.
@@ -23,7 +23,7 @@ In the following, we will focus on the encoders, because we will not further use
 Before the input can be passed to the encoder stack it must be embedded, meaning that the input sequence is converted to a tensor.
 This tensor is then passed through the encoder stack.
 One encoder itself consists of an attention layer and and a subsequent fully connected feed forward \ac{NN} as shown in fig \cref{fig:fundamentals:machine_learning:encoder}.
-\pagebreak % Todo check page breaks
+% \pagebreak % Todo check page breaks
 \begin{figure}[htpb]
     \centering
     % \def\svgwidth{\columnwidth} % Scale for height instead
@@ -33,8 +33,8 @@ One encoder itself consists of an attention layer and and a subsequent fully con
 
 \subsubsection{Self Attention}
 The layer which enables the transformer to perform very well on a wide range of \ac{NLP} tasks is its attention layer.
-\Textcite{Vaswani:2017} describe attention as \textit{"as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors"}.
-The authors use the "Scaled Dot-Product Attention".
+\Textcite{Vaswani:2017} describe attention \textit{"as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors"}.
+The authors use the \textit{Scaled Dot-Product Attention}.
 It is built by computing the dot product of all keys with all queries.
 Then it is scaled by $\frac{1}{\sqrt{d_k}}$ where $d_k$ is the dimension of the keys.
 According to the authors, this leads to more stable gradients.

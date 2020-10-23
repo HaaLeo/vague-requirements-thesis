@@ -2,7 +2,7 @@
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:scotts_pi}
 \textcite{Scott:1955} developed another inter-observer agreement metric.
 It was introduced specifically to measure the agreement for survey research.
-This field of research includes annotating textual entities with classes by different annotators which is a common use case in \ac{NLP}.
+This field of research includes textual entities being annotated with classes by different annotators which is a common use case in \ac{NLP}.
 Its aim is to measure the agreement among raters' multiple responses which are classified in exclusive categories.
 According to \textcite{Scott:1955}, the percent of answers which the raters agree on as well as the \textit{consistency index S} introduced by \textcite{Bennett:1954} are biased.
 Under the assumption that annotators have the same distribution of answers, he introduced his index $\pi$, referred to as \textit{Scott's $\pi$}, which has the same formula as \hyperref[chp:fundamentals:sec:inter_rater_agreement:subsec:cohens_kappa]{Cohen's kappa} (\cref{eq:Cohens_kappa}).
@@ -13,7 +13,7 @@ Under the assumption that annotators have the same distribution of answers, he i
 
 Here $P_o$ is again the observed percentage of agreement and $P_e$ is the percentage of agreement which can be expected merely by chance.
 Similar to Cohen's kappa Scott's $\pi$ is limited to two raters.
-The only difference of Scott's $\pi$ to Cohen's kappa is the calculation of the by chance expected agreement $P_e$.
+The only difference between Scott's $\pi$ and Cohen's kappa is the calculation of the agreement expected by chance $P_e$.
 In contrast to \textcite{Cohen:1960} who uses the squared geometric mean of marginal proportions, \textcite{Scott:1955} uses their squared arithmetic mean.
 Following the notation of \cref{tab:cohens_kappa_sample_definition} this yields:
 

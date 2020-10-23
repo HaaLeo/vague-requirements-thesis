@@ -2,20 +2,20 @@
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:fleiss_kappa}
 Cohen's kappa and Scott's $\pi$ focus only the agreement between two raters.
 To overcome this limitation \textcite{Fleiss:1971} introduced another kappa statistics as a generalization of Scott's $\pi$ \parencite{Scott:1955}.
-Consider $N$ subjects, where each subject is assigned $n$ times to one of $C$ classes.
-How many raters have assigned the $i$th subject to the $j$th class is indicated by $n_{ij}$.
-$p_j$ is the proportion of all ratings which were classified to the $j$th class and is calculated as:
+Consider $N$ datapoints, where each datapoint is assigned $n$ times to one of $C$ classes by different raters.
+How many raters have assigned the $i$th datapoint to the $j$th class is indicated by $n_{ij}$.
+$p_j$ is the proportion of all assignments which were made to the $j$th class and is calculated as:
 
 \begin{equation}\label{eq:fleiss_pj}
     p_j = \frac{1}{Nn}\sum_{i=1}^N n_{ij}
 \end{equation}
 
-The agreement of $n$ raters on the $i$th subject, indicated by $P_i$, is the proportion of agreeing rater pairs out of the $n(n-1)$ possible pairs and given by the following:
+The agreement of $n$ raters on the $i$th datapoint, indicated by $P_i$, is the proportion of agreeing rater pairs out of the $n(n-1)$ possible pairs and given by the following:
 
 \begin{equation}\label{eq:fleiss_Pi}
     \begin{aligned}
         P_i &= \frac{1}{n(n-1)} \sum_{j=1}^C n_{ij} (n_{ij}-1) \\
-        &= \frac{1}{n(n-1)} (\sum_{j=1}^C n_{ij}^2 - n)\\
+        &= \frac{1}{n(n-1)} \left[\left(\sum_{j=1}^C n_{ij}^2 \right) - n\right]\\
     \end{aligned}
 \end{equation}
 
@@ -31,7 +31,7 @@ The agreement achieved merely by chance $\bar{P_e}$ is similar to \textcite{Scot
     \bar{P_e} = \sum_{j=1}^C p_j^2
 \end{equation}
 
-According to \textcite{Fleiss:1971}, the term $1-\bar{P_e}$ measures the agreement which can be achieved in extent to what would be possible by chance.
+According to \textcite{Fleiss:1971}, the term $1-\bar{P_e}$ measures the agreement which can be achieved in extent to the agreement which is obtained by chance.
 The actual agreement including the agreement by chance is represented by $\bar{P} - \bar{P_e}$.
 Then the normalized kappa statistics is similar to \textcite{Cohen:1960} given by:
 
@@ -41,4 +41,4 @@ Then the normalized kappa statistics is similar to \textcite{Cohen:1960} given b
 
 When applying Fleiss' kappa to the sample data of \cref{tab:cohens_kappa_sample_data} one can easily see that all $P_i$s are either $1$ when the raters agree or $0$ if one rater votes for "Good" and one for "Bad".
 Considering this, \cref{eq:fleiss_P_bar} simplifies to $\bar{P} = \frac{20+15}{50} = 0.7$.
-Since the expected agreement purely achieved by chance is calculated like for Scott's $\pi$, one immediately notices that for this test data the two metrics are equal $\kappa_{fleiss} = \pi = 0.\overline{39}$ like one would expect.
+Since the expected agreement purely achieved by chance is calculated in the same way as for Scott's $\pi$, one immediately notices that for this test data the two metrics are equal $\kappa_{fleiss} = \pi = 0.\overline{39}$ like one would expect.
