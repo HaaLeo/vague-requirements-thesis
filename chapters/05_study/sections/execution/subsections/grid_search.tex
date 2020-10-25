@@ -3,19 +3,19 @@
 \label{chp:study:sec:execution:subsec:gridsearch}
 Training \ac{ML} models involves the setting of hyperparameters.
 Those have a direct impact on the performance of a trained model and the user must set them appropriately to optimize the learning routine and with that the model \parencite{Claesen:2015}.
-We perform a grid search to find a good parameter combination for each model.
-We base the parameter grid for each model on the corresponding recommendations of the authors.
+We perform a grid search to find a suitable parameter combination for each model.
+We base the parameter grid for each model on the corresponding recommendations of the models' authors.
 Further, we take a re-sampling strategy of our dataset into account for the grid search, because we deal with imbalanced data.
 
 \subsubsection{Parameter Grid}
 \label{chp:study:sec:execution:subsec:gridsearch:parameter_grid}
 All our models are transformer-based and involve multiple hyperparameters.
 Transformer-based models have the \textit{maximum length} of a sequence as hyperparameter.
-Input sequences are truncated when they exceed this limit and are padded with 0 if they are shorter than this parameter.
+Input sequences are truncated when they exceed this limit and are padded with zeros if they are shorter than this parameter.
 Due to our limited dataset we want to perform $k$-fold cross validation.
 In order to determine how many \textit{folds} we want to use we add this as parameter to our grid as well.
-For the training of the models we use an imbalanced dataset.
-To take account for that imbalance we consider different \textit{re-sampling} strategies.
+For the training of the models we use an imbalanced dataset with the majority being not vague.
+To take that imbalance into account we consider different \textit{re-sampling} strategies.
 \textit{Random down-sampling} randomly discards datapoints of the majority class to create a balanced dataset for the training phase.
 \textit{Random up-sampling} achieves the same by randomly duplicating requirements of the minority class.
 The parameters for \textit{learning rate}, \textit{epochs} and \textit{batch size} follow the the recommendations of the base models' authors.
@@ -65,6 +65,7 @@ The parameter grid for \ac{BERT} and \ac{DistilBERT} is shown in \cref{tab:study
 
 The parameter grid for \ac{ERNIE2.0} is similar, however \textcite{Sun:2019a} recommend different learning rates.
 This leads to the parameter grid for \ac{ERNIE2.0} shown in \cref{tab:study:execution:paramter_grid:ERNIE2.0}
+\pagebreak %Todo check page break
 \begin{table}[htpb]
     \centering
     \begin{tabular}{ p{3.5cm} p{1.5cm} p{2cm} p{1.5cm} p{1.6cm} p{1.5cm} }
@@ -124,6 +125,7 @@ For a detailed description of this approach we refer to \citeauthor{Smith:2018}'
 
 Performing the grid search with the given parameter grids the parameter combinations which achieved the best $F_1$ score are listed in \cref{tab:study:execution:grid_search:results}.
 All three models achieved a $F_1$ score around $0.5$.
+\pagebreak %Todo check page break
 \begin{table}[htpb]
     \centering
 \begin{tabular}{l | p{2.9cm} l p{1.5cm} l p{1.6cm} l }

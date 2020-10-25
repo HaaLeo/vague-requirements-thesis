@@ -1,7 +1,7 @@
 \subsection{Training}
 \label{chp:study:sec:execution:subsec:training}
 With the found hyperparameters we now train our models on the datasets.
-The training phase is split in two separate runs which use different datasets.
+The training phase is split into two separate runs which use different datasets.
 
 \subsubsection{First Run}
 \label{chp:study:sec:execution:subsec:training:first_run}
@@ -10,14 +10,14 @@ In the first run we train all three models with the best parameter configuration
 After that we use the trained models to obtain predictions for the test dataset $D_{crowd_{test}}$.
 Considering the correctly vague classified requirements as \acp{TP} we then calculate the metrics introduced in \cref{chp:fundamentals:sec:metrics}.
 The resulting metrics indicate that the models performed rather poorly on the classification task.
-For instance, no model achieves a $F_1$ score greater than $0.6$ and no \ac{AP} greater than $0.5$. %Todo: Precision und recall here?
+For instance, no model achieves an $F_1$ score greater than $0.6$ or an \ac{AP} greater than $0.5$.
 Instead of listing all results here, we refer to the \cref{chp:study:sec:results} where the complete results of all runs are shown comprehensively.
 
 % Why we create D_{manual}
 Our trained models perform rather poorly in correctly classifying the requirements of $D_{crowd_{test}}$.
 According to \textcite{Domingos:2012} a \textit{"dumb algorithm with lots and lots of data [can beat] a clever one with modest amounts of it."}.
 It follows, that more data leads to better performing algorithms and \ac{ML} models.
-Since we discarded almost the half of all requirements when creating $D_{crowd}$, the concern raises whether our models have had enough data to train properly.
+Since we discarded almost half of all requirements when creating $D_{crowd}$, raises the question of whether our models have had enough data to train properly.
 To encounter this concern and to include all available requirements in the dataset we relabeled all discarded requirements like we described in \cref{chp:study:sec:study_objects:dataset_creation:manual_labeling}.
 
 \subsubsection{Second Run}
