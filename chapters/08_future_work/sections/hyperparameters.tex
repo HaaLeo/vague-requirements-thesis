@@ -5,17 +5,17 @@ In the following two subsections we want to show two enhancements for future res
 
 \subsection{Re-Sampling Strategy}
 \label{chp:future_work:sec:hyperparameters:re_sampling_strategy}
-The dataset we used is very imbalanced.
-Only about a fifth of its datapoints are labeled as vague.
-Therefore, we considered two re-sampling strategies in the grid-search, namely random up-sampling and random down-sampling.
-Those techniques take into account a datasets imbalance by randomly duplicating entries of minority class or discarding samples of the majority class.
+The datasets we used are very imbalanced.
+Only about a fifth of their datapoints are labeled as vague.
+Therefore, in the grid-search, we considered two re-sampling strategies, namely random up-sampling and random down-sampling.
+Those techniques take into account a dataset's imbalance by randomly duplicating entries of the minority class or discarding samples of the majority class.
 
 However, more sophisticated re-sampling techniques exist.
 One example is \ac{SMOTE} \parencite{Chawla:2002}.
-Instead of randomly duplicating entries of the minority class, it generates new samples of the minority class which are "close" to the other datapoints.
+Instead of randomly duplicating entries of the minority class, \ac{SMOTE} generates new samples of the minority class which are "close" to the other datapoints.
 For an extensive explanation of \ac{SMOTE} we refer to the original paper of \textcite{Chawla:2002} instead.
 
-With this technique and other more complex ones the corresponding authors were able to enhance the performance gain of their models significantly.
+With this technique and other more complex ones \parencite{Li:2008} the corresponding authors were able to enhance the performance gain of their models significantly.
 Therefore, future studies should consider more advanced re-sampling strategies and examine their impact on the learning phase of a model.
 
 \subsection{Search Technique}
@@ -24,6 +24,6 @@ Hyperparameters can be obtained by different techniques.
 In the study we use a basic grid-search.
 According to \textcite{Bergstra:2012} not all hyperparameters influence a model's performance equally and therefore grid-search is a poor choice.
 Recent research has proposed different alternatives for a simple grid-search, for example \textit{random search} \parencite{Bergstra:2012}.
-Instead of defining a parameter grid and using the combination with which the best performance was achieved, with random search one randomly picks parameters within a range.
+Instead of defining a hyperparameter grid and using the best performing hyperparameter combination, with random search one randomly picks hyperparameters from a predefined range.
 
-Since the used hyperparameters directly impact a model's performance \parencite{Claesen:2015}, future research should consider the usage of more advanced techniques for the hyperparameter search like for example random search.
+Since the used hyperparameters directly impact a model's performance \parencite{Claesen:2015}, future research should consider the usage of more advanced hyperparameter search techniques such as random search.

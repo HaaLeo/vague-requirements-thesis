@@ -4,7 +4,7 @@ Our research indicates that after a transformer encodes each requirement, the re
 However, this does not mean that the datapoints are not separable at all.
 To examine whether the resulting encodings are separable, one should consider advanced techniques.
 One possibility is to apply feature transformations to transform the features to another space in which the datapoints indeed are separable.
-To achieve this, one should consider a more complex \ac{NN} architecture as downstream classifier, for instance using more layers with more trainable parameters to capture the complexity of the classification task.
-Another way is to incorporate not only the first [CLS] output token of the transformers, but further output token like \textcite{Gao:2019} do.
-There are various more complex choices for a downstream classifier.
+To achieve this and to capture the complexity of the classification task, one should consider a more complex \ac{NN} architecture as downstream classifier, for instance using more layers with more trainable parameters.
+Another way to enhance the models is to incorporate additional output tokens like \textcite{Gao:2019} do and not only the [CLS] output token of a model.
+There exist various more complex choices for a downstream classifier.
 Future research should examine whether and to what extent the use of more complex downstream classifiers enhances the classification results.

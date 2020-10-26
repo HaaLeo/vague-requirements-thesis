@@ -1,25 +1,25 @@
 \chapter{Relation to Existing Evidence}
 \label{chp:relation_to_existing_evidence}
-From the previous section we see that our models perform rather poorly.
-In this section we want to introduce approaches which also use transformer-based models and discuss differences and similarities of their approaches and ours.
+In this section we introduce approaches which also use transformer-based models and discuss differences and similarities of their approaches and ours.
+At the end of this chapter we compare their results with ours.
 
 \section{BERT Post-Training for Review Reading Comprehension}
 \Textcite{Xu:2019} use \ac{BERT} for \ac{ASC} on product reviews.
 Their derived \ac{ASC} model is based on \ac{BERT} and takes a \textit{review} and an \textit{aspect} as input.
 The model then outputs the passed aspect's polarity in the review.
 Possible values for the polarity are positive, neutral and negative.
-The model should for instance output "positive" for the aspect "Hard drive" and the review "This laptop has a lightning fast hard drive, but its graphics are really bad.", but "negative" for the same review with the aspect "graphics".
+Given the example review "This laptop has a lightning fast hard drive, but its graphics are really bad.", the model should output "positive" for the aspect "Hard drive", but "negative" for the same review with the aspect "graphics".
 
 They examine reviews from two domains, namely restaurants and laptops.
 Their laptop dataset contains $3,845$ review sentences and $3,012$ aspects whereas the restaurant dataset is slightly smaller.
 It contains $2,676$ sentences and $2,365$ aspects.
 They train plain \ac{BERT} and a custom version of \ac{BERT} on both restaurant reviews and laptop reviews.
-The custom version includes a post-training on the extensive dataset which consists of $100,000$+ sentences.
+The custom version includes an additional post-training step on an extensive dataset consisting of $100,000$+ sentences.
 
 Using vanilla \ac{BERT} they achieved an accuracy of $75.29\%$ and macro $F_1$ score of $71.91\%$ for the laptop domain and even better for the restaurant domain.
 However, the results obtained using plain \ac{BERT} are the \textit{worst} of their study.
 The post-trained model achieves up to $84.95\%$ accuracy and $76.96\%$ macro $F_1$ score.
-The authors conclude that their post-training technique is a legitimate technique to boost \ac{BERT} based models.
+The authors conclude that their post-training technique is a legitimate technique to boost \ac{BERT}-based models.
 Further, their initial smaller dataset significantly limited \ac{BERT}'s performance gain.
 Since their initial dataset is even larger than our dataset $D_{all}$, this indicates that our results may are limited by the dataset's extent as well.
 
@@ -29,14 +29,14 @@ They first define $18$ different \textit{propaganda techniques}.
 With this definitions they annotate $7,485$ of $21,230$ sentences to indicate which propaganda techniques each sentence contains.
 Their dataset is also quite imbalanced with only $35\%$ of the sentences containing propaganda.
 They train different models on the dataset.
-Their baseline model is similar to our \ac{BERT} based model.
+Their baseline model is similar to our \ac{BERT}-based model.
 They use the pre-trained \ac{BERT} version and feed its [CLS] token in a downstream feed forward \ac{NN} for binary classification.
 
 With this model they achieve a precision of $63.20\%$, a recall of $53.16\%$ and a $F_1$ score of $57.74\%$.
 In contrast to the baseline model, their newly proposed \textit{multi-granularity network} additionally incorporates all output tokens of \ac{BERT}.
 This new model achieved $60.41\%$ precision, $61.58\%$ recall and $60.98\%$ $F_1$ score.
 The authors conclude that the use of all output tokens can be utilized to increase a model's performance.
-Since we only use as simple downstream \ac{NN}, the usage of a more complex classifier which leverages all output tokens could increase our models' performance as well.
+Since we only use a simple downstream \ac{NN}, the usage of a more complex classifier which leverages all output tokens could increase our models' performance as well.
 
 \section[Target-Dependent Sentiment Classification With BERT]{Target-Dependent Sentiment Classification With \ac{BERT}}
 \Textcite{Gao:2019} use \ac{BERT} to derive different models for aspect based sentiment analysis whose aim is to predict the polarity of a sentence's phrase.
@@ -44,7 +44,7 @@ They use the vanilla implementation of \ac{BERT} as baseline and use a dataset w
 The baseline model again only uses the [CLS] token which is the input for a downstream \ac{NN}.
 The more complex model uses more output tokens of \ac{BERT}.
 In addition to the [CLS] token, it also uses the output tokens of the sentence's target aspect.
-Those tokens are then aggregated by a max-pooling layer before and are then passed to a fully connected layer.
+Those tokens are then aggregated by a max-pooling layer before they are passed to a fully connected layer.
 
 With vanilla \ac{BERT} the authors obtained a macro $F_1$ score of about $69\%$.
 Their proposed model which uses more output tokens is able to boost the performance up to $79\%$ indicating that more complex downstream classifiers can enhance the performance significantly.
@@ -53,28 +53,28 @@ Their proposed model which uses more output tokens is able to boost the performa
 Another transformer-based approach is introduced by \textcite{Lee:2019}.
 To structure and classify patents according their topics a patent is assigned multiple labels.
 The labels are structured hierarchical, where each child label is more specific as its parent label.
-The authors use \ac{BERT} to classify patents and call it PatentBERT, because doing this by hand is a laborious task.
+The authors use a \ac{BERT}-based model called PatentBERT to classify patents because doing this by hand is a laborious task.
 Their dataset is based on the large \ac{CPC} system which is a cooperation of the United States Patent and Trademark Office and the European Patent Office.
 
 In their work the authors use the vanilla \ac{BERT} with hyperparameters recommended by \textcite{Devlin:2018} and only use the [CLS] output token for the downstream classification.
 The model is trained with different portions of overall $3,050,615$ patents.
 Although PatentBERT was trained on a massive dataset, this rather simple approach achieves $32.19\%$ precision, $86.06\%$ recall and a $F_1$ score of $46.85\%$.
-This indicates that an extensive dataset is not sufficient to significantly enhance the performance of a model.
+Those results are quite similar to ours and indicate that an extensive dataset alone is not sufficient to significantly enhance the performance of a model.
 
 \section{Smella}
 When we compare our results from \cref{chp:study:sec:results} with a rule-based approach, one immediately observes that our models perform rather poorly.
 One example is Smella, developed by \textcite{Femmer:2017}.
-It uncovers \textit{requirement smells} with a precision of $59\%$ and a recall of $82\%$ whereas our \ac{BERT} based model achieves same recall, but only a precision of $36\%$.
-In contrast to our \textit{vague requirements} Smella's objective is to identify requirement smells.
+It uncovers \textit{requirement smells} with a precision of $59\%$ and a recall of $82\%$ whereas our \ac{BERT}-based model achieves the same recall, but only a precision of $36\%$.
+In contrast to our \textit{vague requirements}, Smella's objective is to identify requirement smells.
 Although these objectives are not identical, they are very similar.
 Therefore, we can conclude that Smella as an example and rule-based approaches in general are severely better in identifying poor requirements.
-This is a very interesting finding because this indicates that sophisticated rule-based approaches currently outperform simple transformer-based \ac{ML} approaches.
+This is a very interesting finding because it indicates that sophisticated rule-based approaches currently outperform simple transformer-based \ac{ML} approaches.
 
 \section{Summary}
 All previously presented approaches try to solve different classification problems using variants of \ac{BERT}.
 Most authors use the vanilla version of \ac{BERT} as baseline and observe that this implementation performs rather poorly compared to altered and more complex versions.
-In \cref{tab:relation_to_existing_evidence:overview} we first list all the results of the vanilla implementation based on \ac{BERT} and the results of \textcite{Femmer:2017}.
-Below that, the results our transformer-based models are shown.
+In \cref{tab:relation_to_existing_evidence:overview} we first list all the results of the vanilla implementations based on \ac{BERT} and the results of \textcite{Femmer:2017}.
+Below that, the results of our transformer-based models are shown.
 \pagebreak % Todo check page break
 \begin{table}[htpb]
     \centering
@@ -97,6 +97,6 @@ Below that, the results our transformer-based models are shown.
     \caption[Metrics of Related Approaches]{Metrics of related approaches.}\label{tab:relation_to_existing_evidence:overview}
 \end{table}
 
-From the table above we conclude that the baseline \ac{BERT} based models perform rather insufficiently on their tasks.
+From the table above we conclude that the baseline \ac{BERT}-based models perform rather insufficiently on their tasks.
 Further, the rule-based approach introduced by \textcite{Femmer:2017} clearly outperforms our vanilla transformer-based models.
 Since the results of our implementations are similar to the baseline models of other transformer-based approaches, we consider our results as plausible.
