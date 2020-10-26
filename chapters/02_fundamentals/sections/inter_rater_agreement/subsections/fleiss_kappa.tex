@@ -1,8 +1,8 @@
 \subsection{Fleiss' Kappa}
 \label{chp:fundamentals:sec:inter_rater_agreement:subsec:fleiss_kappa}
-Cohen's kappa and Scott's $\pi$ focus only the agreement between two raters.
+Cohen's kappa and Scott's $\pi$ focus only on the agreement between two raters.
 To overcome this limitation \textcite{Fleiss:1971} introduced another kappa statistics as a generalization of Scott's $\pi$ \parencite{Scott:1955}.
-Consider $N$ datapoints, where each datapoint is assigned $n$ times to one of $C$ classes by different raters.
+Consider $N$ datapoints, each assigned $n$ times to one of $C$ classes by different raters.
 How many raters have assigned the $i$th datapoint to the $j$th class is indicated by $n_{ij}$.
 $p_j$ is the proportion of all assignments which were made to the $j$th class and is calculated as:
 
@@ -19,7 +19,7 @@ The agreement of $n$ raters on the $i$th datapoint, indicated by $P_i$, is the p
     \end{aligned}
 \end{equation}
 
-The mean of all $P_i$ then forms the overall agreement.
+The mean of all $P_i$s then forms the overall agreement.
 
 \begin{equation}\label{eq:fleiss_P_bar}
     \bar{P} = \frac{1}{N} \sum_{i=1}^N P_i

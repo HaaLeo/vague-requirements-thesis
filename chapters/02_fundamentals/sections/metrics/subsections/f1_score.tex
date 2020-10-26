@@ -3,8 +3,8 @@
 
 We previously introduced the two metrics \textit{precision} and \textit{recall}.
 From their definition in \cref{eq:precision} and \cref{eq:recall} one concludes immediately that both are only optimal if an algorithm manages to select \textit{exclusively} \acp{TP} which would lead to $prec = rec = 1$.
-However, in most scenarios there do not only exist \acp{TP}.
-If that is the case, it is proven that there is a trade-off among whether one wants to identify all available relevant items (recall) or all of the selected items should be relevant (precision) \parencite{Gordon:1989}.
+However, in most scenarios an algorithm does not select \acp{TP} exclusively.
+If that is the case, it is proven that a trade-off exists among whether one wants to identify all available relevant items (recall) or all of the selected items should be relevant (precision) \parencite{Gordon:1989}.
 Here we do not focus on the formal derivation of this well known trade-off, instead excellent derivations can be found in \textcites{Gordon:1989}{Zhu:2004}.
 To measure and express this trade-off one can build the \textit{harmonic mean} of precision and recall which is called \textit{$F_1$ score} \parencite{Powers:2011}.
 This metric is defined by the following equation:
