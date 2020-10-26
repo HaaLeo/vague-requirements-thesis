@@ -1,14 +1,14 @@
 \subsection{Evaluation}
 \label{chp:study:sec:design:subsec:evaluation}
 After the training phase the models are evaluated using different metrics.
-In this section we present how we evaluate a model.
+In this subsection we present how we evaluate a model.
 
 As with the training process we execute the evaluation procedure for all of our models.
 Since we do not want our model to just memorize all of the training samples but also to generalize well on unseen data it is good practice to split the dataset into a \textit{training dataset} and a \textit{test dataset} \parencite{Reitermanova:2010}.
 To evaluate our models' generalization capabilities we use a test dataset which is unknown to the models.
 
 Although we use a different dataset for the evaluation, the overall process is quite similar to the training.
-The test data is passed to the model which again produces predictions.
+The test data is passed to the model which predicts whether a requirement is vague or not.
 These predictions are again compared to the true labels but instead of calculating a loss and pass it back to the model for optimization, this comparison is used to determine the \acp{TP}, \acp{FP}, \acp{TN} and \acp{FN} of the model's prediction.
 With those we can then calculate the metrics precision, recall, $F_1$ score and \ac{AP} as defined in \cref{chp:fundamentals:sec:metrics} with which we can judge the models' performance.
 This whole process is illustrated in \cref{fig:study:design:evaluation}.

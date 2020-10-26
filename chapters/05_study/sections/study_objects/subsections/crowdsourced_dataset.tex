@@ -5,14 +5,14 @@
 The first approach to label the set of requirements is to utilize crowdsourcing.
 Using crowdsourcing to generate annotations raises the concern that annotators may have an insufficient level of skill to fulfill the task \parencite{Quinn:2011}.
 Moreover, it is possible that they are even biased \parencite{Kittur:2008}.
-Therefore, the quality of a dataset which was generated with crowdsourcing is not guaranteed.
+Therefore, the quality of a dataset generated with crowdsourcing is not guaranteed.
 
 % Description of the pre-tests
 \subsubsection{Pre-Test Setup}
 In order to address this issues and assess the quality of such a crowdsourced dataset we perform preliminary tests.
 We crowdsource the labelling of two small batches consisting of only 102 requirements as well as have two experts $E1$ and $E2$ to label them.
-All participants are asked to annotate requirements as vague or not following the definition introduced in \cref{chp:fundamentals:sec:vagueness}.
-In the first crowdsourced batch, referred to as $B_{C1}$, each requirement is labeled twice, in the second one named $B_{C2}$ each requirement is labeled three times.
+All participants are asked to annotate requirements as vague or not vague following the definition introduced in \cref{chp:fundamentals:sec:vagueness}.
+In the first crowdsourced batch, referred to as $B_{C1}$, each requirement is labeled \textit{twice}, in the second one named $B_{C2}$ each requirement is labeled \textit{three times}.
 The expert batches are referred to as $B_{E1}$ and $B_{E2}$ respectively.
 Afterwards the \acp{IRA} within the crowdsourced batches and among the experts are calculated.
 We choose the \hyperref[chp:fundamentals:sec:inter_rater_agreement:subsec:free_marginal_multirater_kappa]{\textit{free-marginal multirater kappa}} as \ac{IRA}, because raters do not know beforehand how many requirements are vague.
@@ -68,8 +68,7 @@ We indicate the \ac{IRA} between two datasets $Q$ and $P$ by $IRA(Q, P)$.
 For our experiment we set the baseline for sufficient similarity to the \ac{IRA} between the two datasets labeled by experts $E1$ and $E2$.
 With this we can define the following sufficient quality condition $QC$:
 \begin{description}
-    \item[$QC$]: Given a dataset $Q$ and a dataset $P_E$ which was aggregated from two separate expert datasets $P_{E1}$ and $P_{E2}$,\\
-    $Q$ is of sufficient quality if $IRA(Q, P_E) \ge IRA(P_{E1}, P_{E2})$ holds.
+    \item[$QC$]: Given a dataset $Q$ and a dataset $P_E$ aggregated from two separate expert datasets $P_{E1}$ and $P_{E2}$, $Q$ is of sufficient quality if $IRA(Q, P_E) \ge IRA(P_{E1}, P_{E2})$ holds.
 \end{description}
 
 \subsubsection{From Batch to Dataset}
@@ -82,11 +81,11 @@ Therefore, we want to compare the majority vote of the batches $B_{C1}$ and $B_{
 % How is the majority label built?
 Each requirement of $B_{C2}$ was labeled by three annotators.
 Therefore, it is easy to calculate the majority vote for each requirement and we can introduce dataset $D_{C2}$, in which each requirement is assigned the label with the most votes of the raters of $B_{C2}$.
-We cannot apply this procedure to $B_{C1}$, because it was labeled by an even number of raters.
+We cannot apply this procedure to $B_{C1}$ because it was labeled by an even number of raters.
 Since we prefer the quality of the dataset over its size, we decide to drop all 51 requirements of $B_{C1}$ where the raters do not agree upon.
 The resulting dataset is referred to as $D_{C1}$.
-We proceed in the same way for two expert batches $B_{E1}$ and $B_{E2}$ and call the resulting dataset $D_{E}$.
-Notice here that the two batches $B_{E1}$ and $B_{E2}$ are datasets themselves, because each of them only includes one label per requirement.
+We proceed in the same way for the two expert batches $B_{E1}$ and $B_{E2}$ and call the resulting dataset $D_{E}$.
+Notice here that the two batches $B_{E1}$ and $B_{E2}$ are datasets themselves because each of them only includes one label per requirement.
 
 \subsubsection{Results}
 % Result of IRA of crowdsourcing vs. experts.
@@ -132,4 +131,4 @@ We crowdsourced the labelling of all 2,776 requirements of \citeauthor{Kummeth:2
 The raters agree on $1,548$ requirements and disagree on $1,228$ respectively.
 $288$ requirements of the $1,548$ are labeled as \textit{vague}, the remaining $1,260$ are annotated \textit{not-vague}.
 We refer to this crowdsourced dataset as $D_{crowd}$ in the following.
-One point to notice is that $D_{crowd}$ is very unbalanced, only $\frac{288}{1,548} \approx 19\%$ of the dataset's requirements are labeled vague.
+One point to notice is that $D_{crowd}$ is very imbalanced, only $\frac{288}{1,548} \approx 19\%$ of the dataset's requirements are labeled as vague.

@@ -9,43 +9,43 @@ With those we can now discuss whether and to what extent the models are capable 
 \label{chp:study:sec:interpretation:subsec:discussion:precision}
 The first metric we consider is \textit{precision}.
 Our three models achieve a maximum precision of $45\%$.
-This means that if the model is given a corpus for classification and it classifies $100$ requirements as vague, only $45$ requirements are truly vague but more than half of its selection is not vague.
-If one uses this model with the aim of identifying vague requirements of a dataset, the model causes a lot of additional work.
+This means that if the model is given a dataset for classification and it classifies $100$ requirements as vague, only $45$ requirements are truly vague but more than half of its selection is not vague.
+If one uses this model with the aim of identifying a dataset's vague requirements, the model causes a lot of additional work.
 The practitioner would have to examine and possibly rewrite $100$ requirements, although only $45$ requirements are vague.
 
 \subsubsection{Recall}
 \label{chp:study:sec:interpretation:subsec:discussion:recall}
 Next we take a look how our models perform regarding \textit{recall}.
 The maximum value a model achieves is $53\%$.
-Continuing with the previous example this means the $45$ correct as vague identified requirements represent $53\%$ of all truly vague requirements.
-Although \ac{BERT}'s precision is quite low, it is also only capable to identify $53\%$ of all present vague requirements.
+Continuing with the previous example this means the $45$ requirements correctly identified as vague represent only $53\%$ of all truly vague requirements.
+For example, while \ac{BERT}'s precision is fairly low, it is also only capable of identifying $53\%$ of all present vague requirements.
 Uncovered vague requirements can lead to significantly increasing costs \parencite{Femmer:2017}.
-Therefore, it is very likely that in an real world application a practitioner is not satisfied by detecting half of all vague requirements (with bad precision, too).
-Moreover to detect additional vague requirements, one must scan through the remaining corpus.
+Therefore, it is very likely that in a real world application a practitioner is not satisfied by detecting half of all vague requirements (with bad precision, too).
+Moreover to detect additional vague requirements, one must scan through the remaining datapoints.
 
 \subsubsection{$F_1$ Score}
 \label{chp:study:sec:interpretation:subsec:discussion:f1_score}
-As described in \cref{chp:fundamentals:sec:metrics:subsec:f1_score} the $F_1$ score is the harmonic mean between between precision and recall.
+As described in \cref{chp:fundamentals:sec:metrics:subsec:f1_score} the $F_1$ score is the harmonic mean between precision and recall.
 It is used to express the trade-off among those two metrics.
-The \ac{BERT} based model, with precision of $45\%$ and $53\%$ yields a $F_1$ score of $48\%$.
+The \ac{BERT} based model, with precision of $45\%$ and $53\%$ yields an $F_1$ score of $48\%$.
 Although the \ac{ERNIE2.0} and \ac{DistilBERT} based models differ in precision and recall, with $50\%$ and $48\%$ respectively, they achieve a very similar $F_1$ score to \ac{BERT}.
-This means that the overall performance among all three models is very similar with only $2\%$ difference in the $F_1$ score.
+This means that the overall performance between all three models is very similar with only $2\%$ difference in the $F_1$ score.
 
 \subsubsection{Average Precision}
 \label{chp:study:sec:interpretation:subsec:discussion:average_precision}
-Although our models achieve rather low precision and recall, we do not know whether they are capable to sort the relevant, vague requirements first.
-This can be determined by the metric \ac{AP}.
+Although our models achieve rather low precision and recall, we do not know whether they are capable of sorting the relevant, vague requirements first.
+This can be measured with the metric \ac{AP}.
 For its computation we sort the models' predictions descending, starting with the requirements which the models predict most certainly as vague.
 All three models achieve an \ac{AP} varying between $0.43$ and $0.46$.
 Following the interpretation of \ac{AP} introduced in \cref{chp:fundamentals:sec:metrics:subsec:average_precision:interpretation}, this means that less than every second requirement among the top rated ones is actually vague, because their \ac{AP} is less than $0.5$.
-Considering a user who wants to relabel the top 50 vague requirements, he/she would actually have to relabel more than the 100 first entries of the sorted list returned by the algorithm to actually capture the 50 top vague requirements.
+Considering a user who wants to relabel the top 50 vague requirements, he/she actually has to relabel more than the 100 first entries to actually capture the 50 top vague requirements.
 Knowing that less than half of the top $n$ requirements ranked as vague are truly vague, makes such a system impractical for real world scenarios.
 
 \subsubsection{Conclusion}
 \label{chp:study:sec:interpretation:subsec:discussion:usability}
 In this section we took a closer look at the results presented in \cref{chp:study:sec:results}.
-For each of the metrics precision, recall, $F_1$ score and \ac{AP} we examined their values and reasoned what those values actually mean.
+For each of the metrics precision, recall, $F_1$ score and \ac{AP} we examined their values and reasoned about their consequences.
 All metrics indicate that the used transformer-based approaches only uncover half of all vague requirements with poor precision.
 All three models have the same $F_1$ score indicating that their individual trade-off of precision and recall is very similar, meaning if one of the models is more precise than the others its recall is worse instead.
 Evaluating the \ac{AP} leads to the result that less than every second requirement of the top ranked ones is truly vague.
-We therefore conclude that the models perform rather bad in uncovering vague requirements.
+We therefore conclude that the models perform rather unsatisfactorily in uncovering vague requirements.
