@@ -1,16 +1,16 @@
 \section{Machine Learning Based Approaches}
 \label{chp:related_research:sec:machine_learingn_based_approaches}
 
-Apart from solely rule-based approaches, \ac{ML} based approaches exist to classify requirements or more generally, documents.
-In this chapter \ac{ML} based approaches for requirement classification are presented.
+Apart from solely rule-based approaches, \ac{ML}-based approaches exist to classify requirements or more generally, documents.
+In this chapter \ac{ML}-based approaches for document classification are presented.
 
 \subsection{Hedge Classification in Scientific Literature}
 \textcite{Medlock:2007} present an approach which examines hedge classification in scientific literature.
 The subject of hedge classification is to detect speculative language.
-First they introduce a probabilistic model to gather training data.
+First, they introduce a probabilistic model to gather training data.
 The same model is used to derive a weakly supervised learner which classifies a sample as speculative when its probability exceeds a predefined threshold.
-This iterative learning approach is capable to perform hedge classification with similar accuracy as other approaches based on \acp{SVM}.
-They conclude that their simple \ac{ML} based approach is capable to perform hedge classification and that more complex \ac{ML} approaches are likely to perform even better.
+This iterative learning approach is capable of performing hedge classification with similar accuracy as other approaches which all use a \ac{SVM}.
+They conclude that their simple \ac{ML} based approach is capable of performing hedge classification and that more complex \ac{ML} approaches are likely to perform even better.
 
 \subsection{Decision Trees}
 \textcite{Ormandjieva:2007} present an approach which utilizes decision trees for the classification task.
@@ -19,15 +19,15 @@ Surface understanding captures the literal meaning like how difficult or easy it
 For example how difficult it would be for a developer to implement a system by only reading the paragraph.
 
 The dataset was obtained by manual reviews of four annotators.
-Each annotator carefully read a set of requirements documents and classified its passages once with respect to surface understanding and once with respect to conceptual understanding.
+Each annotator carefully read a set of requirements documents and classified their passages once with respect to surface understanding and once with respect to conceptual understanding.
 The \ac{IRA} is indicated by Cohen's Kappa \parencite{Cohen:1960} and is 0.64 for conceptual understanding and 0.66 for surface understanding.
 
 For the classification task each sentence of the requirements documents was \ac{POS} tagged and its syntax parsed using the Stanford Parser \parencite{Klein:2002}.
 Then the number of occurrences of the indicators for little surface understanding were counted.
 Based on that information a decision tree was constructed.
 The authors mention that a \ac{NN} could maybe achieve better results.
-However, due to the lack of data a decision tree is preferred.
-The trained decision tree was capable to solve the classification task with 86.67\% accuracy.
+However, due to the lack of data they prefer a decision tree.
+The trained decision tree was able to solve the classification task with 86.67\% accuracy.
 \textcite{Ormandjieva:2007} conclude that it is indeed feasible to uncover faults related to surface understanding using a decision tree and see their quality model approved as suitable.
 
 \subsection{Conditional Random Fields}
@@ -56,29 +56,29 @@ To generate the models they use the PART rule induction algorithm \parencite{Eib
 The obtained models use a requirement's different metrics to classify it.
 The models are used to induce rules which then can be used to evaluate a requirement's quality according to the corresponding metric.
 
-The models were examined using a dataset annotated by experts and achieved accuracy in a range between 83.27\% and 87.72\%.
+The models were examined using a dataset annotated by experts and achieved an accuracy in a range between 83.27\% and 87.72\%.
 The achieved recall remains unknown.
 The authors conclude that it is possible to learn the quality features of a requirement and use the obtained models for quality prediction of new requirements.
-They endorse enhancement of the model creation process to further improve the performance.
+They endorse enhancing the model creation process to further improve the performance.
 
 \subsection{Linguistic Hedging in the Monetary Political Domain}
 \textcite{Stajner:2017} examine linguistic hedging in the monetary political domain.
 They create two different datasets.
 One includes transcribed \textit{debates} of different meetings of several committees.
-The second dataset includes the meetings statement reports which are typically conducted at the end of a meeting and further referred to as \textit{decisions}.
-The datasets were labeled \textit{speculative} or \textit{non-speculative} by three annotators.
+The second dataset includes the meetings' statement reports which are typically conducted at the end of a meeting and further referred to as \textit{decisions}.
+Three annotators labeled the datasets' entries as \textit{speculative} or \textit{non-speculative}.
 The averaged pairwise Cohen's Kappa \parencite{Cohen:1960} was 0.56 for the debates and 0.61 for the decisions dataset.
 The annotators marked phrases which indicate a speculative sentence in their opinion.
 
 For the classification task a \ac{SVM} was trained on both datasets.
 They used \ac{BoW}, the lists of speculation triggers or different combinations as input features for the \acp{SVM}.
-The authors benchmarked their \ac{SVM} approach with a \ac{CNN} and the best performing system for the CoNLL-2010 shared task \parencite{Farkas:2010}.
+The authors benchmarked their \ac{SVM} approach with a \ac{CNN} and with the best performing system for the CoNLL-2010 shared task \parencite{Farkas:2010}.
 They conclude that a general domain dataset can be used to train a model for a hedge classification task in this domain.
 Further they showed that their \ac{SVM} approach including lists of speculation triggers performs as well as other state of the art systems in other domains and could outperform the \ac{CNN} classifier on the debates dataset.
 
 \subsection{Summary}
 All of the presented works use \ac{ML} techniques in order to improve their results.
-Some try to build classifiers which are capable to predict a new requirement's quality.
+Some try to build classifiers which are capable of predicting a new requirement's quality.
 Others use those techniques to extract specific cues and their location.
-However, none of the mentioned approaches examines how state of the art \acp{NN}, like \acp{DNN}, perform at classifying requirements as vague or not.
-With this thesis we want to answer the question whether \acp{DNN} are promising in classifying requirements regarding their quality.
+However, none of the mentioned approaches examines how state of the art \acp{NN}, like \acp{DNN}, perform at classifying requirements as vague or not vague.
+With this thesis we want to answer the question whether \acp{DNN} are promising in classifying requirements regarding their vagueness.

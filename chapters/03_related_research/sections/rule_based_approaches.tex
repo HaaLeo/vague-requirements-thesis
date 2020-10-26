@@ -1,15 +1,15 @@
 \section{Rule-Based Approaches}
 \label{chp:related_research:sec:rule_based approaches}
-Rule-based approaches are one of the most often used approaches to tackle \ac{NLP} tasks in the context of \ac{RE}.
+Rule-based approaches are most often used to tackle \ac{NLP} tasks in the context of \ac{RE}.
 An approach is called rule-based approach if rules or facts represent the linguistic expertise. \parencite{Zhao:2020}
 
 \subsection{Tool Supported Use Case Reviews}
-Since use cases are often used to specify functional requirements, \textcite{Ciemniewska:2007} aim to support use case reviews with a tool which is capable to detect \textit{bad smells}.
+Since use cases are often used to specify functional requirements, \textcite{Ciemniewska:2007} aim to support use case reviews with a tool which is capable of detecting \textit{bad smells}.
 They want to detect specification level use case defects such as duplicates as well as use case level smells like too long or too short use cases.
 To uncover each of their proposed smells the parser introduced by \textcite{Klein:2002} is used.
 With the tokens returned by the parser rules are implemented to detect each smell.
 The developed system was tested with 40 use cases which almost all contained a bad smell.
-It remains unclear how the approach performed regarding precision and recall.
+It remains unclear how the approach performs regarding precision and recall.
 
 \subsection{Automated Ambiguity Detection}
 \textcite{Gleich:2010} present a tool to enable automated ambiguity detection.
@@ -24,13 +24,13 @@ The tool was evaluated using 50 German as well as 50 English sentences and achie
 To investigate the capabilities of \ac{NLP} techniques to identify requirement defects in an industrial environment \textcite{Rosadini:2017} contribute a large-scale case study.
 They accomplish this by analyzing a railway signalling company's requirements documents.
 The study was conducted using the \ac{GATE} tool \parencite{Cunningham:2002}.
-The dataset was obtained by verification engineers that assigned each of $1,866$ requirements to defect classes which were defined beforehand.
+The dataset was obtained by verification engineers which assigned each of $1,866$ requirements to defect classes defined beforehand.
 For each defect class the engineers implement rules such as matching a list of predefined terms.
 In the experiment a recall of 100\% is achieved for some defect classes which were implemented using \ac{POS} tagging.
 
 In their second large-scale study a larger requirements dataset was used to determine whether their approach is applicable in an industrial environment.
 The studies suggest that the implemented tool is suitable to detect the requirement defects with high recall.
-Further, such tools are capable to enhance the quality assurance process in industries.
+Further, such tools are capable of enhancing the quality assurance process in industries.
 The authors conclude that \ac{NLP} is only part of the solution and cannot replace human reviews.
 However, it helps verification engineers to prioritize requirements for manual inspection or can be used to check for left over defects after a manual review.
 
@@ -40,22 +40,22 @@ As first step they developed a quality model against which they can evaluate the
 This model defines different quality properties and their indicators.
 It is based on the analysis of several industry requirements and on the authors' experience in \ac{RE} and does not cover all facets of software requirements.
 However, it is specific enough to verify requirement documents' quality and compare them.
-\Ac{QuARS} was tested with multiple industry requirements and was capable to identify a large amount of requirements which did not satisfy the predefined quality model.
+\Ac{QuARS} was tested with multiple industry requirements and was able to identify a large amount of requirements which did not satisfy the predefined quality model.
 The study encourages the use of rule-based tools for requirement defect detection and to further support engineers in the quality assurance process.
 
 \subsection{Smella}
 \textcite{Femmer:2017} aim for rapid checks which allow immediate feedback when requirements are written down.
 Similar to \textcite{Fabbrini:2002} they first define a quality model.
-The model is represented by so called \textit{requirement smells} which were derived from the domain known as \textit{code smells}.
-They define a requirement smell based on ISO 29148 as \textit{"an indicator of a quality violation, which may lead to a defect, with a concrete location and a concrete detection mechanism"} \parencite{Femmer:2017}.
+The model is represented by so called \textit{requirement smells} which were derived from the domain known \textit{code smells}.
+They define a requirement smell based on ISO 29148 as \textit{"an indicator of a quality violation, which may lead[s] to a defect, with a concrete location and a concrete detection mechanism"} \parencite{Femmer:2017}.
 This standard was chosen because it aims to unify different existing standards and it allows to choose proper language specifically to formulate requirements.
 
 They introduce a prototype called \textit{Smella} for rapid requirement smell detection.
-It is capable to parse requirements from different file formats like \ac{PDF} and \ac{CSV}.
+It is capable of parsing requirements from different file formats like \ac{PDF} and \ac{CSV}.
 Once a file is parsed, the requirements are annotated using a combination of \ac{POS} tagging, morphological analysis and dictionaries \& lemmatization.
 After the requirements were analyzed, Smella allows the user to view, review and blacklist findings.
 Further, a user can disable specific smells and analyze hotspots to identify very requirement smell prone documents.
-With Smella \textcite{Femmer:2017} detected requirement smells with a precision of around 0.59 and recall of 0.82.
+With Smella \textcite{Femmer:2017} detected requirement smells with a precision of around 0.59 and a recall of 0.82.
 However, both of these metrics were varying highly.
 For further improvement, they suggest to refine some of the existing requirement smells.
 They conclude that their prototype can uncover requirement smells quite precise and can enhance quality in \ac{RE}.
@@ -68,17 +68,18 @@ Tools which use a \ac{POS} tagger or a auxiliary parser to detect entities with 
 They argue that in safety-, security- or life-critical systems \acp{AFT} must identify \textit{all} ambiguities in order to really support the user who then must only check the reported ambiguities instead of the whole document.
 
 To accomplish this task a prototype was implemented which consists mostly of two parts.
-First a \ac{AIC} which includes multiple phrases which indicate ambiguity.
-It can also be extended by the user so it can be tailored to the requirements.
-Second a lexical analyzer is used to scan a requirement and compare each token with the \ac{AIC}.
+The first one is an \ac{AIC} including multiple phrases in order to indicate ambiguity.
+The user can extend it so that it is tailored to the requirements.
+Secondly, a lexical analyzer is used to scan a requirement and compare each of its tokens with the \ac{AIC}.
 If a match occurs, the token is reported as possible ambiguity.
 Although the authors could not achieve their initial goal of 100\% recall, they are confident that future research will further improve their approach.
 
 \subsection{Ambiguities as Indicators for Variability}
-\textcite{Fantechi:2018} state that ambiguities are not only introduced unintentionally to requirements documents and cause severe drawbacks in the software engineering process, they could also be inserted on purpose to capture variable facets which are solved in a downstream development step.
-In order to further research this claim, first the existing tool \ac{QuARS} \parencite{Fabbrini:2002} is applied on requirements and its output is assessed based on whether ambiguities can constitute variation points.
+\textcite{Fantechi:2018} state that ambiguities are not only introduced unintentionally to requirements documents and cause severe drawbacks in the software engineering process.
+According to the authors, they can also be inserted on purpose to capture variable facets which are solved in a downstream development step.
+In order to further research this claim, first, the existing tool \ac{QuARS} \parencite{Fabbrini:2002} is applied on requirements and its output is assessed based on whether ambiguities can constitute variation points.
 Second, \ac{QuARS} is altered with an additional tailored dictionary to check whether the variability detection process can be enhanced.
-For both cases \ac{QuARS}' output was assessed and manually classified as false positive, actual ambiguity or variability point.
+For both cases \ac{QuARS}' output was assessed and manually classified as \ac{FP}, actual ambiguity or variability point.
 
 The authors conclude that ambiguities are possible indicators for variability.
 Specifically terms like "and/or", "may" and "could" are likely to indicate variability instead of ambiguities.
@@ -88,4 +89,4 @@ This leads the authors to the question of whether precision should be considered
 \subsection{Summary}
 All these approaches use rather simple mechanisms to determine a requirement's quality like matching the requirements against a predefined list of vague words.
 Although some works use more complex approaches like \ac{POS} tagging and achieve remarkable results, they do not consider \ac{ML} techniques.
-In contrast to that, this thesis aims to investigate whether recent \ac{ML} techniques, especially \textit{transfer learning}, are capable to reliably classify requirements regarding their vagueness.
+In contrast to that, this thesis aims to investigate whether recent \ac{ML} techniques, especially \textit{transfer learning}, are capable of reliably classifying requirements regarding their vagueness.
