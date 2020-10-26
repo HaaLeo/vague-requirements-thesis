@@ -9,15 +9,15 @@ The first consists of 12 encoder layers, the second of 24 which yields 110 milli
 Since the 24 layer variant takes severely longer to train we use the 12 encoder layer variant in this approach. \parencite{Devlin:2018}
 
 % Paragraph on in- / outputs
-\Ac{BERT} is suitable for different kinds of downstream tasks, since it is capable to embed sentence pairs in a single sequence.
+\Ac{BERT} is suitable for different kinds of downstream tasks, since it is capable of embedding sentence pairs in a single sequence.
 This is achieved by introducing special input tokens which have a designated meaning.
-For example the [SEP] token indicates the start of a new sequence when two sequences are passed to the model.
+For example the \textit{[SEP]} token indicates the start of a new sequence when two sequences are passed to the model.
 For our approach the most important special token is the \textit{[CLS]} token because its corresponding final hidden state represents the aggregation of the input sequence and can be used for further downstream classification tasks.
 \Ac{BERT}'s input is the summation of three different embeddings.
 The first embedding is the \textit{token embedding}.
 Here each input token (for example each word of a sentence) is embedded using WordPiece embeddings \parencite{Wu:2016} which utilize a vocabulary of 30,000 words.
 The second embedding is called \textit{segment embedding} and indicates to which input sequence a token belongs.
-The third embedding embeds a tokens position.
+The third embedding embeds a token's position.
 The input of \ac{BERT} is obtained by summing up those three embeddings for each input token.
 \Cref{fig:approach:BERT:input_embedding} visualizes how two sequences are embedded. \parencite{Devlin:2018}
 \begin{figure}[htpb]

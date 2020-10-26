@@ -2,14 +2,14 @@
 \label{chp:approach:sec:distilbert}
 
 Parameter-heavy deep learning models like \ac{BERT} tend to raise scaling issues the more parameters they include \parencite{Schwartz:2019}.
-To tackle this concern, \textcite{Sanh:2019} introduced \acl{DistilBERT}.
+To tackle this concern, \textcite{Sanh:2019} introduced \ac{DistilBERT}.
 
 % Paragraph architecture and learning
 The architecture of \ac{DistilBERT} is similar to that of \ac{BERT}.
 However, \ac{DistilBERT} uses only half as many layers.
 To obtain a much smaller model the authors use \textit{knowledge distillation} as proposed by \textcites{Bucilua:2006}{Hinton:2015}.
-When applying this technique a smaller student model is trained to replicate the behaviour of the larger model, the teacher.
-The "teacher" can also be a set of different models.
+When applying this technique a smaller student model is trained to replicate the behavior of the larger model, the teacher.
+The teacher can also be a set of different models.
 With this technique the authors successfully trained \ac{DistilBERT} to keep 97\% of \ac{BERT}'s performance.
 Compared to \ac{BERT}, \ac{DistilBERT} consists of 40\% less parameters and trains 60\% faster. \parencite{Sanh:2019}
 
