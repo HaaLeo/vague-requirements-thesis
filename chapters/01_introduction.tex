@@ -4,7 +4,7 @@
 \chapter{Introduction}
 \label{chp:introduction}
 
-Recent research found that a software product is only as good as its development process \parencite{Hsia:1993}.
+Recent research found out that a software product is only as good as its development process \parencite{Hsia:1993}.
 Correctly specifying and understanding requirements is an integral part of this process, known as \ac{RE}.
 Research has shown that \ac{RE} is prone to faults which can cost additional time and money \parencite{Mendez:2016} and may lead to severe project delay \parencite{Femmer:2014}.
 Further, the later design changes are introduced in the development process, the costlier these changes are \parencite{Folkestad:2001}.
@@ -30,7 +30,7 @@ A common approach to check whether a requirement smell applies or not are manual
 According to \textcite{Salger:2013}, reviews have several drawbacks.
 The review must be carried out by the relevant stakeholders and they must fully understand each requirement.
 Consequently, the reviewer needs domain knowledge in order to perform the reviews which makes the review more challenging.
-Furthermore, the result of a review depends on the reviewer him/herself \parencite{Zelkowitz:1983} and the reviewer can be distracted by the earlier mentioned requirement smells themselves.
+Furthermore, the result of a review depends on the reviewer him/herself \parencite{Zelkowitz:1983} and the reviewer can be distracted by the earlier mentioned requirement smells themselves \parencite{Femmer:2017}.
 Therefore, \textcite{Femmer:2017} conclude that manual reviews are costly and time consuming.
 
 Tooling which supports the review process could consequently have the potential to save resources and further benefit the quality assurance process.
@@ -39,15 +39,15 @@ Further, in industrial environments not only dedicated requirement smells are of
 Because requirements are mostly formulated in natural language \parencite{Mich:2004} an assisting tool has to be capable of processing natural language and then assess whether a requirement is vague or not.
 
 In recent history \Ac{ML} achieved remarkable results for complex \ac{NLP} tasks \parencite{Khan:2016}.
-An important example to mention is Google's \ac{NN} model called BERT which showcased how \acp{NN} can improve performance in \textit{transfer learning} tremendously \parencite{Devlin:2018}.
-This recent success indicates that \acp{NN} have great potential in transfer learning and therefore could be capable to detect vague requirements.
+An important example to mention is Google's \ac{NN} model called \ac{BERT} which showcases how \acp{NN} can improve performance in \textit{transfer learning} tremendously \parencite{Devlin:2018}.
+This recent success indicates that \acp{NN} have great potential in transfer learning and therefore could be capable of detecting vague requirements.
 However, recent research lacks the exploration of vague sentences and in particular vague requirements.
 
 The aim of this thesis is to further explore the capabilities of modern \acp{NN} in the context of detection of vague requirements and whether they are suitable candidates to improve the quality assurance process.
 In order to improve \ac{RE} we make the following contributions:
 \begin{enumerate}
-    \item Since recent research endorses \acp{NN}' capabilities to solve complex tasks but has not yet explored this in the context of vague requirements, this thesis evaluates whether and to what extent state of the art \acp{NN} are capable to classify requirements as \textit{vague} and \textit{not vague}.
-    \item To successfully apply transfer learning one needs a set of labeled datapoints. However, as the time of writing there are no such datasets publicly available.
+    \item Since recent research endorses \acp{NN}' capabilities to solve complex tasks but has not yet explored this in the context of vague requirements, this thesis evaluates whether and to what extent state of the art \acp{NN} are capable of classifying requirements as \textit{vague} or \textit{not vague}.
+    \item To successfully apply transfer learning one needs a set of labeled datapoints. However, as the time of writing no such datasets are available publicly.
         Therefore, we create a dataset containing requirements and labels which indicate whether the corresponding requirement is vague or not.
     \item It is known that recent \ac{ML} approaches perform well on \ac{NLP} tasks.
         However, they have not been compared among each other in the context of vague requirements.
@@ -55,10 +55,10 @@ In order to improve \ac{RE} we make the following contributions:
 \end{enumerate}
 
 The thesis is structured as follows:
-In \cref{chp:fundamentals} we establish the fundamental knowledge fundamentals which is required throughout this thesis.
+In \cref{chp:fundamentals} we establish the fundamental knowledge which is required throughout this thesis.
 After that, we examine related research in the field of \ac{RE}.
 The specific approach we use is introduced in \cref{chp:approach} and its sections.
-To assess this approach is we carry out a study which we describe in depth in \cref{chp:study}.
+To assess this approach we carry out a study which we describe in \cref{chp:study} in depth.
 Threats to the study's validity are presented in \cref{chp:threats_to_validity}.
 \Cref{chp:relation_to_existing_evidence} includes the comparison of our approach and its results to other existing approaches.
 In \cref{chp:future_work} we derive opportunities for future research.
